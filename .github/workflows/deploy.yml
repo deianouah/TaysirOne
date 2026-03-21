@@ -15,21 +15,26 @@ jobs:
       - name: Upload project files to server
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          host: ${{ secrets.HOST }}      # تأكد أن هذا هو الاسم في GitHub Secrets
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
           port: 22
           source: "."
-          target: "/home/whatsway"
+          target: "/home/whatsway"      # تأكد أن هذا المجلد موجود في السيرفر
 
       - name: Run deploy script on server
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
             cd /home/whatsway
-            chmod +x deploy.sh
-            ./deploy.sh
+            # تأكد من وجود ملف اسمه deploy.sh داخل مشروعك
+            if [ -f "deploy.sh" ]; then
+              chmod +x deploy.sh
+              ./deploy.sh
+            else
+              echo "deploy.sh not found!"
+            fi
