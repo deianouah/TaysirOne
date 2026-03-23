@@ -1,8 +1,8 @@
-name: CI/CD to Ubuntu Server
+name: Auto Deploy Antigravity
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main"] # سيتم الرفع عند عمل push لفرع main
 
 jobs:
   deploy:
@@ -12,29 +12,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Upload project files to server
+      - name: Upload files via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.HOST }}      # تأكد أن هذا هو الاسم في GitHub Secrets
+          host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          port: 22
+          port: ${{ secrets.PORT }}
           source: "."
-          target: "/home/whatsway"      # تأكد أن هذا المجلد موجود في السيرفر
+          target: "/home/whatsway"
 
-      - name: Run deploy script on server
+      - name: Restart Application via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          port: 22
+          port: ${{ secrets.PORT }}
           script: |
             cd /home/whatsway
-            # تأكد من وجود ملف اسمه deploy.sh داخل مشروعك
-            if [ -f "deploy.sh" ]; then
-              chmod +x deploy.sh
-              ./deploy.sh
-            else
-              echo "deploy.sh not found!"
-            fi
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            npm install
+            npm run build
+            pm2 restart taysirone || pm2 start npm --name "taysirone" -- run start
