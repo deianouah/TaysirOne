@@ -1,4 +1,4 @@
-name: Auto Deploy Antigravity
+name: Auto Deploy TaysirOne
 
 on:
   push:
@@ -22,9 +22,9 @@ jobs:
           source: "."
           target: "/home/whatsway"
           overwrite: true
-          rm: false # لا يحذف الملفات القديمة، فقط يضيف الجديد
+          rm: false # Doesn't delete old files, just adds/updates new ones
 
-      - name: Restart Application via SSH
+      - name: Run Deployment Script via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
@@ -33,13 +33,12 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/whatsway
-            # تحميل بيئة Node.js (مهم جداً لـ PM2)
+            # Load Node.js environment (crucial for PM2/npm)
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             
-            # تحديث المشروع
-            npm install
-            npm run build
+            # Make sure deploy.sh is executable
+            chmod +x deploy.sh
             
-            # إعادة التشغيل أو البدء من جديد
-            pm2 restart taysirone || pm2 start npm --name "taysirone" -- run start
+            # Execute the robust deployment script
+            bash deploy.sh
