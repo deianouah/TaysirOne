@@ -266,9 +266,9 @@ export const getBrandSettings = async (_req: Request, res: Response) => {
       return res.json({
         title: "TaysirOne",
         tagline: "Your Ultimate Marketing Platform",
-        logo: "",
-        logo2:"",
-        favicon: "",
+        logo: "/img/logo.png",
+        logo2: "/img/logo.png",
+        favicon: "/img/logo.png",
         supportEmail: "",
         updatedAt: new Date().toISOString(),
       });
@@ -283,19 +283,28 @@ export const getBrandSettings = async (_req: Request, res: Response) => {
       supportEmail: config.supportEmail || "",
       logo: config.logo?.startsWith("https")
         ? config.logo
-        : `/uploads/${config.logo}`,
+        : (config.logo ? `/uploads/${config.logo}` : "/img/logo.png"),
       logo2: config.logo2?.startsWith("https")
         ? config.logo2
-        : `/uploads/${config.logo2}`,  
+        : (config.logo2 ? `/uploads/${config.logo2}` : "/img/logo.png"),  
       favicon: config.favicon?.startsWith("https")
         ? config.favicon
-        : `/uploads/${config.favicon}`,
+        : (config.favicon ? `/uploads/${config.favicon}` : "/img/logo.png"),
       updatedAt: config.updatedAt?.toISOString() || new Date().toISOString(),
     };
 
     res.json(brandSettings);
   } catch (err: any) {
-    res.status(500).json({ error: err.message });
+    // Graceful fallback for database timeout / error
+    res.json({
+        title: "TaysirOne",
+        tagline: "Your Ultimate Marketing Platform",
+        logo: "/img/logo.png",
+        logo2: "/img/logo.png",
+        favicon: "/img/logo.png",
+        supportEmail: "",
+        updatedAt: new Date().toISOString(),
+    });
   }
 };
 

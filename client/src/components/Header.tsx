@@ -232,27 +232,21 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`flex items-center justify-between transition-all duration-500 ${
-              isScrolled ? "h-16" : "h-[72px]"
-            } ${isRtl ? "flex-row-reverse" : "flex-row"}`}
+              isScrolled ? "h-20" : "h-[90px]"
+            } ${!isRtl ? "flex-row-reverse" : "flex-row"}`}
           >
             <Link
               href="/"
               className="flex items-center space-x-2.5 group"
             >
-              {brandSettings?.logo ? (
-                <img
-                  src={brandSettings?.logo}
-                  alt="Logo"
-                  className="h-10 object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              ) : (
-                <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white rounded-xl p-2.5 shadow-lg shadow-emerald-500/20 transition-transform duration-300 group-hover:scale-105">
-                  <MessageSquare className="h-6 w-6" />
-                </div>
-              )}
+              <img
+                src={brandSettings?.logo || "/img/logo.png"}
+                alt="Logo"
+                className={`h-14 sm:h-16 w-auto object-contain scale-[1.8] sm:scale-[2.2] transition-transform duration-300 ${!isRtl ? "origin-right" : "origin-left ml-6"}`}
+              />
             </Link>
 
-            <nav className={`hidden lg:flex items-center gap-1 ${isRtl ? "mr-8 flex-row-reverse" : "ml-8 flex-row"}`}>
+            <nav className={`hidden lg:flex items-center gap-1 px-4 flex-row-reverse ${!isRtl ? "mr-4" : "ml-4"}`}>
 
 
               <Link
@@ -341,7 +335,7 @@ const Header = () => {
               </div>
 
               {!isAuthenticated && (
-                <div className={`flex items-center gap-2 ${isRtl ? "mr-2" : "ml-2"}`}>
+                <div className={`flex items-center gap-2 mx-2 ${isRtl ? "flex-row-reverse" : "flex-row"}`}>
                   <Link
                     href="/login"
                     className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-300"
@@ -359,7 +353,7 @@ const Header = () => {
               )}
 
               {isAuthenticated && (
-                <div className={`flex items-center gap-3 ${isRtl ? "mr-2" : "ml-2"}`}>
+                <div className={`flex items-center gap-3 mx-2 ${isRtl ? "flex-row-reverse" : "flex-row"}`}>
                   <Link
                     href="/dashboard"
                     className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-300"
@@ -463,10 +457,10 @@ const Header = () => {
         />
 
         <div
-          className={`absolute top-0 ${isRtl ? "left-0" : "right-0"} w-full max-w-sm h-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl ${isRtl ? "border-r" : "border-l"} border-gray-200/50 dark:border-gray-700/50 shadow-2xl transition-transform duration-500 ease-out overflow-y-auto ${
+          className={`absolute top-0 ${!isRtl ? "left-0" : "right-0"} w-full max-w-sm h-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl ${!isRtl ? "border-r" : "border-l"} border-gray-200/50 dark:border-gray-700/50 shadow-2xl transition-transform duration-500 ease-out overflow-y-auto ${
             isMenuOpen
               ? "translate-x-0"
-              : isRtl
+              : !isRtl
               ? "-translate-x-full"
               : "translate-x-full"
           }`}

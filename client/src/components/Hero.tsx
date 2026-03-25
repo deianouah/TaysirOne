@@ -20,11 +20,12 @@ import { ArrowRight, Play, Users, TrendingUp, Zap } from "lucide-react";
 import LoadingAnimation from "./LoadingAnimation";
 import { useTranslation } from "@/lib/i18n";
 import { Link } from "wouter";
+import AgencyDashboardMockup from "./AgencyDashboardMockup";
 
 const TYPING_WORDS = [
-  "WhatsApp Marketing",
-  "Customer Engagement",
-  "Business Growth",
+  "en opportunités",
+  "en rendez-vous",
+  "en clients réels",
 ];
 
 const Hero = () => {
@@ -67,7 +68,7 @@ const Hero = () => {
   const stats = [
     {
       icon: Users,
-      value: 50000,
+      value: 200,
       label: t("Landing.heroSec.stats.0.label"),
       suffix: "+",
       color: "text-blue-600",
@@ -75,17 +76,17 @@ const Hero = () => {
     },
     {
       icon: TrendingUp,
-      value: 98,
+      value: 5000,
       label: t("Landing.heroSec.stats.1.label"),
-      suffix: t("Landing.heroSec.stats.1.suffix"),
+      suffix: "+",
       color: "text-emerald-600",
       bg: "bg-emerald-50",
     },
     {
       icon: Zap,
-      value: 5,
+      value: 98,
       label: t("Landing.heroSec.stats.2.label"),
-      suffix: t("Landing.heroSec.stats.2.suffix"),
+      suffix: "%",
       color: "text-violet-600",
       bg: "bg-violet-50",
     },
@@ -110,9 +111,9 @@ const Hero = () => {
         const progress = step / steps;
 
         setAnimatedNumbers({
-          users: Math.floor(50000 * progress),
-          delivery: Math.floor(98 * progress),
-          engagement: Math.floor(5 * progress),
+          users: Math.floor(200 * progress),
+          delivery: Math.floor(5000 * progress),
+          engagement: Math.floor(98 * progress),
         });
 
         if (step >= steps) clearInterval(timer);
@@ -171,54 +172,7 @@ const Hero = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-3xl mx-auto">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className={`bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 animate-[fadeInUp_0.6s_ease-out] ${
-                  currentStat === index
-                    ? "ring-1 ring-emerald-400/50 shadow-md border-emerald-100"
-                    : ""
-                }`}
-                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: "both" }}
-              >
-                <div
-                  className={`${stat.bg} p-3 rounded-xl w-fit mx-auto mb-3`}
-                >
-                  <stat.icon
-                    className={`w-5 h-5 lg:w-6 lg:h-6 ${stat.color}`}
-                  />
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1 tracking-tight">
-                  {index === 0
-                    ? animatedNumbers.users.toLocaleString()
-                    : index === 1
-                    ? animatedNumbers.delivery
-                    : animatedNumbers.engagement}
-                  {stat.suffix || ""}
-                </h3>
-                <p className="text-sm text-gray-500 font-medium">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="text-center animate-[fadeIn_1s_ease-out]">
-          <p className="text-sm text-gray-400 mb-6 font-medium uppercase tracking-wider">
-            {t("Landing.heroSec.trustedByText")}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            {["Shopify", "WooCommerce", "Salesforce", "HubSpot", "Zapier"].map(
-              (brand, index) => (
-                <div
-                  key={index}
-                  className="px-5 py-2.5 rounded-lg text-sm font-medium text-gray-400 bg-gray-50 border border-gray-100 transition-colors duration-200 hover:text-gray-500 hover:border-gray-200"
-                >
-                  {brand}
-                </div>
-              )
-            )}
-          </div>
+          <AgencyDashboardMockup />
         </div>
       </div>
 

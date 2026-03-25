@@ -110,25 +110,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
-              {brandSettings?.logo2 && brandSettings.logo2 !== "/uploads/null" ? (
-                <img
-                  src={brandSettings.logo2}
-                  alt="Logo"
-                  className="h-12 object-contain"
-                  style={{ filter: "brightness(0) invert(1)" }}
-                />
-              ) : brandSettings?.logo ? (
-                <img
-                  src={brandSettings.logo}
-                  alt="Logo"
-                  className="h-12 object-contain"
-                  style={{ filter: "brightness(0) invert(1)" }}
-                />
-              ) : (
-                <div className="bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 rounded-xl p-2.5">
-                  <MessageSquare className="h-7 w-7" />
-                </div>
-              )}
+              <img
+                src={brandSettings?.logo2 && brandSettings.logo2 !== "/uploads/null" ? brandSettings.logo2 : (brandSettings?.logo || "/img/logo.png")}
+                alt="Logo"
+                className="h-24 w-auto object-contain scale-[1.8] origin-left"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
             </Link>
             <p className="text-gray-400 mt-5 mb-8 max-w-sm text-sm leading-relaxed">
               {t("Landing.footerSec.brandSection.description")}

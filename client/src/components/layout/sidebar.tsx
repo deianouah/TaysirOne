@@ -42,6 +42,8 @@ import {
   Code,
   BookOpen,
   Smartphone,
+  Home,
+  Car,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChannelSwitcher } from "@/components/channel-switcher";
@@ -82,227 +84,70 @@ interface NavItem {
 }
 
 function getNavItems(role: string): NavItem[] {
-  if (role === "admin") {
-    return [
-      {
-        href: "/dashboard",
-        icon: LayoutDashboard,
-        labelKey: "navigation.dashboard",
-        color: "text-green-600",
-        alwaysVisible: true,
-        allowedRoles: ["superadmin", "admin", "user", "team"],
-      },
-      {
-        href: "/inbox",
-        icon: MessageSquare,
-        labelKey: "navigation.inbox",
-        color: "text-blue-400",
-        allowedRoles: ["admin"],
-      },
-      {
-        href: "/contacts",
-        icon: Users,
-        labelKey: "navigation.contacts",
-        color: "text-blue-600",
-        allowedRoles: ["superadmin", "admin"],
-      },
-      {
-        href: "/groups",
-        icon: MdGroups,
-        labelKey: "navigation.groups",
-        color: "text-blue-400",
-        allowedRoles: ["admin"],
-      },
-      {
-        href: "/campaigns",
-        icon: Megaphone,
-        labelKey: "navigation.campaigns",
-        color: "text-orange-600",
-        allowedRoles: ["superadmin", "admin"],
-      },
-      {
-        href: "/templates",
-        icon: FileText,
-        labelKey: "navigation.templates",
-        color: "text-purple-600",
-        allowedRoles: ["superadmin", "admin"],
-      },
-
-      {
-        href: "/automation",
-        icon: Zap,
-        labelKey: "navigation.automations",
-        color: "text-indigo-600",
-        allowedRoles: ["superadmin", "admin"],
-      },
+  // Return the customized agency dashboard items for all platform users
+  return [
+    {
+      href: "/dashboard",
+      icon: LayoutDashboard,
+      labelKey: "agency_nav.dashboard",
+      color: "text-emerald-600",
+      alwaysVisible: true,
+      allowedRoles: ["superadmin", "admin", "user", "team"],
+    },
+    {
+      href: "/inbox",
+      icon: MessageSquare,
+      labelKey: "agency_nav.messages",
+      color: "text-blue-500",
+      allowedRoles: ["superadmin", "admin", "team"],
+    },
+    {
+      href: "/contacts",
+      icon: Home,
+      labelKey: "agency_nav.real_estate",
+      color: "text-orange-500",
+      allowedRoles: ["superadmin", "admin", "team"],
+    },
+    {
+      href: "/campaigns",
+      icon: Car,
+      labelKey: "agency_nav.cars",
+      color: "text-red-500",
+      allowedRoles: ["superadmin", "admin", "team"],
+    },
+    {
+      href: "/widget-builder",
+      icon: Bot,
+      labelKey: "agency_nav.ai_bot",
+      color: "text-violet-600",
+      alwaysVisible: true,
+      allowedRoles: ["superadmin", "admin", "team"],
+    },
+    {
+      href: "/plans",
+      icon: Star,
+      labelKey: "agency_nav.subscription",
+      color: "text-yellow-500",
+      allowedRoles: ["superadmin", "admin", "team"],
+    },
+    // Superadmin additional settings
+    ...(role === "superadmin" ? [
       {
         href: "/analytics",
         icon: BarChart3,
         labelKey: "navigation.analytics",
-        color: "text-pink-600",
-        allowedRoles: ["superadmin", "admin"],
+        color: "text-gray-500",
+        allowedRoles: ["superadmin"] as Role[],
       },
       {
-        href: "/widget-builder",
-        icon: Bot,
-        labelKey: "navigation.widgetBuilder",
-        color: "text-teal-600",
-        alwaysVisible: true,
-        allowedRoles: ["superadmin", "admin", "user"],
-      },
-      {
-        href: "/api-docs",
-        icon: Code,
-        labelKey: "navigation.apiDocs",
-        color: "text-cyan-600",
-        allowedRoles: ["admin"],
-      },
-
-      // {
-      //   href: "/settings",
-      //   icon: Settings,
-      //   labelKey: "navigation.settings",
-      //   color: "text-gray-600",
-      //   alwaysVisible: true,
-      //   allowedRoles: ["superadmin", "admin"],
-      // },
-
-      {
-        href: "/plans",
-        icon: Bell,
-        labelKey: "navigation.plans",
-        color: "text-blue-400",
-        allowedRoles: ["superadmin"],
-      },
-      {
-        href: "/gateway",
-        icon: Bell,
-        labelKey: "navigation.plans",
-        color: "text-blue-400",
-        allowedRoles: ["superadmin"],
-      },
-      {
-        href: "/languages",
-        icon: Globe,
-        labelKey: "navigation.languages",
-        color: "text-violet-500",
-        allowedRoles: ["superadmin"],
-      },
-      {
-        href: "/support-tickets",
-        icon: Bell,
-        labelKey: "navigation.tickets_support",
-        color: "text-blue-400",
-        allowedRoles: ["superadmin"],
-      },
-    ];
-  } else {
-    // Team or default role
-    return [
-      {
-        href: "/dashboard",
-        icon: LayoutDashboard,
-        labelKey: "navigation.dashboard",
-        color: "text-green-600",
-        alwaysVisible: true,
-        allowedRoles: ["superadmin", "admin", "user", "team"],
-      },
-      {
-        href: "/inbox",
-        icon: MessageSquare,
-        labelKey: "navigation.inbox",
-        color: "text-blue-400",
-        requiredPrefix: "inbox.",
-        allowedRoles: ["team"],
-      },
-      {
-        href: "/contacts",
-        icon: Users,
-        labelKey: "navigation.contacts",
-        color: "text-blue-600",
-        requiredPrefix: "contacts.",
-        allowedRoles: ["team"],
-      },
-      {
-        href: "/groups",
-        icon: MdGroups,
-        labelKey: "Groups",
-        color: "text-blue-400",
-        requiredPrefix: "groups.",
-        allowedRoles: ["team"],
-      },
-      {
-        href: "/campaigns",
-        icon: Megaphone,
-        labelKey: "navigation.campaigns",
-        color: "text-orange-600",
-        requiredPrefix: "campaigns.",
-        allowedRoles: ["team"],
-      },
-      {
-        href: "/templates",
-        icon: FileText,
-        labelKey: "navigation.templates",
-        color: "text-purple-600",
-        requiredPrefix: "templates.",
-        allowedRoles: ["team"],
-      },
-
-      {
-        href: "/automation",
-        icon: Zap,
-        labelKey: "navigation.automations",
-        color: "text-indigo-600",
-        requiredPrefix: "automations.",
-        allowedRoles: ["team"],
-      },
-      {
-        href: "/analytics",
-        icon: BarChart3,
-        labelKey: "navigation.analytics",
-        color: "text-pink-600",
-        requiredPrefix: "analytics.",
-        allowedRoles: ["team"],
-      },
-      {
-        href: "/widget-builder",
-        icon: Bot,
-        labelKey: "navigation.widgetBuilder",
-        color: "text-teal-600",
-        alwaysVisible: true,
-        requiredPrefix: "widgetbuilder.",
-        allowedRoles: ["team"],
-      },
-
-
-      // {
-      //   href: "/settings",
-      //   icon: Settings,
-      //   labelKey: "navigation.settings",
-      //   color: "text-gray-600",
-      //   alwaysVisible: true,
-      //   requiredPrefix: "settings.",
-      //   allowedRoles: ["team"],
-      // },
-
-      {
-        href: "/plans",
-        icon: Bell,
-        labelKey: "navigation.plans",
-        color: "text-blue-400",
-        requiredPrefix: "plans.",
-        allowedRoles: ["team"],
-      },
-      {
-        href: "/gateway",
-        icon: Bell,
-        labelKey: "navigation.plans",
-        color: "text-blue-400",
-        requiredPrefix: "gateway.",
-        allowedRoles: ["team"],
-      },
-    ];
-  }
+        href: "/settings",
+        icon: Settings,
+        labelKey: "navigation.settings",
+        color: "text-gray-500",
+        allowedRoles: ["superadmin"] as Role[],
+      }
+    ] : [])
+  ];
 }
 
 const sidebarItemsCategories = [
@@ -655,17 +500,11 @@ export default function Sidebar() {
               href="/dashboard"
               className="flex items-center flex-col space-x-2 sm:space-x-3"
             >
-              {brandSettings?.logo ? (
-                <img
-                  src={brandSettings?.logo}
-                  alt="Logo"
-                  className=" h-10 object-contain"
-                />
-              ) : (
-                <div className="bg-green-800 text-primary-foreground rounded-full p-3">
-                  <MessageSquare className="h-8 w-8" />
-                </div>
-              )}
+              <img
+                src={brandSettings?.logo || "/img/logo.png"}
+                alt="Logo"
+                className="h-20 w-auto object-contain scale-[1.8] origin-center"
+              />
               <span className=" text-[10px] sm:text-xs pl-8">
                 {brandSettings?.tagline}
               </span>

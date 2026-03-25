@@ -1,0 +1,636 @@
+{
+  "header": {
+    "getstart": "Get Started Free",
+    "redystart": "Ready to get started?",
+    "join": "Join thousands of businesses already growing with {{appName}}",
+    "start": " Start Free Trial",
+    "Learn": " Learn more",
+    "dash": "Dashboard",
+    "Settings": "Settings",
+    "Account": "Account",
+    "logout": "Logout",
+    "resourcesMenuItems": [
+      {
+        "title": "Privacy Policy",
+        "description": "Ready-to-use message templates"
+      },
+      {
+        "title": "Terms of Service",
+        "description": "Success stories from our clients"
+      },
+      {
+        "title": "WhatsApp Guide",
+        "description": "Complete WhatsApp marketing guide"
+      },
+      {
+        "title": "API Documentation",
+        "description": "Developer resources and API docs"
+      },
+      {
+        "title": "Best Practices",
+        "description": "Tips for WhatsApp marketing success"
+      },
+      {
+        "title": "ROI Calculator",
+        "description": "Calculate your WhatsApp marketing ROI"
+      }
+    ],
+    "aboutMenuItems": [
+      {
+        "title": "About Us",
+        "description": "Learn about our mission and team"
+      },
+      {
+        "title": "Contact",
+        "description": "Get in touch with our team"
+      },
+      {
+        "title": "Careers",
+        "description": "Join our growing team"
+      },
+      {
+        "title": "Integrations",
+        "description": "Connect with 1000+ apps"
+      }
+    ],
+    "Navlinks": [
+      "Home",
+      "About",
+      "Resources",
+      "Login",
+      "Dashboard"
+    ]
+  },
+  "heroSec": {
+    "animatedBgGreenText": "Free WhatsApp Marketing Platform - Bring Your Own API",
+    "headline": "Scale Your Business with",
+    "highlightText": "WhatsApp Marketing",
+    "subHeadline": "Connect your Meta WhatsApp Business API and unlock powerful automation, bulk messaging, and advanced analytics. Start free, scale unlimited.",
+    "startTrialButton": "Start Free Trial",
+    "watchDemoButton": "Watch 2-min Demo",
+    "trustedByText": "Trusted by 10,000+ businesses worldwide",
+    "brands": [
+      "Shopify",
+      "WooCommerce",
+      "Salesforce",
+      "HubSpot",
+      "Zapier"
+    ],
+    "stats": [
+      {
+        "label": "Active Users",
+        "suffix": "+"
+      },
+      {
+        "label": "Delivery Rate",
+        "suffix": "%"
+      },
+      {
+        "label": "Higher Engagement",
+        "suffix": "x"
+      }
+    ],
+    "animationDelays": {
+      "delay1": "animation-delay-2000",
+      "delay2": "animation-delay-4000"
+    }
+  },
+  "featuresSec": {
+    "introTagline": "Powerful WhatsApp Marketing Features",
+    "headlinePre": "Everything You Need to",
+    "headlineHighlight": "Scale Your Business",
+    "subHeadline": "From bulk messaging to AI chatbots, our platform provides all the tools you need to create successful WhatsApp marketing campaigns",
+    "demo": "Demo",
+    "campaign_progress": "Campaign Progress",
+    "featureTabs": [
+      {
+        "title": "Bulk Messaging",
+        "description": "Send personalized messages to thousands of contacts instantly with smart delivery optimization",
+        "demo": {
+          "title": "Broadcast Campaign",
+          "stats": "10,000 messages sent in 2 minutes",
+          "features": [
+            "Personalized templates",
+            "Smart scheduling",
+            "Delivery optimization"
+          ]
+        }
+      },
+      {
+        "title": "Automation Workflows",
+        "description": "Create intelligent automated sequences that nurture leads and engage customers 24/7",
+        "demo": {
+          "title": "Welcome Sequence",
+          "stats": "85% engagement rate",
+          "features": [
+            "Trigger-based flows",
+            "Conditional logic",
+            "Multi-step journeys"
+          ]
+        }
+      },
+      {
+        "title": "Advanced Analytics",
+        "description": "Track performance with real-time insights, delivery reports, and engagement metrics",
+        "demo": {
+          "title": "Campaign Analytics",
+          "stats": "98% delivery rate",
+          "features": [
+            "Real-time tracking",
+            "ROI analysis",
+            "Custom reports"
+          ]
+        }
+      },
+      {
+        "title": "Contact Management",
+        "description": "Organize and segment your audience with smart tagging and advanced filtering",
+        "demo": {
+          "title": "Smart Segmentation",
+          "stats": "50+ custom fields",
+          "features": [
+            "Auto-tagging",
+            "Behavioral segments",
+            "Import/Export"
+          ]
+        }
+      },
+      {
+        "title": "AI Chatbots",
+        "description": "Deploy intelligent chatbots that handle customer queries and qualify leads automatically",
+        "demo": {
+          "title": "Customer Support Bot",
+          "stats": "24/7 availability",
+          "features": [
+            "Natural language",
+            "Lead qualification",
+            "Handoff to humans"
+          ]
+        }
+      },
+      {
+        "title": "Campaign Scheduler",
+        "description": "Plan and schedule campaigns across time zones with optimal delivery timing",
+        "demo": {
+          "title": "Global Campaigns",
+          "stats": "Multi-timezone support",
+          "features": [
+            "Smart timing",
+            "Recurring campaigns",
+            "A/B testing"
+          ]
+        }
+      }
+    ],
+    "additionalFeatures": [
+      {
+        "title": "Multi-language Support",
+        "desc": "Reach global audiences in their native language"
+      },
+      {
+        "title": "Smart Targeting",
+        "desc": "Precision targeting based on behavior and demographics"
+      },
+      {
+        "title": "API Integration",
+        "desc": "Seamless integration with your existing tools and CRM"
+      }
+    ]
+  },
+  "howItWorksSec": {
+    "introTagline": "Simple 4-Step Process",
+    "headlinePre": "Get Started in",
+    "headlineHighlight": "Under 5 Minutes",
+    "subHeadline": "Our streamlined onboarding process gets you up and running with WhatsApp marketing faster than any other platform",
+    "steps": [
+      {
+        "title": "Connect Your Meta API",
+        "description": "Bring your own WhatsApp Business API from Meta and connect it to our platform in seconds",
+        "details": [
+          "Secure API integration",
+          "One-click setup process",
+          "No technical knowledge required",
+          "Full data ownership"
+        ]
+      },
+      {
+        "title": "Import Your Contacts",
+        "description": "Upload your customer database or sync directly from your CRM and existing tools",
+        "details": [
+          "CSV/Excel import support",
+          "CRM integrations available",
+          "Smart duplicate detection",
+          "Automatic data validation"
+        ]
+      },
+      {
+        "title": "Create & Launch Campaigns",
+        "description": "Design beautiful messages with our drag-and-drop builder and launch targeted campaigns",
+        "details": [
+          "Visual campaign builder",
+          "Pre-built templates",
+          "Personalization options",
+          "A/B testing capabilities"
+        ]
+      },
+      {
+        "title": "Track & Optimize",
+        "description": "Monitor performance in real-time and optimize your campaigns for better results",
+        "details": [
+          "Real-time analytics",
+          "Delivery tracking",
+          "Engagement metrics",
+          "ROI calculations"
+        ]
+      }
+    ],
+    "progressBar": {
+      "previous": "Previous",
+      "nextStep": "Next Step"
+    },
+    "visualDemo": {
+      "whatsAppBusinessDashboard": "WhatsApp Business Dashboard"
+    },
+    "cta": {
+      "readyToGetStarted": "Ready to Get Started?",
+      "joinText": "Join thousands of businesses already using our platform to scale their WhatsApp marketing",
+      "startFreeTrial": "Start Your Free Trial"
+    }
+  },
+  "useCasesSec": {
+    "introTagline": "Industry Solutions",
+    "headlinePre": "Perfect for Every",
+    "headlineHighlight": "Industry & Business",
+    "subHeadline": "Discover how businesses across different industries are using WhatsApp marketing to drive growth and improve customer engagement",
+    "keyFeatures": "Key Features",
+    "quickStatsTitle": "Quick Stats",
+    "useCases": [
+      {
+        "icon": "ShoppingCart",
+        "title": "E-commerce",
+        "description": "Boost sales with abandoned cart recovery, order updates, and personalized product recommendations",
+        "color": "from-green-500 to-green-600",
+        "bgColor": "bg-green-50",
+        "stats": {
+          "increase": "300%",
+          "metric": "Sales Recovery"
+        },
+        "features": [
+          "Abandoned cart recovery",
+          "Order status updates",
+          "Product recommendations",
+          "Flash sale notifications"
+        ]
+      },
+      {
+        "icon": "GraduationCap",
+        "title": "Education",
+        "description": "Engage students and parents with course updates, assignment reminders, and educational content",
+        "color": "from-blue-500 to-blue-600",
+        "bgColor": "bg-blue-50",
+        "stats": {
+          "increase": "85%",
+          "metric": "Student Engagement"
+        },
+        "features": [
+          "Assignment reminders",
+          "Course announcements",
+          "Parent communication",
+          "Study material sharing"
+        ]
+      },
+      {
+        "icon": "Heart",
+        "title": "Healthcare",
+        "description": "Improve patient care with appointment reminders, health tips, and medication alerts",
+        "color": "from-red-500 to-red-600",
+        "bgColor": "bg-red-50",
+        "stats": {
+          "increase": "60%",
+          "metric": "Appointment Attendance"
+        },
+        "features": [
+          "Appointment reminders",
+          "Medication alerts",
+          "Health tips delivery",
+          "Test result notifications"
+        ]
+      },
+      {
+        "icon": "Building",
+        "title": "Real Estate",
+        "description": "Connect with prospects through property alerts, virtual tours, and market updates",
+        "color": "from-purple-500 to-purple-600",
+        "bgColor": "bg-purple-50",
+        "stats": {
+          "increase": "45%",
+          "metric": "Lead Conversion"
+        },
+        "features": [
+          "Property alerts",
+          "Virtual tour scheduling",
+          "Market updates",
+          "Lead qualification"
+        ]
+      },
+      {
+        "icon": "Utensils",
+        "title": "Restaurants",
+        "description": "Increase orders with menu updates, special offers, and reservation confirmations",
+        "color": "from-orange-500 to-orange-600",
+        "bgColor": "bg-orange-50",
+        "stats": {
+          "increase": "120%",
+          "metric": "Order Volume"
+        },
+        "features": [
+          "Menu updates",
+          "Special offers",
+          "Reservation confirmations",
+          "Loyalty programs"
+        ]
+      },
+      {
+        "icon": "Car",
+        "title": "Automotive",
+        "description": "Enhance customer service with service reminders, appointment booking, and vehicle updates",
+        "color": "from-indigo-500 to-indigo-600",
+        "bgColor": "bg-indigo-50",
+        "stats": {
+          "increase": "75%",
+          "metric": "Service Bookings"
+        },
+        "features": [
+          "Service reminders",
+          "Appointment booking",
+          "Vehicle updates",
+          "Maintenance tips"
+        ]
+      }
+    ],
+    "cta": {
+      "viewCaseStudyButton": "View Case Study",
+      "customerSuccessQuote": "WhatsApp Pro helped us increase our {industry} engagement by {increase}. The automation features saved us countless hours while improving customer satisfaction.",
+      "testimonialName": "Sarah Johnson",
+      "testimonialPosition": "Marketing Director"
+    },
+    "quickStats": [
+      {
+        "value": "98%",
+        "label": "Delivery Rate"
+      },
+      {
+        "value": "5x",
+        "label": "Higher Engagement"
+      },
+      {
+        "value": "24/7",
+        "label": "Automation"
+      },
+      {
+        "value": "50%",
+        "label": "Cost Reduction"
+      }
+    ]
+  },
+  "testimonialsSec": {
+    "introTagline": "Customer Success Stories",
+    "headlinePre": "Loved by",
+    "headlineHighlight": "10,000+ Businesses",
+    "subHeadline": "See how businesses across industries are achieving remarkable results with our WhatsApp marketing platform",
+    "testimonials": [
+      {
+        "name": "Sarah Chen",
+        "role": "E-commerce Director",
+        "company": "Fashion Forward",
+        "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+        "rating": 5,
+        "text": "WhatsApp Pro transformed our customer engagement. We saw a 300% increase in cart recovery rates and our customers love the personalized experience.",
+        "results": "300% increase in cart recovery"
+      },
+      {
+        "name": "Michael Rodriguez",
+        "role": "Marketing Manager",
+        "company": "TechStart Solutions",
+        "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+        "rating": 5,
+        "text": "The automation workflows are incredible. We can now nurture leads 24/7 without any manual intervention. Our conversion rates have never been higher.",
+        "results": "85% improvement in lead conversion"
+      },
+      {
+        "name": "Emily Johnson",
+        "role": "Customer Success Lead",
+        "company": "HealthCare Plus",
+        "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+        "rating": 5,
+        "text": "Patient appointment attendance improved dramatically after implementing WhatsApp reminders. The platform is intuitive and our team adopted it quickly.",
+        "results": "60% reduction in no-shows"
+      },
+      {
+        "name": "David Park",
+        "role": "Restaurant Owner",
+        "company": "Gourmet Bistro",
+        "image": "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+        "rating": 5,
+        "text": "Our reservation system is now seamless. Customers get instant confirmations and we can send them special offers. Revenue increased by 40% in just 3 months.",
+        "results": "40% revenue increase"
+      },
+      {
+        "name": "Lisa Thompson",
+        "role": "Education Coordinator",
+        "company": "Bright Future Academy",
+        "image": "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+        "rating": 5,
+        "text": "Parent engagement has never been better. We can instantly share updates about their children and important school announcements reach everyone.",
+        "results": "90% parent engagement rate"
+      }
+    ],
+    "navButtons": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "statsGrid": [
+      {
+        "number": "10,000+",
+        "label": "Happy Customers"
+      },
+      {
+        "number": "98%",
+        "label": "Satisfaction Rate"
+      },
+      {
+        "number": "5M+",
+        "label": "Messages Sent"
+      },
+      {
+        "number": "24/7",
+        "label": "Support Available"
+      }
+    ]
+  },
+  "ctaSec": {
+    "introTagline": "Join 10,000+ Businesses Already Growing",
+    "headline": "Ready to Scale Your Business with WhatsApp Marketing?",
+    "subHeadline": "Start your free trial today. No credit card required. Connect your Meta API and begin sending campaigns in under 5 minutes.",
+    "buttons": {
+      "startTrial": "Start Free Trial",
+      "scheduleDemo": "Schedule Demo"
+    },
+    "trustIndicators": [
+      {
+        "title": "Instant Setup",
+        "desc": "Get started in 5 minutes"
+      },
+      {
+        "title": "Secure & Compliant",
+        "desc": "Enterprise-grade security"
+      },
+      {
+        "title": "24/7 Support",
+        "desc": "Always here to help"
+      },
+      {
+        "title": "Free Forever",
+        "desc": "No hidden costs"
+      }
+    ],
+    "stats": [
+      {
+        "number": "10,000+",
+        "label": "Active Users"
+      },
+      {
+        "number": "98%",
+        "label": "Delivery Rate"
+      },
+      {
+        "number": "5M+",
+        "label": "Messages Sent"
+      },
+      {
+        "number": "24/7",
+        "label": "Support"
+      }
+    ]
+  },
+  "pricingSec": {
+    "introTagline": "Simple, Transparent Pricing",
+    "headlinePre": "Choose Your",
+    "headlineHighlight": "Perfect Plan",
+    "subHeadline": "Start free and scale as you grow. All plans include your own Meta API integration and unlimited message sending.",
+    "billingToggle": {
+      "monthly": "Monthly",
+      "annual": "Annual",
+      "saveLabel": "Save 20%"
+    },
+    "planCTA": {
+      "freeButton": "Get Started Free",
+      "paidButton": "Buy "
+    },
+    "pricing": {
+      "month": "month",
+      "year": "year",
+      "upTo": "Up to",
+      "contacts": "contacts",
+      "channels": "WhatsApp Channels",
+      "automation": "Automation"
+    },
+    "loading": "Loading plans...",
+    "noPlans": {
+      "title": "No Plans Available",
+      "description": "Please check back later for pricing options."
+    },
+    "authRequired": {
+      "title": "Authentication Required",
+      "description": "Please login before purchasing a plan"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "q": "Do I need my own WhatsApp Business API?",
+          "a": "Yes, you need to bring your own Meta WhatsApp Business API. This ensures you have full control over your data and messaging."
+        },
+        {
+          "q": "Is there a setup fee?",
+          "a": "No setup fees! You can start using our platform immediately after connecting your API."
+        },
+        {
+          "q": "Can I change plans anytime?",
+          "a": "Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately."
+        },
+        {
+          "q": "What happens if I exceed my contact limit?",
+          "a": "We'll notify you before you reach your limit. You can upgrade your plan or purchase additional contacts."
+        }
+      ]
+    },
+    "enterprise": {
+      "title": "Need a Custom Solution?",
+      "description": "Contact our enterprise team for custom pricing, dedicated support, and tailored features",
+      "button": "Contact Sales"
+    }
+  },
+  "footerSec": {
+    "newsletter": {
+      "heading": "Stay Updated with WhatsApp Marketing Tips",
+      "description": "Get the latest strategies, case studies, and platform updates delivered to your inbox.",
+      "emailPlaceholder": "Enter your email address",
+      "subscribeButton": "Subscribe"
+    },
+    "brandSection": {
+      "brandNames": [
+        "",
+        ""
+      ],
+      "description": "The most powerful WhatsApp marketing platform. Scale your business with automated campaigns, advanced analytics, and seamless API integration."
+    },
+    "socialLinks": {
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "mail": "Mail"
+    },
+    "links": {
+      "product": [
+        "Features",
+        "How it Works",
+        "Use Cases",
+        "Pricing",
+        "API Documentation"
+      ],
+      "company": [
+        "About Us",
+        "Contact",
+        "Careers",
+        "Press Kit",
+        "Integrations"
+      ],
+      "support": [
+        "Help Center",
+        "Community",
+        "Status",
+        "Security"
+      ],
+      "resources": [
+        "Templates",
+        "Case Studies",
+        "WhatsApp Guide",
+        "Best Practices",
+        "ROI Calculator"
+      ],
+      "legal": [
+        "Privacy Policy",
+        "Terms of Service",
+        "Cookie Policy",
+        "GDPR"
+      ]
+    },
+    "bottomBar": {
+      "copyrightText": "© 2025 {{appName}}. All rights reserved.",
+      "termsLink": "Terms of Service",
+      "privacyLink": "Privacy Policy",
+      "cookieLink": "Cookie Policy"
+    }
+  }
+}

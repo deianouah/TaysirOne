@@ -173,20 +173,11 @@ export default function LoginPage() {
 
         <div className="relative z-10 flex flex-col justify-center px-12 xl:px-16 text-white w-full">
           <div className="mb-10">
-            {brandSettings?.logo ? (
-              <img
-                src={brandSettings?.logo}
-                alt="Logo"
-                className="h-12 object-contain brightness-0 invert"
-              />
-            ) : (
-              <div className="flex items-center gap-3">
-                <div className="bg-green-500/10 backdrop-blur-sm rounded-xl p-2.5">
-                  <MessageSquare className="h-7 w-7 text-green-400" />
-                </div>
-                <span className="text-2xl font-bold">WhatsWay</span>
-              </div>
-            )}
+            <img
+              src={brandSettings?.logo || "/img/logo.png"}
+              alt="Logo"
+              className="h-24 w-auto object-contain scale-[2.2] origin-left brightness-0 invert"
+            />
           </div>
 
           <h2 className="text-3xl xl:text-4xl font-bold leading-tight mb-4">
@@ -216,17 +207,11 @@ export default function LoginPage() {
         <div className="w-full max-w-md space-y-6">
           <div className="text-center lg:text-left">
             <div className="flex justify-center lg:hidden mb-6">
-              {brandSettings?.logo ? (
-                <img
-                  src={brandSettings?.logo}
-                  alt="Logo"
-                  className="h-14 object-contain"
-                />
-              ) : (
-                <div className="bg-slate-800 text-white rounded-full p-3">
-                  <MessageSquare className="h-8 w-8" />
-                </div>
-              )}
+              <img
+                src={brandSettings?.logo || "/img/logo.png"}
+                alt="Logo"
+                className="h-20 w-auto object-contain scale-[1.8] origin-center"
+              />
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
               {step === "login" && "Welcome Back"}
