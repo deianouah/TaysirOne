@@ -101,6 +101,10 @@ import LanguageManagement from "./pages/LanguageManagement";
 import SuperadminMessageLogs from "./pages/SuperadminMessageLogs";
 import ApiDocs from "./pages/api-docs";
 import ChannelsManagement from "./pages/channels-management";
+import LandingPage from "./pages/LandingPage";
+import OnboardingFlow from "./pages/OnboardingFlow";
+import BotSettings from "./pages/BotSettings";
+import SubscriptionsPage from "./pages/SubscriptionsPage";
 
 // Define route permissions mapping
 const ROUTE_PERMISSIONS: Record<string, string> = {
@@ -385,6 +389,8 @@ function ProtectedRoutes() {
                 <PermissionRoute component={AllSubscriptionsPage} requiredRoles={["superadmin"]} />
               )}
             />
+            <Route path="/bot-settings" component={BotSettings} />
+            <Route path="/my-subscription" component={SubscriptionsPage} />
             <Route component={NotFound} />
           </Switch>
         </div>
@@ -448,6 +454,8 @@ function Router() {
       <ScrollToTop />
       <SignupPopupHandler />
       <Switch>
+        <Route path="/landing" component={LandingPage} />
+        <Route path="/onboarding" component={OnboardingFlow} />
         <Route path="/demo">
           <>
             <DemoPage />

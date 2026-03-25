@@ -233,7 +233,7 @@ const Header = () => {
           <div
             className={`flex items-center justify-between transition-all duration-500 ${
               isScrolled ? "h-20" : "h-[90px]"
-            } ${!isRtl ? "flex-row-reverse" : "flex-row"}`}
+            } flex-row-reverse`}
           >
             <Link
               href="/"
@@ -242,11 +242,11 @@ const Header = () => {
               <img
                 src={brandSettings?.logo || "/img/logo.png"}
                 alt="Logo"
-                className={`h-14 sm:h-16 w-auto object-contain scale-[1.8] sm:scale-[2.2] transition-transform duration-300 ${!isRtl ? "origin-right" : "origin-left ml-6"}`}
+                className={`h-14 sm:h-16 w-auto object-contain scale-[1.8] sm:scale-[2.2] transition-transform duration-300 ${isRtl ? "origin-right ml-6" : "origin-left mr-6"}`}
               />
             </Link>
 
-            <nav className={`hidden lg:flex items-center gap-1 px-4 flex-row-reverse ${!isRtl ? "mr-4" : "ml-4"}`}>
+            <nav className={`hidden lg:flex items-center gap-1 px-4 flex-row-reverse`}>
 
 
               <Link
