@@ -3408,6 +3408,205 @@
       "exceeded": "Response when rate limit is exceeded (HTTP 429)"
     }
   },
+  "Landing": {
+    "header": {
+      "Navlinks": ["Features", "How it works?", "Pricing", "Testimonials"],
+      "Settings": "Settings",
+      "Account": "Account",
+      "logout": "Logout",
+      "Login": "Login",
+      "getstart": "Start Free",
+      "dash": "Dashboard",
+      "redystart": "Ready to Start?",
+      "join": "Join {{appName}} Today",
+      "start": "Start Now",
+      "Learn": "Learn More"
+    },
+    "hero": {
+      "badge": "✦ For Merchants, Professionals & Service Providers",
+      "title": "Turn your inquiries into",
+      "subtitle": "Taysir One collects your customer messages from Facebook and WhatsApp in one place, and the AI bot handles technical replies and collects lead phone numbers for you.",
+      "cta_primary": "Start Free Now",
+      "cta_secondary": "How it works?",
+      "stats": [
+        "Merchants",
+        "Leads Monthly",
+        "Data Accuracy",
+        "States Covered"
+      ]
+    },
+    "features": {
+      "badge": "✦ Features",
+      "title": "Goodbye to repeating the same",
+      "title_highlight": "Questions",
+      "subtitle": "A smart system that filters serious customers and collects their data automatically.",
+      "items": [
+        {
+          "title": "AI Sales Agent",
+          "desc": "Smart bot replies with details of your offers, products, or services accurately 24/7 without intervention."
+        },
+        {
+          "title": "Phone Number Collection",
+          "desc": "The bot asks for the interested customer's number and saves it in an organized Leads list ready for calling."
+        },
+        {
+          "title": "Unified Team Inbox",
+          "desc": "Collect WhatsApp, Facebook, and Instagram messages in one professional screen."
+        },
+        {
+          "title": "Smart Filtering",
+          "desc": "AI knows the difference between a serious buyer and casual chat, ignoring non-essential messages automatically."
+        },
+        {
+          "title": "Sales Analytics",
+          "desc": "Know which products attract the most customers and which platforms perform best for you."
+        },
+        {
+          "title": "Lead Management",
+          "desc": "The bot organizes the customer list based on their level of interest and readiness to buy."
+        }
+      ]
+    },
+    "how": {
+      "badge": "✦ How it works",
+      "title_before": "From",
+      "title_quote": "'How much is it?'",
+      "title_middle": "to",
+      "title_highlight": "Serious Lead",
+      "steps": [
+        {
+          "title": "Add Your Offers",
+          "desc": "Upload specifications, price, and details to your control panel once."
+        },
+        {
+          "title": "Bot Takes Over",
+          "desc": "When a customer asks, the bot gives all technical details professionally."
+        },
+        {
+          "title": "Data Collection",
+          "desc": "The bot asks the customer for their number for follow-up and order confirmation."
+        },
+        {
+          "title": "Close the Deal",
+          "desc": "Enter the dashboard and find the list of phone numbers ready to call."
+        }
+      ]
+    },
+    "platforms": {
+      "badge": "✦ Supported Platforms",
+      "title": "Serve your customers across platforms",
+      "items": [
+        {
+          "name": "WhatsApp Business",
+          "desc": "Most requested automation in the region",
+          "feature": "Direct connection via Meta API"
+        },
+        {
+          "name": "Facebook Messenger",
+          "desc": "Smart replies for your page messages",
+          "feature": "Convert visitors into appointments"
+        },
+        {
+          "name": "Instagram DM",
+          "desc": "Instant professional replies for DMs",
+          "feature": "Perfect for all business activities"
+        }
+      ]
+    },
+    "pricing": {
+      "badge": "✦ Pricing",
+      "title": "Professional Plan,",
+      "title_highlight": "half the price of an employee",
+      "plans": [
+        {
+          "name": "Trial",
+          "price": "Free",
+          "subtitle": "Preview platform features",
+          "cta": "Try for Free",
+          "features": ["Limited ads (3)", "Basic auto-reply", "Message management"],
+          "locked": ["Advanced Smart AI", "Export phone list"]
+        },
+        {
+          "name": "Pro Agency",
+          "price": "5,000",
+          "period": "DZD / Month",
+          "subtitle": "The complete package for serious businesses",
+          "cta": "Subscribe Now",
+          "badge": "⭐ Most Popular",
+          "features": [
+            "Unlimited Ads",
+            "Advanced AI Bot",
+            "Unlimited Phone Collection",
+            "WhatsApp + FB + Instagram",
+            "Accurate Ad Analytics",
+            "Dedicated VIP Support"
+          ]
+        }
+      ],
+      "footer": "💳 Payment: BaridiMob or CCP bank transfer"
+    },
+    "testimonials": {
+      "badge": "✦ Success Stories",
+      "title": "Agencies that trust",
+      "title_highlight": "us",
+      "items": [
+        {
+          "text": "The platform saved me from answering hundreds of curious people. The bot only gives me the serious lead numbers.",
+          "name": "Mounir .Q",
+          "role": "Real Estate Agency · Algiers"
+        },
+        {
+          "text": "In a car showroom, messages never stop. Taysir One collects all requests in one place, and we know exactly who is serious.",
+          "name": "Radouane .M",
+          "role": "Car Showroom · Setif"
+        },
+        {
+          "text": "The ease of use is amazing. We linked the page in 5 minutes and the bot started replying instantly. Highly recommended.",
+          "name": "Hamid .S",
+          "role": "Property Developer · Bejaia"
+        }
+      ]
+    },
+    "faqs": {
+      "badge": "✦ FAQ",
+      "title": "Questions & Answers",
+      "items": [
+        {
+          "q": "Can I start for free without a credit card?",
+          "a": "Yes! The trial package is completely free and lets you test platform features before subscribing."
+        },
+        {
+          "q": "What are the available payment methods?",
+          "a": "We support BaridiMob and CCP transfers, which are the most suitable for Algerian users."
+        },
+        {
+          "q": "How is my subscription activated after payment?",
+          "a": "After sending the transfer receipt, it's manually reviewed by our team and activated within hours."
+        },
+        {
+          "q": "Does the bot reply in Algerian Darja?",
+          "a": "Yes! You can program the bot in any language: Classical Arabic, Algerian Darja, French, or English."
+        },
+        {
+          "q": "Does it work with regular WhatsApp?",
+          "a": "We work with WhatsApp Business API. Our support team provides full assistance in linking and setup."
+        }
+      ]
+    },
+    "cta": {
+      "badge": "✦ Start Today",
+      "title": "Ready to turn inquiries",
+      "title_highlight": "into sales?",
+      "subtitle": "Sign up for free and start in minutes. No credit card required.",
+      "button": "Start Free"
+    },
+    "footer": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "contact": "Contact Us",
+      "copyright": "© 2025 Taysir One. All rights reserved."
+    }
+  },
   "agency_nav": {
     "dashboard": "Dashboard",
     "messages": "Messages (12)",

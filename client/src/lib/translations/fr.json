@@ -3348,8 +3348,204 @@
       "exceeded": "Réponse lorsque la limite est dépassée (HTTP 429)"
     }
   },
-  "header": {
-    "getstart": "Commencer gratuitement"
+  "Landing": {
+    "header": {
+      "Navlinks": ["Fonctionnalités", "Comment ça marche ?", "Tarifs", "Témoignages"],
+      "Settings": "Paramètres",
+      "Account": "Compte",
+      "logout": "Déconnexion",
+      "Login": "Connexion",
+      "getstart": "Commencer Gratuitement",
+      "dash": "Tableau de Bord",
+      "redystart": "Prêt à commencer ?",
+      "join": "Rejoignez {{appName}} aujourd'hui",
+      "start": "Commencer maintenant",
+      "Learn": "En savoir plus"
+    },
+    "hero": {
+      "badge": "✦ Pour les commerçants, professionnels et prestataires de services",
+      "title": "Transformez vos demandes en",
+      "subtitle": "Taysir One regroupe vos messages clients de Facebook et WhatsApp en un seul endroit, et le bot IA s'occupe des réponses techniques et de la collecte des numéros de téléphone pour vous.",
+      "cta_primary": "Commencer gratuitement",
+      "cta_secondary": "Comment ça marche ?",
+      "stats": [
+        "Commerçants",
+        "Leads par mois",
+        "Précision des données",
+        "Wilayas couvertes"
+      ]
+    },
+    "features": {
+      "badge": "✦ Fonctionnalités",
+      "title": "Dites adieu aux répétitions des mêmes",
+      "title_highlight": "Questions",
+      "subtitle": "Un système intelligent qui filtre les clients sérieux et collecte leurs données automatiquement.",
+      "items": [
+        {
+          "title": "Agent de vente IA",
+          "desc": "Un bot intelligent répond avec précision aux détails de vos offres ou services 24h/24 et 7j/7."
+        },
+        {
+          "title": "Collecte de numéros",
+          "desc": "Le bot demande le numéro du client intéressé et l'enregistre dans une liste de Leads organisée."
+        },
+        {
+          "title": "Boîte de réception unifiée",
+          "desc": "Rassemblez les messages WhatsApp, Facebook et Instagram dans un seul écran professionnel."
+        },
+        {
+          "title": "Filtrage intelligent",
+          "desc": "L'IA fait la différence entre un acheteur sérieux et une simple discussion, ignorant les messages inutiles."
+        },
+        {
+          "title": "Analyses des ventes",
+          "desc": "Sachez quels produits attirent le plus de clients et quelles plateformes fonctionnent le mieux."
+        },
+        {
+          "title": "Gestion des Leads",
+          "desc": "Le bot organise la liste des clients en fonction de leur niveau d'intérêt et de leur préparation à l'achat."
+        }
+      ]
+    },
+    "how": {
+      "badge": "✦ Comment ça marche",
+      "title_before": "De",
+      "title_quote": "'C'est combien ?'",
+      "title_middle": "à",
+      "title_highlight": "un Lead sérieux",
+      "steps": [
+        {
+          "title": "Ajoutez vos offres",
+          "desc": "Téléchargez les spécifications, le prix et les détails sur votre panneau de contrôle une seule fois."
+        },
+        {
+          "title": "Le bot prend le relais",
+          "desc": "Lorsqu'un client pose une question, le bot donne tous les détails techniques de manière professionnelle."
+        },
+        {
+          "title": "Collecte de données",
+          "desc": "Le bot demande au client son numéro pour le suivi et la confirmation de la commande."
+        },
+        {
+          "title": "Concluez la vente",
+          "desc": "Entrez dans le tableau de bord et trouvez la liste des numéros de téléphone prêts à être appelés."
+        }
+      ]
+    },
+    "platforms": {
+      "badge": "✦ Plateformes supportées",
+      "title": "Servez vos clients sur toutes les plateformes",
+      "items": [
+        {
+          "name": "WhatsApp Business",
+          "desc": "L'automatisation la plus demandée en Algérie",
+          "feature": "Connexion directe via Meta API"
+        },
+        {
+          "name": "Facebook Messenger",
+          "desc": "Réponses intelligentes pour vos messages de page",
+          "feature": "Convertissez les visiteurs en rendez-vous"
+        },
+        {
+          "name": "Instagram DM",
+          "desc": "Réponses professionnelles instantanées pour les DM",
+          "feature": "Idéal pour toutes les activités commerciales"
+        }
+      ]
+    },
+    "pricing": {
+      "badge": "✦ Tarification",
+      "title": "Plan professionnel,",
+      "title_highlight": "la moitié du prix d'un employé",
+      "plans": [
+        {
+          "name": "Essai",
+          "price": "Gratuit",
+          "subtitle": "Aperçu des fonctionnalités",
+          "cta": "Essayer gratuitement",
+          "features": ["Annonces limitées (3)", "Réponse auto de base", "Gestion des messages"],
+          "locked": ["IA intelligente avancée", "Exportation de liste de numéros"]
+        },
+        {
+          "name": "Pro Agency",
+          "price": "5.000",
+          "period": "DZD / Mois",
+          "subtitle": "Le pack complet pour les entreprises sérieuses",
+          "cta": "S'abonner maintenant",
+          "badge": "⭐ Plus populaire",
+          "features": [
+            "Annonces illimitées",
+            "Bot IA avancé",
+            "Collecte de numéros illimitée",
+            "WhatsApp + FB + Instagram",
+            "Analyses précises des annonces",
+            "Support VIP dédié"
+          ]
+        }
+      ],
+      "footer": "💳 Paiement : virement BaridiMob ou CCP"
+    },
+    "testimonials": {
+      "badge": "✦ Success Stories",
+      "title": "Des agences qui nous font",
+      "title_highlight": "confiance",
+      "items": [
+        {
+          "text": "La plateforme m'a évité de répondre à des centaines de curieux. Le bot ne me donne que les numéros des clients sérieux.",
+          "name": "Mounir .Q",
+          "role": "Agence Immobilière · Alger"
+        },
+        {
+          "text": "Dans un showroom auto, les messages ne s'arrêtent jamais. Taysir One rassemble tout au même endroit.",
+          "name": "Radouane .M",
+          "role": "Showroom Auto · Sétif"
+        },
+        {
+          "text": "La facilité d'utilisation est incroyable. Nous avons lié la page en 5 minutes et le bot a commencé à répondre immédiatement.",
+          "name": "Hamid .S",
+          "role": "Promoteur Immobilier · Béjaïa"
+        }
+      ]
+    },
+    "faqs": {
+      "badge": "✦ FAQ",
+      "title": "Questions & Réponses",
+      "items": [
+        {
+          "q": "Puis-je commencer gratuitement sans carte bancaire ?",
+          "a": "Oui ! Le pack d'essai est gratuit et vous permet de tester les fonctionnalités avant de vous abonner."
+        },
+        {
+          "q": "Quels sont les modes de paiement disponibles ?",
+          "a": "Nous acceptons les transferts BaridiMob et CCP, qui sont les plus adaptés aux utilisateurs algériens."
+        },
+        {
+          "q": "Comment mon abonnement est-il activé après le paiement ?",
+          "a": "Après avoir envoyé le reçu, il est examiné manuellement par notre équipe et activé en quelques heures."
+        },
+        {
+          "q": "Le bot répond-il en Darja algérien ?",
+          "a": "Oui ! Vous pouvez programmer le bot en n'importe quelle langue : Arabe, Darja algérien, Français ou Anglais."
+        },
+        {
+          "q": "Est-ce que ça fonctionne avec WhatsApp régulier ?",
+          "a": "Nous travaillons avec l'API WhatsApp Business. Notre équipe de support vous aide pour la configuration."
+        }
+      ]
+    },
+    "cta": {
+      "badge": "✦ Commencez aujourd'hui",
+      "title": "Prêt à transformer vos demandes",
+      "title_highlight": "en ventes ?",
+      "subtitle": "Inscrivez-vous gratuitement et commencez en quelques minutes. Aucune carte bancaire requise.",
+      "button": "Commencer gratuitement"
+    },
+    "footer": {
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "contact": "Contactez-nous",
+      "copyright": "© 2025 Taysir One. Tous droits réservés."
+    }
   },
   "agency_nav": {
     "dashboard": "Tableau de bord",
