@@ -1646,6 +1646,51 @@
         "title": "No Plans Available",
         "description": "Please check back later for pricing options."
       },
+      "plans": {
+        "Starter": {
+          "name": "Starter",
+          "description": "Discover the power of the bot. Ideal for testing the platform.",
+          "badge": "Free"
+        },
+        "Pro": {
+          "name": "Pro",
+          "description": "Full plan for serious businesses. WhatsApp + Facebook + Instagram.",
+          "badge": "Most Popular ⭐"
+        },
+        "Elite": {
+          "name": "Elite",
+          "description": "For groups and large enterprises. Unlimited access with premium support.",
+          "badge": "Elite Business 👑"
+        },
+        "features": {
+          "1 WhatsApp Channel": "1 WhatsApp Channel",
+          "Up to 500 Contacts": "Up to 500 Contacts",
+          "1 Automation Workflow": "1 Automation Workflow",
+          "Basic Analytics": "Basic Analytics",
+          "Template Management": "Template Management",
+          "1,000 API Requests/month": "1,000 API Requests/month",
+          "Community Support": "Community Support",
+          "AI Auto-Reply": "AI Auto-Reply",
+          "Team Members": "Team Members",
+          "Priority Support": "Priority Support",
+          "3 WhatsApp Channels": "3 WhatsApp Channels",
+          "Up to 5,000 Contacts": "Up to 5,000 Contacts",
+          "10 Automation Workflows": "10 Automation Workflows",
+          "Advanced Analytics": "Advanced Analytics",
+          "50,000 API Requests/month": "50,000 API Requests/month",
+          "Up to 5 Team Members": "Up to 5 Team Members",
+          "Campaign Scheduling": "Campaign Scheduling",
+          "VIP Dedicated Support": "VIP Dedicated Support",
+          "Unlimited WhatsApp Channels": "Unlimited WhatsApp Channels",
+          "Unlimited Contacts": "Unlimited Contacts",
+          "Unlimited Automations": "Unlimited Automations",
+          "Advanced Analytics & Reports": "Advanced Analytics & Reports",
+          "Unlimited API Requests": "Unlimited API Requests",
+          "AI Auto-Reply + Knowledge Base": "AI Auto-Reply + Knowledge Base",
+          "Unlimited Team Members": "Unlimited Team Members",
+          "Priority VIP Support + Training": "Priority VIP Support + Training"
+        }
+      },
       "authRequired": {
         "title": "Authentication Required",
         "description": "Please login before purchasing a plan"

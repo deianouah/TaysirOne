@@ -1596,6 +1596,51 @@
         "title": "لا توجد خطط متاحة",
         "description": "يرجى التحقق مرة أخرى لاحقًا للحصول على خيارات التسعير."
       },
+      "plans": {
+        "Starter": {
+          "name": "الباقة المبتدئة",
+          "description": "اكتشف قوة البوت. مثالية لتجربة المنصة واستكشاف ميزاتها.",
+          "badge": "مجاناً"
+        },
+        "Pro": {
+          "name": "الباقة الاحترافية",
+          "description": "الخطة الكاملة للأعمال الجادة. تشمل واتساب وفيسبوك وانستقرام.",
+          "badge": "الأكثر شعبية ⭐"
+        },
+        "Elite": {
+          "name": "باقة النخبة",
+          "description": "للمجموعات والشركات الكبيرة. وصول غير محدود مع دعم فني متميز.",
+          "badge": "خطة النخبة 👑"
+        },
+        "features": {
+          "1 WhatsApp Channel": "قناة واتساب واحدة",
+          "Up to 500 Contacts": "حتى 500 جهة اتصال",
+          "1 Automation Workflow": "سير عمل أتمتة واحد",
+          "Basic Analytics": "تحليلات أساسية",
+          "Template Management": "إدارة القوالب",
+          "1,000 API Requests/month": "1,000 طلب API شهرياً",
+          "Community Support": "دعم المجتمع",
+          "AI Auto-Reply": "رد تلقائي بذكاء اصطناعي",
+          "Team Members": "أعضاء الفريق",
+          "Priority Support": "دعم فني متميز",
+          "3 WhatsApp Channels": "3 قنوات واتساب",
+          "Up to 5,000 Contacts": "حتى 5,000 جهة اتصال",
+          "10 Automation Workflows": "10 سير عمل أتمتة",
+          "Advanced Analytics": "تحليلات متقدمة",
+          "50,000 API Requests/month": "50,000 طلب API شهرياً",
+          "Up to 5 Team Members": "حتى 5 أعضاء فريق",
+          "Campaign Scheduling": "جدولة الحملات",
+          "VIP Dedicated Support": "دعم VIP مخصص",
+          "Unlimited WhatsApp Channels": "قنوات واتساب غير محدودة",
+          "Unlimited Contacts": "جهات اتصال غير محدودة",
+          "Unlimited Automations": "أتمتة غير محدودة",
+          "Advanced Analytics & Reports": "تحليلات وتقارير متقدمة",
+          "Unlimited API Requests": "طلبات API غير محدودة",
+          "AI Auto-Reply + Knowledge Base": "قاعدة معرفة بذكاء اصطناعي",
+          "Unlimited Team Members": "أعضاء فريق غير محدودين",
+          "Priority VIP Support + Training": "دعم VIP وتدريب مباشر"
+        }
+      },
       "authRequired": {
         "title": "المصادقة مطلوبة",
         "description": "يرجى تسجيل الدخول قبل شراء خطة"

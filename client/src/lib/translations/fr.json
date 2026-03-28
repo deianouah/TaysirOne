@@ -1491,6 +1491,79 @@
         }
       ]
     },
+    "pricingSec": {
+      "introTagline": "Tarification simple et transparente",
+      "headlinePre": "Choisissez votre",
+      "headlineHighlight": "Plan parfait",
+      "subHeadline": "Commencez gratuitement et évoluez au fur et à mesure que vous grandissez. Tous les plans incluent votre propre intégration API Meta et l'envoi illimité de messages.",
+      "billingToggle": {
+        "monthly": "Mensuel",
+        "annual": "Annuel",
+        "saveLabel": "Économisez 20%"
+      },
+      "planCTA": {
+        "freeButton": "Commencer gratuitement",
+        "paidButton": "Acheter "
+      },
+      "pricing": {
+        "month": "mois",
+        "year": "an",
+        "upTo": "Jusqu'à",
+        "contacts": "contacts",
+        "channels": "Canaux WhatsApp",
+        "automation": "Automatisation"
+      },
+      "loading": "Chargement des plans...",
+      "noPlans": {
+        "title": "Aucun plan disponible",
+        "description": "Veuillez revenir plus tard pour les options de tarification."
+      },
+      "plans": {
+        "Starter": {
+          "name": "Starter",
+          "description": "Découvrez la puissance du bot. Idéal pour tester la plateforme.",
+          "badge": "Gratuit"
+        },
+        "Pro": {
+          "name": "Pro",
+          "description": "Le plan complet pour les activités sérieuses. WhatsApp + Facebook + Instagram.",
+          "badge": "Le plus populaire ⭐"
+        },
+        "Elite": {
+          "name": "Elite",
+          "description": "Pour les groupes et les grandes entreprises. Accès illimité avec un support premium.",
+          "badge": "Entreprise Élite 👑"
+        },
+        "features": {
+          "1 WhatsApp Channel": "1 Canal WhatsApp",
+          "Up to 500 Contacts": "Jusqu'à 500 contacts",
+          "1 Automation Workflow": "1 Workflow d'automatisation",
+          "Basic Analytics": "Analyses de base",
+          "Template Management": "Gestion des modèles",
+          "1,000 API Requests/month": "1 000 requêtes API/mois",
+          "Community Support": "Support communautaire",
+          "AI Auto-Reply": "Réponse automatique IA",
+          "Team Members": "Membres de l'équipe",
+          "Priority Support": "Support prioritaire",
+          "3 WhatsApp Channels": "3 Canaux WhatsApp",
+          "Up to 5,000 Contacts": "Jusqu'à 5 000 contacts",
+          "10 Automation Workflows": "10 Workflows d'automatisation",
+          "Advanced Analytics": "Analyses avancées",
+          "50,000 API Requests/month": "50 000 requêtes API/mois",
+          "Up to 5 Team Members": "Jusqu'à 5 membres d'équipe",
+          "Campaign Scheduling": "Planification de campagne",
+          "VIP Dedicated Support": "Support VIP dédié",
+          "Unlimited WhatsApp Channels": "Canaux WhatsApp illimités",
+          "Unlimited Contacts": "Contacts illimités",
+          "Unlimited Automations": "Automatisations illimitées",
+          "Advanced Analytics & Reports": "Analyses et rapports avancés",
+          "Unlimited API Requests": "Requêtes API illimitées",
+          "AI Auto-Reply + Knowledge Base": "Réponse automatique IA + Base de connaissances",
+          "Unlimited Team Members": "Membres d'équipe illimités",
+          "Priority VIP Support + Training": "Support VIP prioritaire + Formation"
+        }
+      }
+    },
     "ctaSec": {
       "introTagline": "Rejoignez plus de 10 000 entreprises qui se développent déjà",
       "headline": "Prêt à développer votre entreprise avec le marketing WhatsApp ?",

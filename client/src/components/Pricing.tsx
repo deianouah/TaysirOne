@@ -203,7 +203,7 @@ const Pricing = () => {
               {plan.badge && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                    {plan.badge}
+                    {t(`Landing.pricingSec.plans.${plan.name}.badge`, { defaultValue: plan.badge })}
                   </span>
                 </div>
               )}
@@ -216,12 +216,12 @@ const Pricing = () => {
 
                 {/* Plan Name */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  {plan.name}
+                  {t(`Landing.pricingSec.plans.${plan.name}.name`, { defaultValue: plan.name })}
                 </h3>
 
                 {/* Description */}
                 <p className="text-gray-600 text-sm mb-4 min-h-[40px]">
-                  {plan.description}
+                  {t(`Landing.pricingSec.plans.${plan.name}.description`, { defaultValue: plan.description })}
                 </p>
 
                 {/* Price */}
@@ -278,7 +278,7 @@ const Pricing = () => {
                           feature.included ? "text-gray-700" : "text-gray-400"
                         }`}
                       >
-                        {feature.name}
+                        {t(`Landing.pricingSec.plans.features.${feature.name}`, { defaultValue: feature.name })}
                       </span>
                     </li>
                   ))
