@@ -156,11 +156,17 @@ const Signup: React.FC = () => {
         <div className="max-w-md w-full space-y-8 mt-[50px]">
           <div className="text-center">
             <div className="flex justify-center mb-4">
-              <img
-                src={brandSettings?.logo || "/img/logo.png"}
-                alt="Logo"
-                className="h-24 w-auto object-contain scale-[1.8] origin-center"
-              />
+              {brandSettings?.logo ? (
+                <img
+                  src={`${brandSettings?.logo}${brandSettings?.logo?.includes('?') ? '&' : '?'}v=18`}
+                  alt="Logo"
+                  className="h-16 object-contain"
+                />
+              ) : (
+                <div className="bg-green-600 text-white rounded-full p-3">
+                  <MessageSquare className="h-8 w-8" />
+                </div>
+              )}
             </div>
             <h1 className="text-3xl font-bold text-gray-900">
               Create your account

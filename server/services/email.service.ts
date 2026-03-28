@@ -88,7 +88,7 @@ function generateOTPEmailHTML(
     ? `<img src="${logo}" alt="${displayName} Logo" style="max-height: 60px; margin-bottom: 10px;">`
     : `<div class="logo">${displayName}</div>`;
 
-  const messageText = `Please use the verification code below to verify your identity for ${displayName}.`;
+  const messageText = `Please use the verification code below to verify your identity.`;
 
   return `
     <!DOCTYPE html>
@@ -112,10 +112,11 @@ function generateOTPEmailHTML(
       <div class="container">
         <div class="header">
           ${headerContent}
+          <p style="color: #6b7280; margin: 0;">Our Platform</p>
         </div>
         
         <div class="message">
-          ${name ? `<p>Hi <strong>${name}</strong>,</p>` : "<p>Hi,</p>"}
+          ${name ? `<p>Hello <strong>${name}</strong>,</p>` : "<p>Hello,</p>"}
           <p>${messageText}</p>
         </div>
         
@@ -198,11 +199,12 @@ function generateForgotPasswordEmailHTML(
       <div class="container">
         <div class="header">
           ${headerContent}
+          <p style="color: #6b7280; margin: 0;">Our Platform</p>
         </div>
 
         <div class="message">
-          ${name ? `<p>Hi <strong>${name}</strong>,</p>` : "<p>Hi,</p>"}
-          <p>You requested to reset your password for ${displayName}. Use the verification code below to reset your password.</p>
+          ${name ? `<p>Hello <strong>${name}</strong>,</p>` : "<p>Hello,</p>"}
+          <p>You requested to reset your password. Use the verification code below to reset your password.</p>
         </div>
 
         <div class="otp-box">

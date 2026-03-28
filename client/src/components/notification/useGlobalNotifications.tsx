@@ -20,8 +20,7 @@ import { useLocation } from "wouter";
 
 export function useGlobalNotifications(
   socket: any,
-  conversations: any[],
-  brandTitle?: string
+  conversations: any[]
 ) {
   const [location] = useLocation();
 
@@ -32,10 +31,9 @@ export function useGlobalNotifications(
       0
     );
 
-    const defaultTitle = brandTitle || "TaysirOne";
     document.title =
-      totalUnread > 0 ? `(${totalUnread}) ${defaultTitle}` : defaultTitle;
-  }, [conversations, brandTitle]);
+      totalUnread > 0 ? `(${totalUnread}) Team Inbox` : "Team Inbox";
+  }, [conversations]);
 
   // 🔔 Browser notification (ALWAYS works)
   useEffect(() => {

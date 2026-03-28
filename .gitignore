@@ -1,9 +1,23 @@
 node_modules
-dist
 .env
+dist
 uploads
-*.log
+*.tsbuildinfo
 .DS_Store
 .vscode
-__MACOSX
-package-lock.json
+*.ts.ts
+*.ts.js
+*.ts.map
+# temporary files
+*.tmp
+*.log
+# scripts
+check_*.ts
+update_*.ts
+test.ts
+test-db.js
+add_ar.ts
+check-db.ts
+fix_langs_utf8.ts
+update-logo.ts
+update2.ts

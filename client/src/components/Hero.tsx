@@ -20,12 +20,11 @@ import { ArrowRight, Play, Users, TrendingUp, Zap } from "lucide-react";
 import LoadingAnimation from "./LoadingAnimation";
 import { useTranslation } from "@/lib/i18n";
 import { Link } from "wouter";
-import AgencyDashboardMockup from "./AgencyDashboardMockup";
 
 const TYPING_WORDS = [
-  "en opportunités",
-  "en rendez-vous",
-  "en clients réels",
+  "WhatsApp Marketing",
+  "Bot IA Intelligent",
+  "Lead Generation",
 ];
 
 const Hero = () => {
@@ -68,7 +67,7 @@ const Hero = () => {
   const stats = [
     {
       icon: Users,
-      value: 200,
+      value: 50000,
       label: t("Landing.heroSec.stats.0.label"),
       suffix: "+",
       color: "text-blue-600",
@@ -76,17 +75,17 @@ const Hero = () => {
     },
     {
       icon: TrendingUp,
-      value: 5000,
+      value: 98,
       label: t("Landing.heroSec.stats.1.label"),
-      suffix: "+",
+      suffix: t("Landing.heroSec.stats.1.suffix"),
       color: "text-emerald-600",
       bg: "bg-emerald-50",
     },
     {
       icon: Zap,
-      value: 98,
+      value: 5,
       label: t("Landing.heroSec.stats.2.label"),
-      suffix: "%",
+      suffix: t("Landing.heroSec.stats.2.suffix"),
       color: "text-violet-600",
       bg: "bg-violet-50",
     },
@@ -111,9 +110,9 @@ const Hero = () => {
         const progress = step / steps;
 
         setAnimatedNumbers({
-          users: Math.floor(200 * progress),
-          delivery: Math.floor(5000 * progress),
-          engagement: Math.floor(98 * progress),
+          users: Math.floor(50000 * progress),
+          delivery: Math.floor(98 * progress),
+          engagement: Math.floor(5 * progress),
         });
 
         if (step >= steps) clearInterval(timer);
@@ -158,7 +157,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-[fadeInUp_0.9s_ease-out]">
             <Link
-              href="/contact"
+              href="/signup"
               className="bg-gradient-to-r from-emerald-600 to-teal-500 text-white px-8 py-3.5 rounded-xl font-semibold hover:from-emerald-700 hover:to-teal-600 transition-all duration-300 shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30 flex items-center group min-w-[180px] justify-center"
             >
               {startTrialLoading ? (
@@ -172,7 +171,54 @@ const Hero = () => {
             </Link>
           </div>
 
-          <AgencyDashboardMockup />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-3xl mx-auto">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className={`bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 animate-[fadeInUp_0.6s_ease-out] ${
+                  currentStat === index
+                    ? "ring-1 ring-emerald-400/50 shadow-md border-emerald-100"
+                    : ""
+                }`}
+                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: "both" }}
+              >
+                <div
+                  className={`${stat.bg} p-3 rounded-xl w-fit mx-auto mb-3`}
+                >
+                  <stat.icon
+                    className={`w-5 h-5 lg:w-6 lg:h-6 ${stat.color}`}
+                  />
+                </div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1 tracking-tight">
+                  {index === 0
+                    ? animatedNumbers.users.toLocaleString()
+                    : index === 1
+                    ? animatedNumbers.delivery
+                    : animatedNumbers.engagement}
+                  {stat.suffix || ""}
+                </h3>
+                <p className="text-sm text-gray-500 font-medium">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center animate-[fadeIn_1s_ease-out]">
+          <p className="text-sm text-gray-400 mb-6 font-medium uppercase tracking-wider">
+            {t("Landing.heroSec.trustedByText")}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {["WhatsApp Business", "Facebook", "Instagram", "Gemini AI", "WAHA"].map(
+              (brand, index) => (
+                <div
+                  key={index}
+                  className="px-5 py-2.5 rounded-lg text-sm font-medium text-gray-400 bg-gray-50 border border-gray-100 transition-colors duration-200 hover:text-gray-500 hover:border-gray-200"
+                >
+                  {brand}
+                </div>
+              )
+            )}
+          </div>
         </div>
       </div>
 

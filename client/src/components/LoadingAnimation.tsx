@@ -123,20 +123,14 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({
       <div className="relative z-10 text-center max-w-md mx-auto px-6">
         {/* Logo with Enhanced Animation */}
         <div className="flex items-center justify-center space-x-3 mb-12">
-          {brandSettings?.logo ? (
-            <img
-              src={brandSettings?.logo}
-              alt="Logo"
-              className="h-12  object-contain animate-bounce"
-            />
-          ) : (
-            <div className="bg-gradient-to-r from-green-400 to-emerald-500 p-4 rounded-2xl shadow-2xl ">
-              <MessageCircle
-                className="w-10 h-10 text-white"
-                strokeWidth={1.5}
-              />
-            </div>
-          )}
+          <img
+            src={`${brandSettings?.logo || "/logo.png"}${ (brandSettings?.logo || "/logo.png").includes('?') ? '&' : '?'}v=21`}
+            alt="Logo"
+            className="h-12  object-contain animate-bounce"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "/logo.png?v=21";
+            }}
+          />
         </div>
 
         {/* Floating Messages Animation */}

@@ -19,7 +19,7 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "./components/ui/toaster";
+import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ChannelProvider } from "@/contexts/channel-context";
 import { UnreadCountProvider } from "@/contexts/UnreadCountContext";
@@ -39,8 +39,7 @@ import CampaignAnalytics from "@/pages/campaign-analytics";
 import Settings from "@/pages/settings";
 import Logs from "@/pages/logs";
 import Team from "@/pages/team";
-import DashboardSidebar from "@/components/layout/DashboardSidebar";
-import Topbar from "@/components/layout/Topbar";
+import Sidebar from "@/components/layout/sidebar";
 import Account from "./pages/account";
 import { AppLayout } from "./components/layout/AppLayout";
 import ChatbotBuilder from "./pages/chatbot-builder";
@@ -64,7 +63,6 @@ import Webhooks from "./pages/Webhooks";
 import QRCodes from "./pages/QRCodes";
 import CRMSystem from "./pages/CRMSystem";
 import LeadManagement from "./pages/LeadManagement";
-import ProductsPage from "./pages/products";
 import BulkImport from "./pages/BulkImport";
 import Segmentation from "./pages/Segmentation";
 import HealthMonitor from "./pages/HealthMonitor";
@@ -86,25 +84,12 @@ import MinimalLoader from "./components/MinimalLoader";
 import { TermsPage } from "./pages/TermsPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import VerifyEmail from "./pages/verify-email";
-import AboutUs from "./pages/AboutUs";
 import { ScrollToTop } from "./components/ScrollToTop";
-import Integrations from "./components/Integrations";
-import PressKit from "./components/PressKit";
-import CaseStudies from "./components/CaseStudies";
-import WhatsAppGuide from "./components/WhatsAppGuide";
-import BestPractices from "./components/BestPractices";
-import CookiePolicy from "./components/CookiePolicy";
-import ContactusLanding from "./components/ContactusLanding";
 import { SignupPopupHandler } from "./components/SignupPopupHandler";
-import Careers from "./components/Careers";
 import LanguageManagement from "./pages/LanguageManagement";
 import SuperadminMessageLogs from "./pages/SuperadminMessageLogs";
 import ApiDocs from "./pages/api-docs";
 import ChannelsManagement from "./pages/channels-management";
-import LandingPage from "./pages/LandingPage";
-import OnboardingFlow from "./pages/OnboardingFlow";
-import BotSettings from "./pages/BotSettings";
-import SubscriptionsPage from "./pages/SubscriptionsPage";
 
 // Define route permissions mapping
 const ROUTE_PERMISSIONS: Record<string, string> = {
@@ -245,155 +230,176 @@ function ProtectedRoutes() {
   // Priority 4: Authenticated - show dashboard and protected routes
   return (
     <div className="flex min-h-screen bg-white">
-      <DashboardSidebar />
-      <div className="flex-1 ltr:lg:ml-64 rtl:lg:mr-64">
-        <Topbar />
-        <div className="pt-5">
-          <Switch>
-            <Route path="/dashboard" component={Dashboard} />
-            <Route
-              path="/contacts"
-              component={() => (
-                <PermissionRoute component={Contacts} requiredPermission="contacts:view" />
-              )}
+      <Sidebar />
+      <div className="flex-1 lg:ml-64">
+        <Switch>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/contacts">
+            <PermissionRoute
+              component={Contacts}
+              requiredPermission="contacts:view"
             />
-            <Route
-              path="/users"
-              component={() => (
-                <PermissionRoute component={User} requiredRoles={["superadmin"]} />
-              )}
+          </Route>
+          <Route path="/users">
+            <PermissionRoute component={User} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route path="/channels-management">
+            <PermissionRoute component={ChannelsManagement} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route path="/users/:id">
+            <PermissionRoute component={userDetails} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route path="/campaigns">
+            <PermissionRoute
+              component={Campaigns}
+              requiredPermission="campaigns:view"
             />
-            <Route
-              path="/channels-management"
-              component={() => (
-                <PermissionRoute component={ChannelsManagement} requiredRoles={["superadmin"]} />
-              )}
+          </Route>
+          <Route path="/templates">
+            <PermissionRoute
+              component={Templates}
+              requiredPermission="templates:view"
             />
-            <Route
-              path="/users/:id"
-              component={() => (
-                <PermissionRoute component={userDetails} requiredRoles={["superadmin"]} />
-              )}
+          </Route>
+          <Route path="/inbox">
+            <PermissionRoute
+              component={Inbox}
+              requiredPermission="inbox:view"
             />
-            <Route
-              path="/campaigns"
-              component={() => (
-                <PermissionRoute component={Campaigns} requiredPermission="campaigns:view" />
-              )}
+          </Route>
+          <Route path="/plans">
+            <PermissionRoute component={Plans} />
+          </Route>
+          <Route path="/gateway">
+            <PermissionRoute component={GatewaySettings} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route path="/languages">
+            <PermissionRoute component={LanguageManagement} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route path="/team">
+            <PermissionRoute component={Team} requiredPermission="team:view" />
+          </Route>
+          <Route path="/automation">
+            <PermissionRoute
+              component={Automations}
+              requiredPermission="automations:view"
             />
-            <Route
-              path="/templates"
-              component={() => (
-                <PermissionRoute component={Templates} requiredPermission="templates:view" />
-              )}
+          </Route>
+          <Route path="/analytics">
+            <PermissionRoute component={Analytics} />
+          </Route>
+          <Route path="/websites">
+            <PermissionRoute component={Websites} />
+          </Route>
+          <Route path="/add/chatbot-builder">
+            <PermissionRoute component={AddChatbotBuilder} />
+          </Route>
+          <Route path="/widget-builder">
+            <PermissionRoute component={WidgetBuilder} />
+          </Route>
+          <Route path="/chatbot-builder">
+            <PermissionRoute component={ChatbotBuilder} />
+          </Route>
+          <Route path="/settings">
+            <PermissionRoute
+              component={Settings}
+              requiredPermission="settings:view"
             />
-            <Route
-              path="/inbox"
-              component={() => (
-                <PermissionRoute component={Inbox} requiredPermission="inbox:view" />
-              )}
+          </Route>
+          <Route path="/analytics/campaign/:campaignId">
+            <PermissionRoute
+              component={CampaignAnalytics}
+              // requiredPermission="settings:view"
             />
-            <Route path="/plans" component={Plans} />
-            <Route
-              path="/gateway"
-              component={() => (
-                <PermissionRoute component={GatewaySettings} requiredRoles={["superadmin"]} />
-              )}
-            />
-            <Route
-              path="/languages"
-              component={() => (
-                <PermissionRoute component={LanguageManagement} requiredRoles={["superadmin"]} />
-              )}
-            />
-            <Route
-              path="/team"
-              component={() => (
-                <PermissionRoute component={Team} requiredPermission="team:view" />
-              )}
-            />
-            <Route
-              path="/automation"
-              component={() => (
-                <PermissionRoute component={Automations} requiredPermission="automations:view" />
-              )}
-            />
-            <Route path="/analytics" component={Analytics} />
-            <Route path="/websites" component={Websites} />
-            <Route path="/add/chatbot-builder" component={AddChatbotBuilder} />
-            <Route path="/widget-builder" component={WidgetBuilder} />
-            <Route path="/chatbot-builder" component={ChatbotBuilder} />
-            <Route
-              path="/settings"
-              component={() => (
-                <PermissionRoute component={Settings} requiredPermission="settings:view" />
-              )}
-            />
-            <Route path="/analytics/campaign/:campaignId" component={CampaignAnalytics} />
-            <Route path="/account" component={Account} />
-            <Route path="/bot-builder" component={BotFlowBuilder} />
-            <Route path="/workflows" component={Workflows} />
-            <Route path="/ai-assistant" component={AIAssistant} />
-            <Route path="/auto-responses" component={AutoResponses} />
-            <Route path="/waba-connection" component={WABAConnection} />
-            <Route path="/multi-number" component={MultiNumber} />
-            <Route path="/webhooks" component={Webhooks} />
-            <Route path="/qr-codes" component={QRCodes} />
-            <Route path="/crm-systems" component={CRMSystem} />
-            <Route path="/leads" component={LeadManagement} />
-            <Route path="/products" component={ProductsPage} />
-            <Route path="/bulk-import" component={BulkImport} />
-            <Route path="/segmentation" component={Segmentation} />
-            <Route
-              path="/message-logs"
-              component={() => (
-                <PermissionRoute component={SuperadminMessageLogs} requiredRoles={["superadmin"]} />
-              )}
-            />
-            <Route path="/health-monitor" component={HealthMonitor} />
-            <Route path="/reports" component={Reports} />
-            <Route
-              path="/transactions-logs"
-              component={() => (
-                <PermissionRoute component={TransactionsPage} requiredRoles={["superadmin"]} />
-              )}
-            />
-            <Route
-              path="/contacts-management"
-              component={() => (
-                <PermissionRoute component={ContactsManagements} requiredRoles={["superadmin"]} />
-              )}
-            />
-            <Route
-              path="/support-tickets"
-              component={() => (
-                <PermissionRoute component={SupportTicketsNew} requiredRoles={["superadmin"]} />
-              )}
-            />
-            <Route path="/groups" component={GroupsUI} />
-            <Route
-              path="/api-docs"
-              component={() => (
-                <PermissionRoute component={ApiDocs} requiredRoles={["admin"]} />
-              )}
-            />
-            <Route path="/user-support-tickets" component={UserSupportTicketsNew} />
-            <Route path="/plan-upgrade" component={Plans} />
-            <Route path="/billing" component={BillingSubscriptionPage} />
-            <Route path="/notifications" component={Notifications} />
-            <Route path="/user-notifications" component={UserNotifications} />
-            <Route path="/chat-hub" component={ChatHub} />
-            <Route
-              path="/master-subscriptions"
-              component={() => (
-                <PermissionRoute component={AllSubscriptionsPage} requiredRoles={["superadmin"]} />
-              )}
-            />
-            <Route path="/bot-settings" component={BotSettings} />
-            <Route path="/my-subscription" component={SubscriptionsPage} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
+          </Route>
+          <Route path="/account">
+            <PermissionRoute component={Account} />
+          </Route>
+          <Route path="/bot-builder">
+            <PermissionRoute component={BotFlowBuilder} />
+          </Route>
+          <Route path="/workflows">
+            <PermissionRoute component={Workflows} />
+          </Route>
+          <Route path="/ai-assistant">
+            <PermissionRoute component={AIAssistant} />
+          </Route>
+          <Route path="/auto-responses">
+            <PermissionRoute component={AutoResponses} />
+          </Route>
+          <Route path="/waba-connection">
+            <PermissionRoute component={WABAConnection} />
+          </Route>
+          <Route path="/multi-number">
+            <PermissionRoute component={MultiNumber} />
+          </Route>
+          <Route path="/webhooks">
+            <PermissionRoute component={Webhooks} />
+          </Route>
+          <Route path="/qr-codes">
+            <PermissionRoute component={QRCodes} />
+          </Route>
+          <Route path="/crm-systems">
+            <PermissionRoute component={CRMSystem} />
+          </Route>
+          <Route path="/leads">
+            <PermissionRoute component={LeadManagement} />
+          </Route>
+          <Route path="/bulk-import">
+            <PermissionRoute component={BulkImport} />
+          </Route>
+          <Route path="/segmentation">
+            <PermissionRoute component={Segmentation} />
+          </Route>
+          <Route path="/message-logs">
+            <PermissionRoute component={SuperadminMessageLogs} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route path="/health-monitor">
+            <PermissionRoute component={HealthMonitor} />
+          </Route>
+          <Route path="/reports">
+            <PermissionRoute component={Reports} />
+          </Route>
+          <Route path="/transactions-logs">
+            <PermissionRoute component={TransactionsPage} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route path="/contacts-management">
+            <PermissionRoute component={ContactsManagements} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route path="/support-tickets">
+            <PermissionRoute component={SupportTicketsNew} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route path="/groups">
+            <PermissionRoute component={GroupsUI} />
+          </Route>
+          <Route path="/api-docs">
+            <PermissionRoute component={ApiDocs} requiredRoles={["admin"]} />
+          </Route>
+          <Route path="/user-support-tickets">
+            <PermissionRoute component={UserSupportTicketsNew} />
+          </Route>
+          <Route path="/plan-upgrade">
+            <PermissionRoute component={Plans} />
+          </Route>
+          <Route path="/billing">
+            <PermissionRoute component={BillingSubscriptionPage} />
+          </Route>
+          <Route path="/notifications">
+            <PermissionRoute component={Notifications} />
+          </Route>
+          <Route path="/user-notifications">
+            <PermissionRoute component={UserNotifications} />
+          </Route>
+          <Route path="/chat-hub">
+            <PermissionRoute component={ChatHub} />
+          </Route>
+          <Route path="/master-subscriptions">
+            <PermissionRoute component={AllSubscriptionsPage} requiredRoles={["superadmin"]} />
+          </Route>
+          <Route component={NotFound} />
+        </Switch>
       </div>
     </div>
   );
@@ -454,8 +460,6 @@ function Router() {
       <ScrollToTop />
       <SignupPopupHandler />
       <Switch>
-        <Route path="/landing" component={LandingPage} />
-        <Route path="/onboarding" component={OnboardingFlow} />
         <Route path="/demo">
           <>
             <DemoPage />
@@ -481,69 +485,6 @@ function Router() {
           <>
             <Header />
             <TermsPage />
-            <Footer />
-          </>
-        </Route>
-        <Route path="/about">
-          <>
-            <Header />
-            <AboutUs />
-            <Footer />
-          </>
-        </Route>
-        <Route path="/integrations">
-          <>
-            <Header />
-            <Integrations />
-            <Footer />
-          </>
-        </Route>
-        <Route path="/press-kit">
-          <>
-            <Header />
-            <PressKit />
-            <Footer />
-          </>
-        </Route>
-        <Route path="/case-studies">
-          <>
-            <Header />
-            <CaseStudies />
-            <Footer />
-          </>
-        </Route>
-        <Route path="/whatsapp-guide">
-          <>
-            <Header />
-            <WhatsAppGuide />
-            <Footer />
-          </>
-        </Route>
-        <Route path="/best-practices">
-          <>
-            <Header />
-            <BestPractices />
-            <Footer />
-          </>
-        </Route>
-        <Route path="/cookie-policy">
-          <>
-            <Header />
-            <CookiePolicy />
-            <Footer />
-          </>
-        </Route>
-        <Route path="/contact">
-          <>
-            <Header />
-            <ContactusLanding />
-            <Footer />
-          </>
-        </Route>
-        <Route path="/careers">
-          <>
-            <Header />
-            <Careers />
             <Footer />
           </>
         </Route>

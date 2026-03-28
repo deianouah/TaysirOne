@@ -1058,75 +1058,75 @@
   },
   "Landing": {
     "header": {
-      "getstart": "ابدأ مجاناً",
-      "redystart": "Ready to get started?",
-      "join": "Join thousands of businesses already growing with {{appName}}",
-      "start": " Start Free Trial",
-      "Learn": " Learn more",
-      "dash": "Dashboard",
-      "Settings": "Settings",
-      "Account": "Account",
-      "logout": "Logout",
+      "getstart": "ابدأ مجانًا",
+      "redystart": "هل أنت مستعد للبدء؟",
+      "join": "انضم إلى آلاف الشركات التي تنمو بالفعل مع {{appName}}",
+      "start": "ابدأ التجربة المجانية",
+      "Learn": "معرفة المزيد",
+      "dash": "لوحة التحكم",
+      "Settings": "الإعدادات",
+      "Account": "الحساب",
+      "logout": "تسجيل الخروج",
       "resourcesMenuItems": [
         {
-          "title": "Privacy Policy",
-          "description": "Ready-to-use message templates"
+          "title": "القوالب",
+          "description": "قوالب رسائل جاهزة للاستخدام"
         },
         {
-          "title": "Terms of Service",
-          "description": "Success stories from our clients"
+          "title": "دراسات الحالة",
+          "description": "قصص نجاح من عملائنا"
         },
         {
-          "title": "WhatsApp Guide",
-          "description": "Complete WhatsApp marketing guide"
+          "title": "دليل WhatsApp",
+          "description": "دليل التسويق الكامل عبر WhatsApp"
         },
         {
-          "title": "API Documentation",
-          "description": "Developer resources and API docs"
+          "title": "وثائق API",
+          "description": "موارد المطورين ووثائق API"
         },
         {
-          "title": "Best Practices",
-          "description": "Tips for WhatsApp marketing success"
+          "title": "أفضل الممارسات",
+          "description": "نصائح لنجاح التسويق عبر WhatsApp"
         },
         {
-          "title": "ROI Calculator",
-          "description": "Calculate your WhatsApp marketing ROI"
+          "title": "حاسبة العائد على الاستثمار",
+          "description": "احسب عائد الاستثمار من التسويق عبر WhatsApp"
         }
       ],
       "aboutMenuItems": [
         {
-          "title": "About Us",
-          "description": "Learn about our mission and team"
+          "title": "من نحن",
+          "description": "تعرف على مهمتنا وفريقنا"
         },
         {
-          "title": "Contact",
-          "description": "Get in touch with our team"
+          "title": "اتصل بنا",
+          "description": "تواصل مع فريقنا"
         },
         {
-          "title": "Careers",
-          "description": "Join our growing team"
+          "title": "الوظائف",
+          "description": "انضم إلى فريقنا المتنامي"
         },
         {
-          "title": "Integrations",
-          "description": "Connect with 1000+ apps"
+          "title": "التكاملات",
+          "description": "اتصل بأكثر من 1000 تطبيق"
         }
       ],
       "Navlinks": [
         "الرئيسية",
-        "المميزات",
-        "كيف نعمل",
+        "من نحن",
+        "الموارد",
         "تسجيل الدخول",
         "لوحة التحكم"
       ]
     },
     "heroSec": {
-      "animatedBgGreenText": "✦ للبائعين، التجار، والمهنيين المحترفين",
-      "headline": "حوّل عملائك المحتملين",
-      "highlightText": "إلى فرص مبيعات مؤكدة",
-      "subHeadline": "Taysir One يجمع رسائل فيسبوك وواتساب في مكان واحد. البوت المدعوم بالذكاء الاصطناعي الخاص بنا يجيب على الأسئلة الفنية ويفلتر العملاء الجادين نيابة عنك.",
-      "startTrialButton": "ابدأ مجاناً",
-      "watchDemoButton": "Watch 2-min Demo",
-      "trustedByText": "موثوق من المحترفين",
+      "animatedBgGreenText": "منصة تسويق WhatsApp مجانية - أحضر API الخاص بك",
+      "headline": "وسع نطاق عملك مع",
+      "highlightText": "التسويق عبر WhatsApp",
+      "subHeadline": "اربط Meta WhatsApp Business API الخاص بك واستفد من الأتمتة القوية والرسائل الجماعية والتحليلات المتقدمة. ابدأ مجانًا، وسع بلا حدود.",
+      "startTrialButton": "ابدأ التجربة المجانية",
+      "watchDemoButton": "شاهد عرض توضيحي لمدة دقيقتين",
+      "trustedByText": "موثوق به من قبل أكثر من 10,000 شركة في جميع أنحاء العالم",
       "brands": [
         "Shopify",
         "WooCommerce",
@@ -1136,15 +1136,15 @@
       ],
       "stats": [
         {
-          "label": "Active Users",
+          "label": "المستخدمون النشطون",
           "suffix": "+"
         },
         {
-          "label": "Delivery Rate",
+          "label": "معدل التسليم",
           "suffix": "%"
         },
         {
-          "label": "Higher Engagement",
+          "label": "تفاعل أعلى",
           "suffix": "x"
         }
       ],
@@ -1154,541 +1154,539 @@
       }
     },
     "featuresSec": {
-      "introTagline": "✦ المميزات",
-      "headlinePre": "وداعاً",
-      "headlineHighlight": "للردود المكررة",
-      "subHeadline": "نظام ذكي يقوم بفلترة وجمع بيانات المهتمين تلقائياً.",
-      "demo": "Demo",
-      "campaign_progress": "Campaign Progress",
+      "introTagline": "ميزات تسويق WhatsApp القوية",
+      "headlinePre": "كل ما تحتاجه لـ",
+      "headlineHighlight": "توسيع نطاق عملك",
+      "subHeadline": "من الرسائل الجماعية إلى روبوتات الدردشة بالذكاء الاصطناعي، توفر منصتنا جميع الأدوات التي تحتاجها لإنشاء حملات تسويقية ناجحة عبر WhatsApp",
       "featureTabs": [
         {
-          "title": "🤖 وكيل الذكاء الاصطناعي",
-          "description": "البوت الذكي يجيب بدقة على استفسارات العملاء حول منتجاتك، خدماتك أو عروضك 24/7 وبكل دقة.",
+          "title": "الرسائل الجماعية",
+          "description": "أرسل رسائل مخصصة إلى آلاف جهات الاتصال على الفور مع تحسين التسليم الذكي",
           "demo": {
-            "title": "Broadcast Campaign",
-            "stats": "10,000 messages sent in 2 minutes",
+            "title": "حملة إذاعية",
+            "stats": "تم إرسال 10,000 رسالة في دقيقتين",
             "features": [
-              "Personalized templates",
-              "Smart scheduling",
-              "Delivery optimization"
+              "قوالب مخصصة",
+              "جدولة ذكية",
+              "تحسين التسليم"
             ]
           }
         },
         {
-          "title": "📞 جمع الأرقام",
-          "description": "الذكاء الاصطناعي يطلب بلطف ويسجل رقم العميل المحتمل في قائمة اتصال مهيكلة.",
+          "title": "سير عمل الأتمتة",
+          "description": "أنشئ تسلسلات آلية ذكية ترعى العملاء المحتملين وتشرك العملاء على مدار الساعة طوال أيام الأسبوع",
           "demo": {
-            "title": "Welcome Sequence",
-            "stats": "85% engagement rate",
+            "title": "تسلسل الترحيب",
+            "stats": "معدل تفاعل 85%",
             "features": [
-              "Trigger-based flows",
-              "Conditional logic",
-              "Multi-step journeys"
+              "تدفقات قائمة على المحفزات",
+              "منطق شرطي",
+              "رحلات متعددة الخطوات"
             ]
           }
         },
         {
-          "title": "💬 صندوق رسائل موحد",
-          "description": "إدارة رسائل WhatsApp و Facebook و Instagram من واجهة واحدة.",
+          "title": "التحليلات المتقدمة",
+          "description": "تتبع الأداء برؤى فورية وتقارير التسليم ومقاييس التفاعل",
           "demo": {
-            "title": "Campaign Analytics",
-            "stats": "98% delivery rate",
+            "title": "تحليلات الحملة",
+            "stats": "معدل تسليم 98%",
             "features": [
-              "Real-time tracking",
-              "ROI analysis",
-              "Custom reports"
+              "تتبع في الوقت الفعلي",
+              "تحليل العائد على الاستثمار",
+              "تقارير مخصصة"
             ]
           }
         },
         {
-          "title": "🛡️ فلترة ذكية",
-          "description": "الذكاء الاصطناعي يميز بين العميل الجاد والمجرد الفضولي، ويتجاهل الرسائل غير المفيدة.",
+          "title": "إدارة جهات الاتصال",
+          "description": "نظم وقسّم جمهورك بالوسم الذكي والتصفية المتقدمة",
           "demo": {
-            "title": "Smart Segmentation",
-            "stats": "50+ custom fields",
+            "title": "التقسيم الذكي",
+            "stats": "أكثر من 50 حقلاً مخصصًا",
             "features": [
-              "Auto-tagging",
-              "Behavioral segments",
-              "Import/Export"
+              "الوسم التلقائي",
+              "شرائح سلوكية",
+              "استيراد/تصدير"
             ]
           }
         },
         {
-          "title": "📊 إحصائيات المبيعات",
-          "description": "اكتشف أي المنتجات والمنصات التي تولد أكبر قدر من الاهتمام والمبيعات.",
+          "title": "روبوتات الدردشة بالذكاء الاصطناعي",
+          "description": "انشر روبوتات دردشة ذكية تتعامل مع استفسارات العملاء وتؤهل العملاء المحتملين تلقائيًا",
           "demo": {
-            "title": "Customer Support Bot",
-            "stats": "24/7 availability",
+            "title": "روبوت دعم العملاء",
+            "stats": "متاح على مدار الساعة طوال أيام الأسبوع",
             "features": [
-              "Natural language",
-              "Lead qualification",
-              "Handoff to humans"
+              "لغة طبيعية",
+              "تأهيل العملاء المحتملين",
+              "التحويل إلى البشر"
             ]
           }
         },
         {
-          "title": "🗓️ إدارة جهات الاتصال",
-          "description": "يُنظم البوت العملاء المحتملين تلقائيًا بناءً على مستوى اهتمامهم.",
+          "title": "مُجدول الحملات",
+          "description": "خطط وجدول الحملات عبر المناطق الزمنية مع توقيت التسليم الأمثل",
           "demo": {
-            "title": "Global Campaigns",
-            "stats": "Multi-timezone support",
+            "title": "الحملات العالمية",
+            "stats": "دعم متعدد المناطق الزمنية",
             "features": [
-              "Smart timing",
-              "Recurring campaigns",
-              "A/B testing"
+              "توقيت ذكي",
+              "حملات متكررة",
+              "اختبار A/B"
             ]
           }
         }
       ],
       "additionalFeatures": [
         {
-          "title": "Multi-language Support",
-          "desc": "Reach global audiences in their native language"
+          "title": "دعم متعدد اللغات",
+          "desc": "الوصول إلى الجماهير العالمية بلغتهم الأصلية"
         },
         {
-          "title": "Smart Targeting",
-          "desc": "Precision targeting based on behavior and demographics"
+          "title": "الاستهداف الذكي",
+          "desc": "استهداف دقيق بناءً على السلوك والديموغرافيا"
         },
         {
-          "title": "API Integration",
-          "desc": "Seamless integration with your existing tools and CRM"
+          "title": "تكامل API",
+          "desc": "تكامل سلس مع أدواتك الحالية ونظام CRM"
         }
       ]
     },
     "howItWorksSec": {
-      "introTagline": "✦ كيف تعمل المنصة",
-      "headlinePre": "من الرسالة الأولى",
-      "headlineHighlight": "حتى المبيعات المؤكدة",
-      "subHeadline": "",
+      "introTagline": "عملية بسيطة من 4 خطوات",
+      "headlinePre": "ابدأ في",
+      "headlineHighlight": "أقل من 5 دقائق",
+      "subHeadline": "تتيح لك عملية الإعداد المبسطة لدينا البدء في التسويق عبر WhatsApp بشكل أسرع من أي منصة أخرى",
       "steps": [
         {
-          "title": "١. أضف عروضك",
-          "description": "أدخل تفاصيل منتجاتك أو خدماتك في لوحة التحكم الخاصة بك.",
+          "title": "اربط Meta API الخاص بك",
+          "description": "أحضر WhatsApp Business API الخاص بك من Meta واربطه بمنصتنا في ثوانٍ",
           "details": [
-            "Secure API integration",
-            "One-click setup process",
-            "No technical knowledge required",
-            "Full data ownership"
+            "تكامل API آمن",
+            "عملية إعداد بنقرة واحدة",
+            "لا حاجة لمعرفة تقنية",
+            "ملكية كاملة للبيانات"
           ]
         },
         {
-          "title": "٢. البوت يستلم المهمة",
-          "description": "عندما يسأل العميل سؤالاً، يجيب الذكاء الاصطناعي بدقة تامة وبلا توقف.",
+          "title": "استورد جهات الاتصال الخاصة بك",
+          "description": "قم بتحميل قاعدة بيانات العملاء الخاصة بك أو المزامنة مباشرة من نظام CRM والأدوات الحالية",
           "details": [
-            "CSV/Excel import support",
-            "CRM integrations available",
-            "Smart duplicate detection",
-            "Automatic data validation"
+            "دعم استيراد CSV/Excel",
+            "تكاملات CRM متاحة",
+            "كشف التكرارات الذكي",
+            "التحقق التلقائي من البيانات"
           ]
         },
         {
-          "title": "٣. تقييم العميل",
-          "description": "الذكاء الاصطناعي يطلب بلطف رقم الهاتف لتحديد موعد للمرحلة القادمة.",
+          "title": "أنشئ وأطلق الحملات",
+          "description": "صمم رسائل جميلة باستخدام أداة السحب والإفلات وأطلق حملات مستهدفة",
           "details": [
-            "Visual campaign builder",
-            "Pre-built templates",
-            "Personalization options",
-            "A/B testing capabilities"
+            "أداة بناء حملات مرئية",
+            "قوالب جاهزة",
+            "خيارات التخصيص",
+            "إمكانيات اختبار A/B"
           ]
         },
         {
-          "title": "٤. إغلاق الصفقة",
-          "description": "تمتع بالوصول إلى جهات الاتصال المؤهلة واتصل بهم لإنهاء الصفقة بنجاح.",
+          "title": "تتبع وحسّن",
+          "description": "راقب الأداء في الوقت الفعلي وحسّن حملاتك للحصول على نتائج أفضل",
           "details": [
-            "Real-time analytics",
-            "Delivery tracking",
-            "Engagement metrics",
-            "ROI calculations"
+            "تحليلات في الوقت الفعلي",
+            "تتبع التسليم",
+            "مقاييس التفاعل",
+            "حسابات العائد على الاستثمار"
           ]
         }
       ],
       "progressBar": {
-        "previous": "Previous",
-        "nextStep": "Next Step"
+        "previous": "السابق",
+        "nextStep": "الخطوة التالية"
       },
       "visualDemo": {
-        "whatsAppBusinessDashboard": "taysir.one/agency/dashboard"
+        "whatsAppBusinessDashboard": "لوحة تحكم WhatsApp Business"
       },
       "cta": {
-        "readyToGetStarted": "جاهز؟",
-        "joinText": "",
-        "startFreeTrial": "ابدأ العمل"
+        "readyToGetStarted": "هل أنت مستعد للبدء؟",
+        "joinText": "انضم إلى آلاف الشركات التي تستخدم منصتنا بالفعل لتوسيع نطاق تسويقها عبر WhatsApp",
+        "startFreeTrial": "ابدأ تجربتك المجانية"
       }
     },
     "useCasesSec": {
-      "introTagline": "✦ المنصات المدعومة",
-      "headlinePre": "خدمة زبائنك",
-      "headlineHighlight": "عبر المنصات",
-      "subHeadline": "",
-      "keyFeatures": "Key Features",
-      "quickStatsTitle": "Quick Stats",
+      "introTagline": "حلول الصناعة",
+      "headlinePre": "مثالي لكل",
+      "headlineHighlight": "صناعة وعمل",
+      "subHeadline": "اكتشف كيف تستخدم الشركات في مختلف الصناعات تسويق WhatsApp لدفع النمو وتحسين تفاعل العملاء",
+      "keyFeatures": "الميزات الرئيسية",
+      "quickStatsTitle": "إحصائيات سريعة",
       "useCases": [
         {
           "icon": "ShoppingCart",
-          "title": "💚 واتساب بزنس",
-          "description": "الرد الآلي الأكثر طلباً في الجزائر. ربط مباشر عبر Meta API ✅",
+          "title": "التجارة الإلكترونية",
+          "description": "عزز المبيعات من خلال استعادة السلة المتروكة وتحديثات الطلبات والتوصيات الشخصية للمنتجات",
           "color": "from-green-500 to-green-600",
           "bgColor": "bg-green-50",
           "stats": {
             "increase": "300%",
-            "metric": "Sales Recovery"
+            "metric": "استعادة المبيعات"
           },
           "features": [
-            "Abandoned cart recovery",
-            "Order status updates",
-            "Product recommendations",
-            "Flash sale notifications"
+            "استعادة السلة المتروكة",
+            "تحديثات حالة الطلب",
+            "توصيات المنتجات",
+            "إشعارات التخفيضات السريعة"
           ]
         },
         {
           "icon": "GraduationCap",
-          "title": "💙 فيسبوك Messenger",
-          "description": "رد ذكي على رسائل صفحة الوكالة. تحويل الزوار إلى مواعيد ✅",
+          "title": "التعليم",
+          "description": "إشراك الطلاب وأولياء الأمور بتحديثات الدورات وتذكيرات الواجبات والمحتوى التعليمي",
           "color": "from-blue-500 to-blue-600",
           "bgColor": "bg-blue-50",
           "stats": {
             "increase": "85%",
-            "metric": "Student Engagement"
+            "metric": "تفاعل الطلاب"
           },
           "features": [
-            "Assignment reminders",
-            "Course announcements",
-            "Parent communication",
-            "Study material sharing"
+            "تذكيرات الواجبات",
+            "إعلانات الدورات",
+            "التواصل مع أولياء الأمور",
+            "مشاركة المواد الدراسية"
           ]
         },
         {
           "icon": "Heart",
-          "title": "🟣 إنستجرام DM",
-          "description": "مثالي لمعارض السيارات الفاخرة. رد فوري ومهني ✅",
+          "title": "الرعاية الصحية",
+          "description": "تحسين رعاية المرضى من خلال تذكيرات المواعيد ونصائح الصحة وتنبيهات الأدوية",
           "color": "from-red-500 to-red-600",
           "bgColor": "bg-red-50",
           "stats": {
             "increase": "60%",
-            "metric": "Appointment Attendance"
+            "metric": "حضور المواعيد"
           },
           "features": [
-            "Appointment reminders",
-            "Medication alerts",
-            "Health tips delivery",
-            "Test result notifications"
+            "تذكيرات المواعيد",
+            "تنبيهات الأدوية",
+            "توصيل نصائح الصحة",
+            "إشعارات نتائج الاختبار"
           ]
         },
         {
           "icon": "Building",
-          "title": "Real Estate",
-          "description": "Connect with prospects through property alerts, virtual tours, and market updates",
+          "title": "العقارات",
+          "description": "التواصل مع العملاء المحتملين من خلال تنبيهات العقارات والجولات الافتراضية وتحديثات السوق",
           "color": "from-purple-500 to-purple-600",
           "bgColor": "bg-purple-50",
           "stats": {
             "increase": "45%",
-            "metric": "Lead Conversion"
+            "metric": "تحويل العملاء المحتملين"
           },
           "features": [
-            "Property alerts",
-            "Virtual tour scheduling",
-            "Market updates",
-            "Lead qualification"
+            "تنبيهات العقارات",
+            "جدولة الجولات الافتراضية",
+            "تحديثات السوق",
+            "تأهيل العملاء المحتملين"
           ]
         },
         {
           "icon": "Utensils",
-          "title": "Restaurants",
-          "description": "Increase orders with menu updates, special offers, and reservation confirmations",
+          "title": "المطاعم",
+          "description": "زيادة الطلبات من خلال تحديثات القائمة والعروض الخاصة وتأكيدات الحجز",
           "color": "from-orange-500 to-orange-600",
           "bgColor": "bg-orange-50",
           "stats": {
             "increase": "120%",
-            "metric": "Order Volume"
+            "metric": "حجم الطلبات"
           },
           "features": [
-            "Menu updates",
-            "Special offers",
-            "Reservation confirmations",
-            "Loyalty programs"
+            "تحديثات القائمة",
+            "العروض الخاصة",
+            "تأكيدات الحجز",
+            "برامج الولاء"
           ]
         },
         {
           "icon": "Car",
-          "title": "Automotive",
-          "description": "Enhance customer service with service reminders, appointment booking, and vehicle updates",
+          "title": "السيارات",
+          "description": "تحسين خدمة العملاء من خلال تذكيرات الخدمة وحجز المواعيد وتحديثات المركبات",
           "color": "from-indigo-500 to-indigo-600",
           "bgColor": "bg-indigo-50",
           "stats": {
             "increase": "75%",
-            "metric": "Service Bookings"
+            "metric": "حجوزات الخدمة"
           },
           "features": [
-            "Service reminders",
-            "Appointment booking",
-            "Vehicle updates",
-            "Maintenance tips"
+            "تذكيرات الخدمة",
+            "حجز المواعيد",
+            "تحديثات المركبات",
+            "نصائح الصيانة"
           ]
         }
       ],
       "cta": {
-        "viewCaseStudyButton": "View Case Study",
-        "customerSuccessQuote": "WhatsApp Pro helped us increase our {industry} engagement by {increase}. The automation features saved us countless hours while improving customer satisfaction.",
+        "viewCaseStudyButton": "عرض دراسة الحالة",
+        "customerSuccessQuote": "ساعدنا WhatsApp Pro على زيادة تفاعل {industry} بنسبة {increase}. وفرت لنا ميزات الأتمتة ساعات لا تحصى مع تحسين رضا العملاء.",
         "testimonialName": "Sarah Johnson",
-        "testimonialPosition": "Marketing Director"
+        "testimonialPosition": "مديرة التسويق"
       },
       "quickStats": [
         {
           "value": "98%",
-          "label": "Delivery Rate"
+          "label": "معدل التسليم"
         },
         {
           "value": "5x",
-          "label": "Higher Engagement"
+          "label": "تفاعل أعلى"
         },
         {
           "value": "24/7",
-          "label": "Automation"
+          "label": "الأتمتة"
         },
         {
           "value": "50%",
-          "label": "Cost Reduction"
+          "label": "تقليل التكلفة"
         }
       ]
     },
     "testimonialsSec": {
-      "introTagline": "✦ قصص نجاح",
-      "headlinePre": "وكالات وعملاء",
-      "headlineHighlight": "يثقون بنا دائماً",
-      "subHeadline": "",
+      "introTagline": "قصص نجاح العملاء",
+      "headlinePre": "محبوب من قبل",
+      "headlineHighlight": "10,000+ شركة",
+      "subHeadline": "تعرف على كيفية تحقيق الشركات في مختلف الصناعات نتائج ملحوظة باستخدام منصة تسويق WhatsApp الخاصة بنا",
       "testimonials": [
         {
-          "name": "منير .ق",
-          "role": "وكالة عقارية",
+          "name": "Sarah Chen",
+          "role": "مديرة التجارة الإلكترونية",
           "company": "Fashion Forward",
           "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
           "rating": 5,
-          "text": "المنصة وفرت عليّ عناء الرد على مئات الأشخاص الذين يسألون فقط بدافع الفضول. البوت يعطي التفاصيل ولا يعطيني إلا رقم الزبون الجاد.",
-          "results": "300% increase in cart recovery"
+          "text": "حول WhatsApp Pro تفاعل عملائنا. شهدنا زيادة بنسبة 300٪ في معدلات استعادة السلة ويحب عملاؤنا التجربة الشخصية.",
+          "results": "زيادة بنسبة 300٪ في استعادة السلة"
         },
         {
-          "name": "رضوان .م",
-          "role": "معرض سيارات",
+          "name": "Michael Rodriguez",
+          "role": "مدير التسويق",
           "company": "TechStart Solutions",
           "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
           "rating": 5,
-          "text": "في معرض السيارات، الرسائل لا تتوقف. Taysir One يجمع لنا كل الطلبات في مكان واحد، ونعرف بالضبط من هو الزبون الجاد من رقم هاتفه.",
-          "results": "85% improvement in lead conversion"
+          "text": "سير عمل الأتمتة مذهلة. يمكننا الآن رعاية العملاء المحتملين على مدار الساعة طوال أيام الأسبوع دون أي تدخل يدوي. معدلات التحويل لدينا لم تكن أعلى من أي وقت مضى.",
+          "results": "تحسين بنسبة 85٪ في تحويل العملاء المحتملين"
         },
         {
-          "name": "حميد .س",
-          "role": "مروج عقاري",
+          "name": "Emily Johnson",
+          "role": "قائدة نجاح العملاء",
           "company": "HealthCare Plus",
           "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
           "rating": 5,
-          "text": "سهولة الاستخدام مذهلة. ربطنا الصفحة في 5 دقائق والبوت بدأ الرد فوراً. أنصح به لأي صاحب وكالة يريد تنظيم عمله.",
-          "results": "60% reduction in no-shows"
+          "text": "تحسن حضور مواعيد المرضى بشكل كبير بعد تطبيق تذكيرات WhatsApp. المنصة بديهية وتبناها فريقنا بسرعة.",
+          "results": "انخفاض بنسبة 60٪ في عدم الحضور"
         },
         {
           "name": "David Park",
-          "role": "Restaurant Owner",
+          "role": "صاحب مطعم",
           "company": "Gourmet Bistro",
           "image": "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
           "rating": 5,
-          "text": "Our reservation system is now seamless. Customers get instant confirmations and we can send them special offers. Revenue increased by 40% in just 3 months.",
-          "results": "40% revenue increase"
+          "text": "نظام الحجز الخاص بنا الآن سلس. يحصل العملاء على تأكيدات فورية ويمكننا إرسال عروض خاصة لهم. زادت الإيرادات بنسبة 40٪ في 3 أشهر فقط.",
+          "results": "زيادة الإيرادات بنسبة 40٪"
         },
         {
           "name": "Lisa Thompson",
-          "role": "Education Coordinator",
+          "role": "منسقة التعليم",
           "company": "Bright Future Academy",
           "image": "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
           "rating": 5,
-          "text": "Parent engagement has never been better. We can instantly share updates about their children and important school announcements reach everyone.",
-          "results": "90% parent engagement rate"
+          "text": "لم يكن تفاعل الآباء أفضل من أي وقت مضى. يمكننا مشاركة التحديثات الفورية حول أطفالهم وتصل الإعلانات المدرسية المهمة إلى الجميع.",
+          "results": "معدل تفاعل الآباء 90٪"
         }
       ],
       "navButtons": {
-        "previous": "Previous",
-        "next": "Next"
+        "previous": "السابق",
+        "next": "التالي"
       },
       "statsGrid": [
         {
           "number": "10,000+",
-          "label": "Happy Customers"
+          "label": "عملاء سعداء"
         },
         {
           "number": "98%",
-          "label": "Satisfaction Rate"
+          "label": "معدل الرضا"
         },
         {
           "number": "5M+",
-          "label": "Messages Sent"
+          "label": "الرسائل المرسلة"
         },
         {
           "number": "24/7",
-          "label": "Support Available"
+          "label": "الدعم متاح"
         }
       ]
     },
     "ctaSec": {
-      "introTagline": "Join 10,000+ Businesses Already Growing",
-      "headline": "جاهز لتحويل الاستفسارات إلى مبيعات؟",
-      "subHeadline": "سجّل مجاناً وابدأ في دقائق، ولا تطلب بطاقة ائتمان.",
+      "introTagline": "انضم إلى أكثر من 10,000 شركة تنمو بالفعل",
+      "headline": "هل أنت مستعد لتوسيع نطاق عملك مع تسويق WhatsApp؟",
+      "subHeadline": "ابدأ تجربتك المجانية اليوم. لا حاجة لبطاقة ائتمان. اربط Meta API الخاص بك وابدأ إرسال الحملات في أقل من 5 دقائق.",
       "buttons": {
-        "startTrial": "ابدأ مجاناً",
-        "scheduleDemo": "Schedule Demo"
+        "startTrial": "ابدأ التجربة المجانية",
+        "scheduleDemo": "جدولة عرض توضيحي"
       },
       "trustIndicators": [
         {
-          "title": "Instant Setup",
-          "desc": "Get started in 5 minutes"
+          "title": "إعداد فوري",
+          "desc": "ابدأ في 5 دقائق"
         },
         {
-          "title": "Secure & Compliant",
-          "desc": "Enterprise-grade security"
+          "title": "آمن ومتوافق",
+          "desc": "أمان على مستوى المؤسسات"
         },
         {
-          "title": "24/7 Support",
-          "desc": "Always here to help"
+          "title": "دعم 24/7",
+          "desc": "دائمًا هنا للمساعدة"
         },
         {
-          "title": "Free Forever",
-          "desc": "No hidden costs"
+          "title": "مجاني للأبد",
+          "desc": "بدون تكاليف خفية"
         }
       ],
       "stats": [
         {
           "number": "10,000+",
-          "label": "Active Users"
+          "label": "المستخدمون النشطون"
         },
         {
           "number": "98%",
-          "label": "Delivery Rate"
+          "label": "معدل التسليم"
         },
         {
           "number": "5M+",
-          "label": "Messages Sent"
+          "label": "الرسائل المرسلة"
         },
         {
           "number": "24/7",
-          "label": "Support"
+          "label": "الدعم"
         }
       ]
     },
     "pricingSec": {
-      "introTagline": "✦ الأسعار",
-      "headlinePre": "باقة احترافية بثمن بخس",
-      "headlineHighlight": "نصف تكلفة الموظف",
-      "subHeadline": "",
+      "introTagline": "تسعير بسيط وشفاف",
+      "headlinePre": "اختر",
+      "headlineHighlight": "خطتك المثالية",
+      "subHeadline": "ابدأ مجانًا وقم بالتوسع مع نموك. تتضمن جميع الخطط تكامل Meta API الخاص بك وإرسال رسائل غير محدود.",
       "billingToggle": {
-        "monthly": "Monthly",
-        "annual": "Annual",
-        "saveLabel": "Save 20%"
+        "monthly": "شهري",
+        "annual": "سنوي",
+        "saveLabel": "وفر 20%"
       },
       "planCTA": {
-        "freeButton": "Get Started Free",
-        "paidButton": "Buy "
+        "freeButton": "ابدأ مجانًا",
+        "paidButton": "ابدأ التجربة المجانية"
       },
       "pricing": {
-        "month": "month",
-        "year": "year",
-        "upTo": "Up to",
-        "contacts": "contacts",
-        "channels": "WhatsApp Channels",
-        "automation": "Automation"
+        "month": "شهر",
+        "year": "سنة",
+        "upTo": "ما يصل إلى",
+        "contacts": "جهات اتصال",
+        "channels": "قنوات WhatsApp",
+        "automation": "أتمتة"
       },
-      "loading": "Loading plans...",
+      "loading": "جارٍ تحميل الخطط...",
       "noPlans": {
-        "title": "No Plans Available",
-        "description": "Please check back later for pricing options."
+        "title": "لا توجد خطط متاحة",
+        "description": "يرجى التحقق مرة أخرى لاحقًا للحصول على خيارات التسعير."
       },
       "authRequired": {
-        "title": "Authentication Required",
-        "description": "Please login before purchasing a plan"
+        "title": "المصادقة مطلوبة",
+        "description": "يرجى تسجيل الدخول قبل شراء خطة"
       },
       "faq": {
-        "title": "Frequently Asked Questions",
+        "title": "الأسئلة الشائعة",
         "questions": [
           {
-            "q": "Do I need my own WhatsApp Business API?",
-            "a": "Yes, you need to bring your own Meta WhatsApp Business API. This ensures you have full control over your data and messaging."
+            "q": "هل أحتاج إلى WhatsApp Business API الخاص بي؟",
+            "a": "نعم، تحتاج إلى إحضار Meta WhatsApp Business API الخاص بك. هذا يضمن لك السيطرة الكاملة على بياناتك ورسائلك."
           },
           {
-            "q": "Is there a setup fee?",
-            "a": "No setup fees! You can start using our platform immediately after connecting your API."
+            "q": "هل هناك رسوم إعداد؟",
+            "a": "لا توجد رسوم إعداد! يمكنك البدء في استخدام منصتنا فورًا بعد توصيل API الخاص بك."
           },
           {
-            "q": "Can I change plans anytime?",
-            "a": "Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately."
+            "q": "هل يمكنني تغيير الخطط في أي وقت؟",
+            "a": "بالتأكيد! يمكنك الترقية أو التخفيض في أي وقت. تسري التغييرات على الفور."
           },
           {
-            "q": "What happens if I exceed my contact limit?",
-            "a": "We'll notify you before you reach your limit. You can upgrade your plan or purchase additional contacts."
+            "q": "ماذا يحدث إذا تجاوزت حد جهات الاتصال الخاصة بي؟",
+            "a": "سنخطرك قبل أن تصل إلى الحد الخاص بك. يمكنك ترقية خطتك أو شراء جهات اتصال إضافية."
           }
         ]
       },
       "enterprise": {
-        "title": "Need a Custom Solution?",
-        "description": "Contact our enterprise team for custom pricing, dedicated support, and tailored features",
-        "button": "Contact Sales"
+        "title": "هل تحتاج إلى حل مخصص؟",
+        "description": "اتصل بفريق المؤسسات لدينا للحصول على تسعير مخصص ودعم مخصص وميزات مصممة خصيصًا",
+        "button": "اتصل بالمبيعات"
       }
     },
     "footerSec": {
       "newsletter": {
-        "heading": "Stay Updated with WhatsApp Marketing Tips",
-        "description": "Get the latest strategies, case studies, and platform updates delivered to your inbox.",
-        "emailPlaceholder": "Enter your email address",
-        "subscribeButton": "Subscribe"
+        "heading": "ابق على اطلاع بنصائح تسويق WhatsApp",
+        "description": "احصل على أحدث الاستراتيجيات ودراسات الحالة وتحديثات المنصة في صندوق الوارد الخاص بك.",
+        "emailPlaceholder": "أدخل عنوان بريدك الإلكتروني",
+        "subscribeButton": "اشترك"
       },
       "brandSection": {
         "brandNames": [
           "",
           ""
         ],
-        "description": "Taysir One المنصة رقم 1 لإدارة المبيعات والعملاء المحتملين في الجزائر."
+        "description": "منصة تسويق WhatsApp الأكثر قوة. وسّع نطاق عملك من خلال الحملات الآلية والتحليلات المتقدمة وتكامل API السلس."
       },
       "socialLinks": {
-        "twitter": "Twitter",
-        "linkedin": "LinkedIn",
-        "github": "GitHub",
-        "mail": "Mail"
+        "twitter": "تويتر",
+        "linkedin": "لينكد إن",
+        "github": "جيت هاب",
+        "mail": "البريد"
       },
       "links": {
         "product": [
-          "Features",
-          "How it Works",
-          "Use Cases",
-          "Pricing",
-          "API Documentation"
+          "الميزات",
+          "كيف يعمل",
+          "حالات الاستخدام",
+          "التسعير",
+          "وثائق API"
         ],
         "company": [
-          "About Us",
-          "Contact",
-          "Careers",
-          "Press Kit",
-          "Integrations"
+          "من نحن",
+          "اتصل بنا",
+          "الوظائف",
+          "مجموعة الصحافة",
+          "التكاملات"
         ],
         "support": [
-          "Help Center",
-          "Community",
-          "Status",
-          "Security"
+          "مركز المساعدة",
+          "المجتمع",
+          "الحالة",
+          "الأمان"
         ],
         "resources": [
-          "Templates",
-          "Case Studies",
-          "WhatsApp Guide",
-          "Best Practices",
-          "ROI Calculator"
+          "القوالب",
+          "دراسات الحالة",
+          "دليل WhatsApp",
+          "أفضل الممارسات",
+          "حاسبة العائد على الاستثمار"
         ],
         "legal": [
-          "Privacy Policy",
-          "Terms of Service",
-          "Cookie Policy",
-          "GDPR"
+          "سياسة الخصوصية",
+          "شروط الخدمة",
+          "سياسة ملفات تعريف الارتباط",
+          "اللائحة العامة لحماية البيانات"
         ]
       },
       "bottomBar": {
-        "copyrightText": "© 2025 {{appName}}. All rights reserved.",
-        "termsLink": "Terms of Service",
-        "privacyLink": "Privacy Policy",
-        "cookieLink": "Cookie Policy"
+        "copyrightText": "{{appName}}© 2025 . جميع الحقوق محفوظة.",
+        "termsLink": "شروط الخدمة",
+        "privacyLink": "سياسة الخصوصية",
+        "cookieLink": "سياسة ملفات تعريف الارتباط"
       }
     }
   },
@@ -2739,232 +2737,185 @@
       "titleHighlight": "أفضل الممارسات",
       "subtitle": "استراتيجيات وتقنيات مثبتة لتعظيم نجاح تسويقك على واتساب. تعلّم من خبراء الصناعة والحملات الأعلى أداءً."
     },
-   "Landing": {
-    "header": {
-      "Navlinks": ["المميزات", "كيف يعمل؟", "الأسعار", "شهادات"],
-      "Settings": "الإعدادات",
-      "Account": "الحساب",
-      "logout": "تسجيل الخروج",
-      "Login": "تسجيل الدخول",
-      "getstart": "ابدأ مجاناً",
-      "dash": "لوحة التحكم",
-      "redystart": "جاهز للبدء؟",
-      "join": "انضم إلى {{appName}} اليوم",
-      "start": "ابدأ الآن",
-      "Learn": "تعلم المزيد"
-    },
-    "hero": {
-      "badge": "✦ للتجار والمحترفين ومقدمي الخدمات في الجزائر",
-      "title": "حوّل استفساراتك إلى",
-      "subtitle": "Taysir One تجمع رسائل زبائنك من فيسبوك وواتساب في مكان واحد، وبوت الـ AI يتكفل بالرد التقني وجمع أرقام هواتف المهتمين الجادين بدلاً منك.",
-      "cta_primary": "ابدأ مجاناً الآن",
-      "cta_secondary": "كيف يعمل؟",
-      "stats": [
-        "تاجر ومحترف",
-        "Lead شهرياً",
-        "دقة البيانات",
-        "ولاية مغطاة"
-      ]
-    },
-    "features": {
-      "badge": "✦ المميزات",
-      "title": "وداعاً للرد على نفس",
-      "title_highlight": "الأسئلة",
-      "subtitle": "نظام ذكي يفلتر الزبائن الجادين ويجمع بياناتهم آلياً",
-      "items": [
+    "categories": [
+      {
+        "id": "messaging",
+        "name": "الرسائل"
+      },
+      {
+        "id": "automation",
+        "name": "الأتمتة"
+      },
+      {
+        "id": "engagement",
+        "name": "التفاعل"
+      },
+      {
+        "id": "compliance",
+        "name": "الامتثال"
+      },
+      {
+        "id": "timing",
+        "name": "التوقيت"
+      },
+      {
+        "id": "optimization",
+        "name": "التحسين"
+      }
+    ],
+    "implementationTips": "نصائح التنفيذ:",
+    "expectedImpact": "التأثير المتوقع",
+    "expectedImpactDesc": "عادةً ما يؤدي تطبيق هذه الممارسة إلى تحسينات قابلة للقياس في أداء تسويقك على واتساب.",
+    "quickTips": {
+      "heading": "نصائح النجاح السريعة",
+      "subtitle": "تذكيرات أساسية لنجاح تسويق واتساب",
+      "tips": [
         {
-          "title": "وكيل مبيعات AI",
-          "desc": "بوت ذكي يرد بتفاصيل عروضك، منتجاتك أو خدماتك بدقة 24/7 دون تدخلك."
+          "title": "الجودة أهم من الكمية",
+          "tip": "ركز على المشتركين المتفاعلين بدلاً من القوائم الكبيرة"
         },
         {
-          "title": "جمع أرقام الهواتف",
-          "desc": "البوت يطلب رقم الزبون المهتم ويحفظه في قائمة Leads منظمة وجاهزة للاتصال."
+          "title": "التوقيت مهم",
+          "tip": "أرسل الرسائل عندما يكون جمهورك أكثر نشاطًا"
         },
         {
-          "title": "صندوق رسائل موحد",
-          "desc": "اجمع رسائل واتساب، فيسبوك وإنستجرام في شاشة واحدة احترافية."
+          "title": "كن شخصيًا",
+          "tip": "استخدم بيانات العميل لإنشاء تجارب ذات صلة"
         },
         {
-          "title": "فلترة ذكية",
-          "desc": "AI يعرف الفرق بين الزبون الجاد وبين الدردشة العامة ويتجاهل غير المهمين آلياً."
+          "title": "التزم بالامتثال",
+          "tip": "اتبع سياسات واتساب واللوائح المحلية دائمًا"
         },
         {
-          "title": "إحصائيات المبيعات",
-          "desc": "اعرف أي منتجاتك تجذب أكبر عدد من الزبائن وأي المنصات تحقق لك أفضل النتائج."
+          "title": "شجع التفاعل",
+          "tip": "اجعل المحادثات ثنائية الاتجاه لتحسين التفاعل"
         },
         {
-          "title": "إدارة المهتمين",
-          "desc": "البوت ينظم قائمة الزبائن حسب درجة اهتمامهم وجاهزيتهم للشراء."
+          "title": "اختبر وحسن",
+          "tip": "طوّر باستمرار بناءً على بيانات الأداء"
         }
       ]
     },
-    "how": {
-      "badge": "✦ كيف يعمل",
-      "title_before": "من",
-      "title_quote": "'شحال السعر'",
-      "title_middle": "إلى",
-      "title_highlight": "زبون جاد",
-      "steps": [
-        {
-          "title": "أضف عروضك",
-          "desc": "ارفع المواصفات، السعر والتفاصيل في لوحة تحكمك مرة واحدة."
-        },
-        {
-          "title": "البوت يتولى الرد",
-          "desc": "عندما يسأل زبون، يقوم البوت بإعطائه كل التفاصيل الفنية بشكل مهني."
-        },
-        {
-          "title": "جمع البيانات",
-          "desc": "يسأل البوت الزبون عن رقمه للمتابعة وتأكيد الطلب ويحفظه لك."
-        },
-        {
-          "title": "أغلق الصفقة",
-          "desc": "ادخل للوحة التحكم وستجد قائمة أرقام الهواتف جاهزة للاتصال."
-        }
-      ]
-    },
-    "platforms": {
-      "badge": "✦ المنصات المدعومة",
-      "title": "خدمة زبائنك عبر المنصات",
-      "items": [
-        {
-          "name": "واتساب بزنس",
-          "desc": "الرد الآلي الأكثر طلباً في الجزائر",
-          "feature": "ربط مباشر عبر Meta API"
-        },
-        {
-          "name": "فيسبوك Messenger",
-          "desc": "رد ذكي على رسائل صفحتك",
-          "feature": "تحويل الزوار إلى مواعيد"
-        },
-        {
-          "name": "إنستجرام DM",
-          "desc": "رد فوري ومهني على رسائل DM",
-          "feature": "مثالي لكل الأنشطة التجارية"
-        }
-      ]
-    },
-    "pricing": {
-      "badge": "✦ الأسعار",
-      "title": "باقة احترافية،",
-      "title_highlight": "بنصف سعر موظف",
-      "plans": [
-        {
-          "name": "تجريبية",
-          "price": "مجاناً",
-          "subtitle": "لمعاينة خصائص المنصة",
-          "cta": "جرب مجاناً",
-          "features": ["إعلانات محدودة (3)", "رد آلي أساسي", "إدارة الرسائل"],
-          "locked": ["AI ذكي متقدم", "تصدير قائمة الهواتف"]
-        },
-        {
-          "name": "Pro Agency",
-          "price": "5,000",
-          "period": "دج / شهر",
-          "subtitle": "الباقة المتكاملة للنشاطات الجادة",
-          "cta": "اشترك الآن",
-          "badge": "⭐ الأكثر طلباً",
-          "features": [
-            "إعلانات غير محدودة",
-            "بوت AI متطور",
-            "جمع أرقام هواتف غير محدود",
-            "واتساب + فيسبوك + إنستجرام",
-            "إحصائيات دقيقة للإعلانات",
-            "دعم فني مخصص (VIP)"
-          ]
-        }
-      ],
-      "footer": "💳 طرق الدفع: بريدي موب (BaridiMob) أو الحساب البريدي الجاري (CCP)"
-    },
-    "testimonials": {
-      "badge": "✦ قصص نجاح",
-      "title": "وكالات تثق ",
-      "title_highlight": "بنا",
-      "items": [
-        {
-          "text": "المنصة وفرت عليّ عناء الرد على مئات الأشخاص الذين يسألون فقط بدافع الفضول. البوت يعطي التفاصيل ولا يعطيني إلا رقم الزبون الجاد.",
-          "name": "منير .ق",
-          "role": "وكالة عقارية · القبة"
-        },
-        {
-          "text": "في معرض السيارات، الرسائل لا تتوقف. Taysir One يجمع لنا كل الطلبات في مكان واحد، ونعرف بالضبط من هو الزبون الجاد.",
-          "name": "رضوان .م",
-          "role": "معرض سيارات · سطيف"
-        },
-        {
-          "text": "سهولة الاستخدام مذهلة. ربطنا الصفحة في 5 دقائق والبوت بدأ الرد فوراً. أنصح به لأي صاحب نشاط يريد تنظيم عمله.",
-          "name": "حميد .س",
-          "role": "مروّج عقاري · بجاية"
-        }
-      ]
-    },
-    "faqs": {
-      "badge": "✦ الأسئلة الشائعة",
-      "title": "أسئلة وأجوبة",
-      "items": [
-        {
-          "q": "هل يمكنني البدء مجاناً دون بطاقة بنكية؟",
-          "a": "نعم! الباقة التجريبية مجانية تماماً وتتيح لك تجربة خصائص المنصة قبل الاشتراك في الباقة الاحترافية."
-        },
-        {
-          "q": "ما هي طرق الدفع المتاحة؟",
-          "a": "ندعم بريدي موب (BaridiMob) والحساب البريدي الجاري (CCP)، وهي الطرق الأنسب للجزائريين."
-        },
-        {
-          "q": "كيف يتم تفعيل اشتراكي بعد الدفع؟",
-          "a": "بعد إرسال التحويل، يُرسل لك وصل تأكيد تلقائياً ويتم مراجعة اشتراكك من قِبل فريقنا ثم يُفعَّل خلال ساعات."
-        },
-        {
-          "q": "هل البوت يرد بالدارجة الجزائرية؟",
-          "a": "نعم، يمكنك برمجة البوت بأي لغة تريدها: العربية الفصحى، الدارجة الجزائرية، الفرنسية أو أي لغة أخرى."
-        },
-        {
-          "q": "هل يعمل مع واتساب العادي؟",
-          "a": "نعمل مع واتساب بزنس API. نوفر لك المساعدة الكاملة في الربط والإعداد عبر فريق الدعم."
-        }
+    "warning": {
+      "heading": "تذكير هام بالامتثال",
+      "description": "تأكد دائمًا من الحصول على موافقة صريحة قبل إرسال الرسائل للعملاء على واتساب. قد يؤدي انتهاك سياسات واتساب التجارية إلى قيود أو حظر على الحساب.",
+      "points": [
+        "لا تشتري قوائم الاتصال أبدًا",
+        "وفر دائمًا خيارات الانسحاب",
+        "احترم فترة الـ 24 ساعة للرسائل",
+        "استخدم قوالب رسائل معتمدة للمحتوى الترويجي"
       ]
     },
     "cta": {
-      "badge": "✦ ابدأ اليوم",
-      "title": "جاهز لتحويل الاستفسارات",
-      "title_highlight": " إلى مبيعات؟",
-      "subtitle": "سجّل مجاناً وابدأ في دقائق. لا بطاقة بنكية مطلوبة.",
-      "button": "ابدأ مجاناً"
+      "heading": "هل أنت مستعد لتطبيق هذه الممارسات الأفضل؟",
+      "subtitle": "ابدأ تطبيق هذه الاستراتيجيات المثبتة مع {{appName}} اليوم",
+      "button": "ابدأ الفترة التجريبية المجانية"
     },
-    "footerSec": {
-      "links": {
-        "product": ["المميزات", "كيف يعمل؟", "الأسعار"],
-        "company": ["عن الشركة", "اتصل بنا", "الوظائف"],
-        "support": ["مركز المساعدة", "الأسئلة الشائعة", "الدعم المباشر", "الأمان"],
-        "resources": ["قوالب", "دراسات حالة", "دليل واتساب", "أفضل الممارسات", "حساب العائد"],
-        "legal": ["سياسة الخصوصية", "شروط الخدمة", "سياسة الكوكيز", "GDPR"]
-      },
-      "brandSection": {
-        "description": "Taysir One المنصة رقم 1 لإدارة المبيعات والعملاء المحتملين في الجزائر."
-      },
-      "socialLinks": {
-        "twitter": "Twitter",
-        "linkedin": "LinkedIn",
-        "github": "GitHub",
-        "mail": "Mail"
-      },
-      "bottomBar": {
-        "copyrightText": "© 2025 {{appName}}. جميع الحقوق محفوظة.",
-        "termsLink": "شروط الخدمة",
-        "privacyLink": "سياسة الخصوصية",
-        "cookieLink": "سياسة الكوكيز"
-      }
-    }
-  },
-  "agency_nav": {
-    "dashboard": "لوحة التحكم",
-    "messages": "الرسائل (12)",
-    "real_estate": "العقارات",
-    "cars": "السيارات",
-    "ai_bot": "بوت AI",
-    "subscription": "اشتراك"
-  }
-}
+    "practices": {
+      "messaging": [
+        {
+          "title": "اجعل الرسائل موجزة وواضحة",
+          "description": "يفضل مستخدمو واتساب الرسائل القصيرة والمباشرة. حاول أن تكون الرسالة أقل من 160 حرفًا متى أمكن.",
+          "tips": [
+            "استخدم النقاط للعديد من العناصر",
+            "اشمل دعوة واضحة لاتخاذ إجراء",
+            "تجنب المصطلحات واللغة المعقدة",
+            "استخدم الرموز التعبيرية باعتدال وفعالية"
+          ],
+          "impact": "يزيد معدل القراءة بنسبة 40%"
+        },
+        {
+          "title": "خصص رسائلك",
+          "description": "استخدم بيانات العملاء لإنشاء تجارب مخصصة تتجاوب مع جمهورك.",
+          "tips": [
+            "اشمل أسماء العملاء في التحيات",
+            "أشر إلى العمليات الشرائية أو التفاعلات السابقة",
+            "قسم الجمهور لتوجيه رسائل مركزة",
+            "استخدم محتوى ديناميكي بناءً على سلوك المستخدم"
+          ],
+          "impact": "يحسن التفاعل بنسبة 60%"
+        },
+        {
+          "title": "استخدم الوسائط الغنية بفعالية",
+          "description": "يمكن للصورة والفيديو والوثائق تعزيز تأثير رسالتك بشكل كبير.",
+          "tips": [
+            "قم بتحسين الصور للمشاهدة على الجوال",
+            "اجعل الفيديوهات أقل من 30 ثانية",
+            "استخدم صور عالية الجودة",
+            "اشمل ترجمات لتسهيل الوصول"
+          ],
+          "impact": "يزيد التحويلات بنسبة 35%"
+        }
+      ],
+      "automation": [
+        {
+          "title": "إعداد تسلسلات الترحيب",
+          "description": "أنشئ رسائل ترحيبية آلية للمشتركين الجدد لتحديد التوقعات.",
+          "tips": [
+            "أرسل رسالة الترحيب خلال 5 دقائق",
+            "اشرح ما يمكن أن يتوقعه المشتركون",
+            "وفر تعليمات لخيار الانسحاب",
+            "اشمل موارد وروابط مفيدة"
+          ],
+          "impact": "يقلل معدل إلغاء الاشتراك بنسبة 25%"
+        },
+        {
+          "title": "تطبيق المحفزات الذكية",
+          "description": "استخدم المحفزات السلوكية لإرسال رسائل ذات صلة في الوقت المناسب.",
+          "tips": [
+            "تذكيرات التخلي عن السلة",
+            "متابعات ما بعد الشراء",
+            "رسائل أعياد الميلاد والذكرى السنوية",
+            "حملات إعادة التفاعل للمستخدمين غير النشطين"
+          ],
+          "impact": "يزيد الإيرادات بنسبة 45%"
+        },
+        {
+          "title": "إنشاء حملات التنقيط",
+          "description": "قم بتنمية العملاء المحتملين عبر سلسلة من الرسائل الآلية مع مرور الوقت.",
+          "tips": [
+            "قم بفصل الرسائل بفاصل 2-3 أيام",
+            "وفر قيمة في كل رسالة",
+            "اشمل إثباتات اجتماعية وشهادات",
+            "اختم بدعوة واضحة لاتخاذ إجراء"
+          ],
+          "impact": "يحسن تحويل العملاء المحتملين بنسبة 50%"
+        }
+      ],
+      "engagement": [
+        {
+          "title": "شجع المحادثات ثنائية الاتجاه",
+          "description": "اجعل وجودك على واتساب تفاعليًا لبناء علاقات أقوى.",
+          "tips": [
+            "اطرح أسئلة في رسائلك",
+            "استجب بسرعة لاستفسارات العملاء",
+            "استخدم استطلاعات الرأي والاستبيانات",
+            "شارك المحتوى الذي ينشئه المستخدمون"
+          ],
+          "impact": "يزيد ولاء العملاء بنسبة 30%"
+        },
+        {
+          "title": "قدم دعمًا ممتازًا للعملاء",
+          "description": "استخدم واتساب كقناة خدمة عملاء لحل المشكلات بسرعة.",
+          "tips": [
+            "قم بإعداد ردود آلية للأسئلة الشائعة",
+            "درب فريق الدعم على آداب واتساب",
+            "استخدم الردود السريعة لتسريع الاستجابة",
+            "تصعيد المشكلات المعقدة للهاتف أو البريد الإلكتروني"
+          ],
+          "impact": "يحسن رضا العملاء بنسبة 55%"
+        },
+        {
+          "title": "شارك محتوى ذا قيمة",
+          "description": "قدم محتوى يثقف، ويرفه، أو يحل مشاكل لجمهورك.",
+          "tips": [
+            "شارك رؤى الصناعة والنصائح",
+            "وفر عروضًا حصرية ومعاينات",
+            "أرسل دروسًا وأدلة مفيدة",
+            "قم بتنظيم الأخبار والتحديثات ذات الصلة"
+          ],
+          "impact": "يزيد الثقة بالعلامة التجارية بنسبة 40%"
+        }
       ],
       "compliance": [
         {
@@ -3394,212 +3345,5 @@
       "perMinuteDesc": "الحد الأقصى لعدد الطلبات المسموح بها في الدقيقة.",
       "exceeded": "استجابة عند تجاوز حد المعدل (HTTP 429)"
     }
-  },
-  "Landing": {
-    "header": {
-      "Navlinks": ["المميزات", "كيف يعمل؟", "الأسعار", "شهادات"],
-      "Settings": "الإعدادات",
-      "Account": "الحساب",
-      "logout": "تسجيل الخروج",
-      "Login": "تسجيل الدخول",
-      "getstart": "ابدأ مجاناً",
-      "dash": "لوحة التحكم",
-      "redystart": "جاهز للبدء؟",
-      "join": "انضم إلى {{appName}} اليوم",
-      "start": "ابدأ الآن",
-      "Learn": "تعلم المزيد"
-    },
-    "hero": {
-      "badge": "✦ للتجار والمحترفين ومقدمي الخدمات في الجزائر",
-      "title": "حوّل استفساراتك إلى",
-      "subtitle": "Taysir One تجمع رسائل زبائنك من فيسبوك وواتساب في مكان واحد، وبوت الـ AI يتكفل بالرد التقني وجمع أرقام هواتف المهتمين الجادين بدلاً منك.",
-      "cta_primary": "ابدأ مجاناً الآن",
-      "cta_secondary": "كيف يعمل؟",
-      "stats": [
-        "تاجر ومحترف",
-        "Lead شهرياً",
-        "دقة البيانات",
-        "ولاية مغطاة"
-      ]
-    },
-    "features": {
-      "badge": "✦ المميزات",
-      "title": "وداعاً للرد على نفس",
-      "title_highlight": "الأسئلة",
-      "subtitle": "نظام ذكي يفلتر الزبائن الجادين ويجمع بياناتهم آلياً",
-      "items": [
-        {
-          "title": "وكيل مبيعات AI",
-          "desc": "بوت ذكي يرد بتفاصيل عروضك، منتجاتك أو خدماتك بدقة 24/7 دون تدخلك."
-        },
-        {
-          "title": "جمع أرقام الهواتف",
-          "desc": "البوت يطلب رقم الزبون المهتم ويحفظه في قائمة Leads منظمة وجاهزة للاتصال."
-        },
-        {
-          "title": "صندوق رسائل موحد",
-          "desc": "اجمع رسائل واتساب، فيسبوك وإنستجرام في شاشة واحدة احترافية."
-        },
-        {
-          "title": "فلترة ذكية",
-          "desc": "AI يعرف الفرق بين الزبون الجاد وبين الدردشة العامة ويتجاهل غير المهمين آلياً."
-        },
-        {
-          "title": "إحصائيات المبيعات",
-          "desc": "اعرف أي منتجاتك تجذب أكبر عدد من الزبائن وأي المنصات تحقق لك أفضل النتائج."
-        },
-        {
-          "title": "إدارة المهتمين",
-          "desc": "البوت ينظم قائمة الزبائن حسب درجة اهتمامهم وجاهزيتهم للشراء."
-        }
-      ]
-    },
-    "how": {
-      "badge": "✦ كيف يعمل",
-      "title_before": "من",
-      "title_quote": "'شحال السعر'",
-      "title_middle": "إلى",
-      "title_highlight": "زبون جاد",
-      "steps": [
-        {
-          "title": "أضف عروضك",
-          "desc": "ارفع المواصفات، السعر والتفاصيل في لوحة تحكمك مرة واحدة."
-        },
-        {
-          "title": "البوت يتولى الرد",
-          "desc": "عندما يسأل زبون، يقوم البوت بإعطائه كل التفاصيل الفنية بشكل مهني."
-        },
-        {
-          "title": "جمع البيانات",
-          "desc": "يسأل البوت الزبون عن رقمه للمتابعة وتأكيد الطلب ويحفظه لك."
-        },
-        {
-          "title": "أغلق الصفقة",
-          "desc": "ادخل للوحة التحكم وستجد قائمة أرقام الهواتف جاهزة للاتصال."
-        }
-      ]
-    },
-    "platforms": {
-      "badge": "✦ المنصات المدعومة",
-      "title": "خدمة زبائنك عبر المنصات",
-      "items": [
-        {
-          "name": "واتساب بزنس",
-          "desc": "الرد الآلي الأكثر طلباً في الجزائر",
-          "feature": "ربط مباشر عبر Meta API"
-        },
-        {
-          "name": "فيسبوك Messenger",
-          "desc": "رد ذكي على رسائل صفحتك",
-          "feature": "تحويل الزوار إلى مواعيد"
-        },
-        {
-          "name": "إنستجرام DM",
-          "desc": "رد فوري ومهني على رسائل DM",
-          "feature": "مثالي لكل الأنشطة التجارية"
-        }
-      ]
-    },
-    "pricing": {
-      "badge": "✦ الأسعار",
-      "title": "باقة احترافية،",
-      "title_highlight": "بنصف سعر موظف",
-      "plans": [
-        {
-          "name": "تجريبية",
-          "price": "مجاناً",
-          "subtitle": "لمعاينة خصائص المنصة",
-          "cta": "جرب مجاناً",
-          "features": ["إعلانات محدودة (3)", "رد آلي أساسي", "إدارة الرسائل"],
-          "locked": ["AI ذكي متقدم", "تصدير قائمة الهواتف"]
-        },
-        {
-          "name": "Pro Agency",
-          "price": "5,000",
-          "period": "دج / شهر",
-          "subtitle": "الباقة المتكاملة للنشاطات الجادة",
-          "cta": "اشترك الآن",
-          "badge": "⭐ الأكثر طلباً",
-          "features": [
-            "إعلانات غير محدودة",
-            "بوت AI متطور",
-            "جمع أرقام هواتف غير محدود",
-            "واتساب + فيسبوك + إنستجرام",
-            "إحصائيات دقيقة للإعلانات",
-            "دعم فني مخصص (VIP)"
-          ]
-        }
-      ],
-      "footer": "💳 طرق الدفع: بريدي موب (BaridiMob) أو الحساب البريدي الجاري (CCP)"
-    },
-    "testimonials": {
-      "badge": "✦ قصص نجاح",
-      "title": "وكالات تثق ",
-      "title_highlight": "بنا",
-      "items": [
-        {
-          "text": "المنصة وفرت عليّ عناء الرد على مئات الأشخاص الذين يسألون فقط بدافع الفضول. البوت يعطي التفاصيل ولا يعطيني إلا رقم الزبون الجاد.",
-          "name": "منير .ق",
-          "role": "وكالة عقارية · القبة"
-        },
-        {
-          "text": "في معرض السيارات، الرسائل لا تتوقف. Taysir One يجمع لنا كل الطلبات في مكان واحد، ونعرف بالضبط من هو الزبون الجاد.",
-          "name": "رضوان .م",
-          "role": "معرض سيارات · سطيف"
-        },
-        {
-          "text": "سهولة الاستخدام مذهلة. ربطنا الصفحة في 5 دقائق والبوت بدأ الرد فوراً. أنصح به لأي صاحب نشاط يريد تنظيم عمله.",
-          "name": "حميد .س",
-          "role": "مروّج عقاري · بجاية"
-        }
-      ]
-    },
-    "faqs": {
-      "badge": "✦ الأسئلة الشائعة",
-      "title": "أسئلة وأجوبة",
-      "items": [
-        {
-          "q": "هل يمكنني البدء مجاناً دون بطاقة بنكية؟",
-          "a": "نعم! الباقة التجريبية مجانية تماماً وتتيح لك تجربة خصائص المنصة قبل الاشتراك في الباقة الاحترافية."
-        },
-        {
-          "q": "ما هي طرق الدفع المتاحة؟",
-          "a": "ندعم بريدي موب (BaridiMob) والحساب البريدي الجاري (CCP)، وهي الطرق الأنسب للجزائريين."
-        },
-        {
-          "q": "كيف يتم تفعيل اشتراكي بعد الدفع؟",
-          "a": "بعد إرسال التحويل، يُرسل لك وصل تأكيد تلقائياً ويتم مراجعة اشتراكك من قِبل فريقنا ثم يُفعَّل خلال ساعات."
-        },
-        {
-          "q": "هل البوت يرد بالدارجة الجزائرية؟",
-          "a": "نعم، يمكنك برمجة البوت بأي لغة تريدها: العربية الفصحى، الدارجة الجزائرية، الفرنسية أو أي لغة أخرى."
-        },
-        {
-          "q": "هل يعمل مع واتساب العادي؟",
-          "a": "نعمل مع واتساب بزنس API. نوفر لك المساعدة الكاملة في الربط والإعداد عبر فريق الدعم."
-        }
-      ]
-    },
-    "cta": {
-      "badge": "✦ ابدأ اليوم",
-      "title": "جاهز لتحويل الاستفسارات",
-      "title_highlight": " إلى مبيعات؟",
-      "subtitle": "سجّل مجاناً وابدأ في دقائق. لا بطاقة بنكية مطلوبة.",
-      "button": "ابدأ مجاناً"
-    },
-    "footer": {
-      "privacy": "سياسة الخصوصية",
-      "terms": "الشروط والأحكام",
-      "contact": "تواصل معنا",
-      "copyright": "© 2025 Taysir One. جميع الحقوق محفوظة."
-    }
-  },
-  "agency_nav": {
-    "dashboard": "لوحة التحكم",
-    "messages": "الرسائل (12)",
-    "real_estate": "العقارات",
-    "cars": "السيارات",
-    "ai_bot": "بوت AI",
-    "subscription": "اشتراك"
   }
 }

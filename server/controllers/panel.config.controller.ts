@@ -264,11 +264,11 @@ export const getBrandSettings = async (_req: Request, res: Response) => {
     if (!config) {
       // Return default settings if no config exists
       return res.json({
-        title: "TaysirOne",
-        tagline: "Your Ultimate Marketing Platform",
-        logo: "/img/logo.png",
-        logo2: "/img/logo.png",
-        favicon: "/img/logo.png",
+        title: "Your App Name",
+        tagline: "Building amazing experiences",
+        logo: "",
+        logo2:"",
+        favicon: "",
         supportEmail: "",
         updatedAt: new Date().toISOString(),
       });
@@ -276,35 +276,26 @@ export const getBrandSettings = async (_req: Request, res: Response) => {
 
     // Transform panel config to brand settings format
     const brandSettings = {
-      title: config.name || "TaysirOne",
+      title: config.name || "Your App Name",
       tagline: config.tagline || "",
       currency: config.currency || "",
       country: config.country || "",
       supportEmail: config.supportEmail || "",
       logo: config.logo?.startsWith("https")
         ? config.logo
-        : (config.logo ? `/uploads/${config.logo}` : "/img/logo.png"),
+        : `/uploads/${config.logo}`,
       logo2: config.logo2?.startsWith("https")
         ? config.logo2
-        : (config.logo2 ? `/uploads/${config.logo2}` : "/img/logo.png"),  
+        : `/uploads/${config.logo2}`,  
       favicon: config.favicon?.startsWith("https")
         ? config.favicon
-        : (config.favicon ? `/uploads/${config.favicon}` : "/img/logo.png"),
+        : `/uploads/${config.favicon}`,
       updatedAt: config.updatedAt?.toISOString() || new Date().toISOString(),
     };
 
     res.json(brandSettings);
   } catch (err: any) {
-    // Graceful fallback for database timeout / error
-    res.json({
-        title: "TaysirOne",
-        tagline: "Your Ultimate Marketing Platform",
-        logo: "/img/logo.png",
-        logo2: "/img/logo.png",
-        favicon: "/img/logo.png",
-        supportEmail: "",
-        updatedAt: new Date().toISOString(),
-    });
+    res.status(500).json({ error: err.message });
   }
 };
 

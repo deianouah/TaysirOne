@@ -198,6 +198,7 @@ io.on("connection", (socket) => {
         await storage.updateConversation(conversationId, {
           status: "assigned",
           assignedTo: agentId,
+          assignedToName: agentName,
         });
       } catch (error) {
         console.error("Error updating conversation:", error);
@@ -238,6 +239,7 @@ io.on("connection", (socket) => {
         await storage.updateConversation(conversationId, {
           status: "assigned",
           assignedTo: agentId,
+          assignedToName: agentName,
         });
       } catch (error) {
         console.error("Error updating conversation:", error);

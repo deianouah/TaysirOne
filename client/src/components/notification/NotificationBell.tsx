@@ -246,9 +246,10 @@ export default function NotificationBell() {
       if (!document.hasFocus() && typeof Notification !== "undefined" && Notification.permission === "granted") {
         const notifTitle = data?.title || "New Notification";
         const notifMessage = data?.message || "You have a new notification";
+        const iconPath = "/uploads/logo.png?v=17";
         new Notification(notifTitle, {
           body: notifMessage,
-          icon: "/logo1924.jpg",
+          icon: iconPath,
         });
       }
     },

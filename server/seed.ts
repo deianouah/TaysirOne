@@ -123,7 +123,7 @@ async function seed() {
     const superadminUser = await createUserIfNotExists({
       username: "superadmin",
       password: "Superadmin@123",
-      email: "superadmin@whatsway.com",
+      email: "admin@taysir.one",
       firstName: "Super",
       lastName: "Admin",
       role: "superadmin",
@@ -135,7 +135,7 @@ async function seed() {
     await createUserIfNotExists({
       username: "demoadmin",
       password: "Admin@123",
-      email: "demoadmin@whatsway.com",
+      email: "demo@taysir.one",
       firstName: "Demo",
       lastName: "Admin",
       role: "superadmin",
@@ -150,14 +150,8 @@ async function seed() {
     console.log("\n━━━ [2/6] Platform Languages ━━━");
 
     const languageConfigs = [
-      { code: "en", name: "English", nativeName: "English", icon: "🇬🇧", direction: "ltr", isDefault: true, sortOrder: 0 },
-      { code: "es", name: "Spanish", nativeName: "Español", icon: "🇪🇸", direction: "ltr", isDefault: false, sortOrder: 1 },
-      { code: "fr", name: "French", nativeName: "Français", icon: "🇫🇷", direction: "ltr", isDefault: false, sortOrder: 2 },
-      { code: "de", name: "German", nativeName: "Deutsch", icon: "🇩🇪", direction: "ltr", isDefault: false, sortOrder: 3 },
-      { code: "pt", name: "Portuguese", nativeName: "Português", icon: "🇧🇷", direction: "ltr", isDefault: false, sortOrder: 4 },
-      { code: "ar", name: "Arabic", nativeName: "العربية", icon: "🇸🇦", direction: "rtl", isDefault: false, sortOrder: 5 },
-      { code: "hi", name: "Hindi", nativeName: "हिन्दी", icon: "🇮🇳", direction: "ltr", isDefault: false, sortOrder: 6 },
-      { code: "zh", name: "Chinese", nativeName: "中文", icon: "🇨🇳", direction: "ltr", isDefault: false, sortOrder: 7 },
+      { code: "fr", name: "French", nativeName: "Français", icon: "🇫🇷", direction: "ltr", isDefault: true, sortOrder: 0 },
+      { code: "en", name: "English", nativeName: "English", icon: "🇬🇧", direction: "ltr", isDefault: false, sortOrder: 1 },
     ];
 
     for (const lang of languageConfigs) {
@@ -216,18 +210,18 @@ async function seed() {
       console.log("  Panel config already exists");
     } else {
       await db.insert(panelConfig).values({
-        name: "TaysirOne",
-        tagline: "Your Ultimate Marketing Platform",
-        description: "A comprehensive SaaS platform for WhatsApp marketing, customer engagement, and business growth.",
-        defaultLanguage: "en",
-        supportedLanguages: ["en", "es", "fr", "de", "pt", "ar", "hi", "zh"],
-        currency: "USD",
-        country: "US",
+        name: "Taysir One",
+        tagline: "Plateforme WhatsApp Marketing #1 en Algérie",
+        description: "Taysir One centralise vos messages WhatsApp Business. Bot IA, campagnes, inbox unifié et plus. La solution complète pour les entreprises algériennes.",
+        defaultLanguage: "fr",
+        supportedLanguages: ["fr", "en"],
+        currency: "DZD",
+        country: "DZ",
         embeddedSignupEnabled: true,
-        companyName: "Your Company",
-        supportEmail: "support@example.com",
+        companyName: "Taysir One",
+        supportEmail: "support@taysir.one",
       });
-      console.log("  ✅ Default panel config created");
+      console.log("  ✅ Default panel config created (Taysir One — DZ)");
     }
 
     // ═══════════════════════════════════════════
@@ -413,11 +407,11 @@ async function seed() {
     } else {
       const defaultPlans = [
         {
-          name: "Free",
-          description: "Get started with WhatsApp marketing. Perfect for small businesses and testing.",
+          name: "Starter",
+          description: "Découvrez la puissance du bot. Idéal pour tester la plateforme.",
           icon: "Sparkles",
           popular: false,
-          badge: "Free Forever",
+          badge: "Gratuit",
           color: "#6b7280",
           buttonColor: "#6b7280",
           monthlyPrice: "0",
@@ -443,15 +437,15 @@ async function seed() {
           ],
         },
         {
-          name: "Professional",
-          description: "Scale your WhatsApp marketing with advanced features and more capacity.",
+          name: "Pro",
+          description: "Le plan complet pour les activités sérieuses. WhatsApp + Facebook + Instagram.",
           icon: "Zap",
           popular: true,
-          badge: "Most Popular",
-          color: "#2563eb",
-          buttonColor: "#2563eb",
-          monthlyPrice: "29",
-          annualPrice: "290",
+          badge: "Le plus populaire ⭐",
+          color: "#008060",
+          buttonColor: "#008060",
+          monthlyPrice: "2000",
+          annualPrice: "20000",
           permissions: {
             channel: "3",
             contacts: "5000",
@@ -469,19 +463,19 @@ async function seed() {
             { name: "AI Auto-Reply", included: true },
             { name: "Up to 5 Team Members", included: true },
             { name: "Campaign Scheduling", included: true },
-            { name: "Email Support", included: true },
+            { name: "VIP Dedicated Support", included: true },
           ],
         },
         {
-          name: "Enterprise",
-          description: "Unlimited access with premium support for high-volume businesses.",
+          name: "Elite",
+          description: "Pour les groupes et entreprises multi-établissements. Accès illimité avec support premium.",
           icon: "Crown",
           popular: false,
-          badge: "Best Value",
+          badge: "Elite Business 👑",
           color: "#7c3aed",
           buttonColor: "#7c3aed",
-          monthlyPrice: "99",
-          annualPrice: "990",
+          monthlyPrice: "12000",
+          annualPrice: "120000",
           permissions: {
             channel: "unlimited",
             contacts: "unlimited",
@@ -499,7 +493,7 @@ async function seed() {
             { name: "AI Auto-Reply + Knowledge Base", included: true },
             { name: "Unlimited Team Members", included: true },
             { name: "Campaign Scheduling", included: true },
-            { name: "Priority Support", included: true },
+            { name: "Priority VIP Support + Training", included: true },
           ],
         },
       ];

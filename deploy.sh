@@ -2,7 +2,7 @@
 set -e
 
 echo "╔════════════════════════════════════════════════════════════╗"
-echo "║     🚀 TaysirOne Production Deployment                      ║"
+echo "║     🚀 WhatsWay Production Deployment                      ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
 
@@ -52,8 +52,8 @@ echo "   ✅ Database schema synced"
 
 echo ""
 echo "🚀 Restarting application with PM2..."
-if pm2 describe taysirone > /dev/null 2>&1; then
-    pm2 restart taysirone
+if pm2 describe whatsway > /dev/null 2>&1; then
+    pm2 restart whatsway
     echo "   ✅ PM2 process restarted"
 else
     pm2 start ecosystem.config.cjs
@@ -68,9 +68,9 @@ echo "║     ✅ Deployment completed successfully!                   ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
 echo "Useful commands:"
-echo "  pm2 logs taysirone    — View application logs"
+echo "  pm2 logs whatsway    — View application logs"
 echo "  pm2 status           — Check process status"
-echo "  pm2 restart taysirone — Restart application"
+echo "  pm2 restart whatsway — Restart application"
 echo ""
 
 exit 0

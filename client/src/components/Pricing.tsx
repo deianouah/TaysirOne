@@ -186,7 +186,7 @@ const Pricing = () => {
       return priceA - priceB;
     });
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mb-16">
+      <div className="flex flex-wrap items-stretch justify-center gap-6 lg:gap-8 mb-16 px-4 max-w-7xl mx-auto">
         {sortedPlans.map((plan, index) => {
           const IconComponent = iconMap[plan.icon] || Zap;
           const isPopular = plan.popular;
@@ -194,9 +194,9 @@ const Pricing = () => {
           return (
             <div
               key={plan.id}
-              className={`bg-white p-8 rounded-2xl shadow-lg border-2 ${
-                isPopular ? "relative transform scale-105" : ""
-              } hover:shadow-xl transition-all flex flex-col h-full`}
+              className={`bg-white p-8 rounded-2xl shadow-lg border-2 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)] max-w-sm ${
+                isPopular ? "relative transform lg:scale-105 z-10" : ""
+              } hover:shadow-xl transition-all flex flex-col`}
               style={{ borderColor: plan.color || '#e5e7eb' }}
             >
               {/* Popular Badge */}
@@ -342,9 +342,9 @@ const Pricing = () => {
               <Crown className="w-4 h-4 mr-2" />
               {t("Landing.pricingSec.introTagline")}
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
               {t("Landing.pricingSec.headlinePre")}{" "}
-              <span className="block bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                 {t("Landing.pricingSec.headlineHighlight")}
               </span>
             </h2>

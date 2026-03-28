@@ -185,6 +185,7 @@ export interface DashboardStats {
 }
 
 export interface AppSettings {
+  name: string;
   title: string;
   tagline: string;
   currency: string;

@@ -3,7 +3,7 @@ const instances = parseInt(process.env.INSTANCES || "1", 10);
 module.exports = {
   apps: [
     {
-      name: "taysirone",
+      name: "whatsway",
       script: "./dist/index.js",
       instances: instances,
       exec_mode: instances > 1 ? "cluster" : "fork",

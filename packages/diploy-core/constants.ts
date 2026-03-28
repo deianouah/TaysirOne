@@ -37,7 +37,7 @@ function readVersionFile(): string {
   }
 }
 
-export const DIPLOY_PRODUCT_NAME = "TaysirOne";
+export const DIPLOY_PRODUCT_NAME = "Diploy";
 export const DIPLOY_VERSION = readVersionFile();
 export const DIPLOY_AUTHOR = "Bisht Technologies Private Limited";
 export const DIPLOY_WEBSITE = "https://diploy.in";

@@ -59,26 +59,15 @@ const Footer: React.FC = () => {
       { name: productLinks[1], href: "/#how-it-works" },
       { name: productLinks[2], href: "/#use-cases" },
     ],
-    company: [
-      { name: companyLinks[0], href: "/about" },
-      { name: companyLinks[1], href: "/contact" },
-      { name: companyLinks[2], href: "/careers" },
-    ],
     support: [
       { name: supportLinks[0], href: "#" },
       { name: supportLinks[1], href: "#" },
       { name: supportLinks[2], href: "#" },
       { name: supportLinks[3], href: "#" },
     ],
-    resources: [
-      { name: resourcesLinks[1], href: "/case-studies" },
-      { name: resourcesLinks[2], href: "/whatsapp-guide" },
-      { name: resourcesLinks[3], href: "/best-practices" },
-    ],
     legal: [
       { name: legalLinks[0], href: "/privacy-policy" },
       { name: legalLinks[1], href: "/terms" },
-      { name: legalLinks[2], href: "/cookie-policy" },
     ],
   };
 
@@ -110,12 +99,23 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
-              <img
-                src={brandSettings?.logo2 && brandSettings.logo2 !== "/uploads/null" ? brandSettings.logo2 : (brandSettings?.logo || "/img/logo.png")}
-                alt="Logo"
-                className="h-24 w-auto object-contain scale-[1.8] origin-left"
-                style={{ filter: "brightness(0) invert(1)" }}
-              />
+              {brandSettings?.logo2 && brandSettings.logo2 !== "/uploads/null" ? (
+                <img
+                  src={brandSettings.logo2}
+                  alt="Logo"
+                  className="h-12 object-contain"
+                />
+              ) : brandSettings?.logo ? (
+                <img
+                  src={brandSettings.logo}
+                  alt="Logo"
+                  className="h-12 object-contain"
+                />
+              ) : (
+                <div className="bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 rounded-xl p-2.5">
+                  <MessageSquare className="h-7 w-7" />
+                </div>
+              )}
             </Link>
             <p className="text-gray-400 mt-5 mb-8 max-w-sm text-sm leading-relaxed">
               {t("Landing.footerSec.brandSection.description")}
@@ -163,19 +163,10 @@ const Footer: React.FC = () => {
 
           <div className="lg:col-span-2">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-300 mb-5">
-              Company
+              Support
             </h3>
             <ul className="space-y-3">
-              {links.company.map((link, index) => renderLink(link, index))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-300 mb-5">
-              Resources
-            </h3>
-            <ul className="space-y-3">
-              {links.resources.map((link, index) => renderLink(link, index))}
+              {links.support.map((link, index) => renderLink(link, index))}
             </ul>
           </div>
 
@@ -210,12 +201,6 @@ const Footer: React.FC = () => {
                 className="text-gray-500 hover:text-gray-300 text-xs transition-colors duration-200"
               >
                 {t("Landing.footerSec.bottomBar.privacyLink")}
-              </Link>
-              <Link
-                to="/cookie-policy"
-                className="text-gray-500 hover:text-gray-300 text-xs transition-colors duration-200"
-              >
-                {t("Landing.footerSec.bottomBar.cookieLink")}
               </Link>
             </div>
           </div>

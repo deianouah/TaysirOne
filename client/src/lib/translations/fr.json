@@ -1058,93 +1058,60 @@
   },
   "Landing": {
     "header": {
-      "getstart": "Commencer gratuitement",
-      "redystart": "Ready to get started?",
-      "join": "Join thousands of businesses already growing with {{appName}}",
-      "start": " Start Free Trial",
-      "Learn": " Learn more",
-      "dash": "Dashboard",
-      "Settings": "Settings",
-      "Account": "Account",
-      "logout": "Logout",
+      "getstart": "Commencer Gratuitement",
+      "redystart": "Prêt à commencer ?",
+      "join": "Rejoignez les entreprises qui se développent déjà avec {{appName}}",
+      "start": "Démarrer l'Essai Gratuit",
+      "Learn": "En Savoir Plus",
+      "dash": "Tableau de Bord",
+      "Settings": "Paramètres",
+      "Account": "Compte",
+      "logout": "Déconnexion",
       "resourcesMenuItems": [
         {
-          "title": "Privacy Policy",
-          "description": "Ready-to-use message templates"
+          "title": "Politique de Confidentialité",
+          "description": "Notre politique de protection des données"
         },
         {
-          "title": "Terms of Service",
-          "description": "Success stories from our clients"
-        },
-        {
-          "title": "WhatsApp Guide",
-          "description": "Complete WhatsApp marketing guide"
-        },
-        {
-          "title": "API Documentation",
-          "description": "Developer resources and API docs"
-        },
-        {
-          "title": "Best Practices",
-          "description": "Tips for WhatsApp marketing success"
-        },
-        {
-          "title": "ROI Calculator",
-          "description": "Calculate your WhatsApp marketing ROI"
+          "title": "Conditions d'Utilisation",
+          "description": "Conditions générales d'utilisation"
         }
       ],
-      "aboutMenuItems": [
-        {
-          "title": "About Us",
-          "description": "Learn about our mission and team"
-        },
-        {
-          "title": "Contact",
-          "description": "Get in touch with our team"
-        },
-        {
-          "title": "Careers",
-          "description": "Join our growing team"
-        },
-        {
-          "title": "Integrations",
-          "description": "Connect with 1000+ apps"
-        }
-      ],
+      "aboutMenuItems": [],
       "Navlinks": [
         "Accueil",
-        "Fonctionnalités",
-        "Comment ça marche",
+        "À Propos",
+        "Juridique",
         "Connexion",
-        "Tableau de bord"
+        "Tableau de Bord"
       ]
     },
     "heroSec": {
-      "animatedBgGreenText": "✦ Pour les vendeurs, commerçants et prestataires professionnels",
-      "headline": "Convertissez vos prospects",
-      "highlightText": "en opportunités",
-      "subHeadline": "Taysir One centralise vos messages Facebook et WhatsApp. Notre bot IA répond aux questions techniques et qualifie les prospects à votre place.",
-      "startTrialButton": "Commencer gratuitement",
-      "watchDemoButton": "Watch 2-min Demo",
-      "trustedByText": "Rejoint par des professionnels",
+      "animatedBgGreenText": "Plateforme WhatsApp Marketing #1 en Algérie",
+      "headline": "Boostez Votre Business avec",
+      "highlightText": "le Marketing WhatsApp",
+      "subHeadline": "Taysir One centralise vos messages WhatsApp Business, automatise les réponses avec l'IA, et capture vos leads automatiquement. La solution complète pour les entreprises algériennes.",
+      "startTrialButton": "Commencer Gratuitement",
+      "watchDemoButton": "Voir la Démo",
+      "trustedByText": "Technologies intégrées dans notre plateforme",
       "brands": [
-        "Shopify",
-        "WooCommerce",
-        "Salesforce",
-        "HubSpot",
-        "Zapier"
+        "WhatsApp Business",
+        "Facebook",
+        "Instagram",
+        "Gemini AI",
+        "WAHA"
       ],
       "stats": [
         {
-          "label": "Active Users",
+          "label": "Entreprises Actives",
           "suffix": "+"
         },
         {
-          "label": "Delivery Rate",
+          "label": "Taux de Livraison",
           "suffix": "%"
         },
         {
-          "label": "Higher Engagement",
+          "label": "Engagement Plus Élevé",
           "suffix": "x"
         }
       ],
@@ -1154,416 +1121,414 @@
       }
     },
     "featuresSec": {
-      "introTagline": "✦ Fonctionnalités",
-      "headlinePre": "Fini les",
-      "headlineHighlight": "réponses répétitives",
-      "subHeadline": "Un système intelligent qui filtre et collecte les données automatiquement.",
-      "demo": "Demo",
-      "campaign_progress": "Campaign Progress",
+      "introTagline": "Fonctionnalités puissantes de marketing WhatsApp",
+      "headlinePre": "Tout ce dont vous avez besoin pour",
+      "headlineHighlight": "développer votre entreprise",
+      "subHeadline": "De la messagerie en masse aux chatbots IA, notre plateforme fournit tous les outils nécessaires pour créer des campagnes de marketing WhatsApp réussies",
       "featureTabs": [
         {
-          "title": "🤖 Agent IA",
-          "description": "Le bot intelligent répond avec précision aux détails de vos produits, services ou offres 24/7.",
+          "title": "Messagerie en Masse",
+          "description": "Envoyez des messages personnalisés à des milliers de contacts instantanément avec une optimisation intelligente de la livraison",
           "demo": {
-            "title": "Broadcast Campaign",
-            "stats": "10,000 messages sent in 2 minutes",
+            "title": "Campagne de Diffusion",
+            "stats": "10 000 messages envoyés en 2 minutes",
             "features": [
-              "Personalized templates",
-              "Smart scheduling",
-              "Delivery optimization"
+              "Modèles personnalisés",
+              "Planification intelligente",
+              "Optimisation de la livraison"
             ]
           }
         },
         {
-          "title": "📞 Collecte de numéros",
-          "description": "L'IA demande et enregistre le numéro du prospect dans une liste de contacts structurée.",
+          "title": "Workflows d'Automatisation",
+          "description": "Créez des séquences automatisées intelligentes qui nourrissent les leads et engagent les clients 24h/24 et 7j/7",
           "demo": {
-            "title": "Welcome Sequence",
-            "stats": "85% engagement rate",
+            "title": "Séquence de Bienvenue",
+            "stats": "Taux d'engagement de 85%",
             "features": [
-              "Trigger-based flows",
-              "Conditional logic",
-              "Multi-step journeys"
+              "Flux basés sur des déclencheurs",
+              "Logique conditionnelle",
+              "Parcours multi-étapes"
             ]
           }
         },
         {
-          "title": "💬 Boîte de réception unifiée",
-          "description": "Gérez les messages WhatsApp, Facebook et Instagram depuis une seule interface.",
+          "title": "Analyses Avancées",
+          "description": "Suivez les performances avec des insights en temps réel, des rapports de livraison et des métriques d'engagement",
           "demo": {
-            "title": "Campaign Analytics",
-            "stats": "98% delivery rate",
+            "title": "Analyses de Campagne",
+            "stats": "Taux de livraison de 98%",
             "features": [
-              "Real-time tracking",
-              "ROI analysis",
-              "Custom reports"
+              "Suivi en temps réel",
+              "Analyse du ROI",
+              "Rapports personnalisés"
             ]
           }
         },
         {
-          "title": "🛡️ Filtrage intelligent",
-          "description": "L'IA distingue un client sérieux d'un simple curieux et ignore les messages inutiles.",
+          "title": "Gestion des Contacts",
+          "description": "Organisez et segmentez votre audience avec un marquage intelligent et un filtrage avancé",
           "demo": {
-            "title": "Smart Segmentation",
-            "stats": "50+ custom fields",
+            "title": "Segmentation Intelligente",
+            "stats": "Plus de 50 champs personnalisés",
             "features": [
-              "Auto-tagging",
-              "Behavioral segments",
-              "Import/Export"
+              "Marquage automatique",
+              "Segments comportementaux",
+              "Importer/Exporter"
             ]
           }
         },
         {
-          "title": "📊 Statistiques des ventes",
-          "description": "Découvrez quels produits et plateformes génèrent le plus d'intérêt.",
+          "title": "Chatbots IA",
+          "description": "Déployez des chatbots intelligents qui gèrent les requêtes clients et qualifient automatiquement les leads",
           "demo": {
-            "title": "Customer Support Bot",
-            "stats": "24/7 availability",
+            "title": "Bot de Support Client",
+            "stats": "Disponibilité 24h/24 et 7j/7",
             "features": [
-              "Natural language",
-              "Lead qualification",
-              "Handoff to humans"
+              "Langage naturel",
+              "Qualification des leads",
+              "Transfert vers des humains"
             ]
           }
         },
         {
-          "title": "🗓️ Gestion des contacts",
-          "description": "Le bot organise vos prospects selon leur degré d'intérêt.",
+          "title": "Planificateur de Campagnes",
+          "description": "Planifiez et programmez des campagnes à travers les fuseaux horaires avec un timing de livraison optimal",
           "demo": {
-            "title": "Global Campaigns",
-            "stats": "Multi-timezone support",
+            "title": "Campagnes Mondiales",
+            "stats": "Support multi-fuseaux horaires",
             "features": [
-              "Smart timing",
-              "Recurring campaigns",
-              "A/B testing"
+              "Timing intelligent",
+              "Campagnes récurrentes",
+              "Tests A/B"
             ]
           }
         }
       ],
       "additionalFeatures": [
         {
-          "title": "Multi-language Support",
-          "desc": "Reach global audiences in their native language"
+          "title": "Support Multilingue",
+          "desc": "Atteignez des audiences mondiales dans leur langue maternelle"
         },
         {
-          "title": "Smart Targeting",
-          "desc": "Precision targeting based on behavior and demographics"
+          "title": "Ciblage Intelligent",
+          "desc": "Ciblage de précision basé sur le comportement et la démographie"
         },
         {
-          "title": "API Integration",
-          "desc": "Seamless integration with your existing tools and CRM"
+          "title": "Intégration API",
+          "desc": "Intégration transparente avec vos outils existants et votre CRM"
         }
       ]
     },
     "howItWorksSec": {
-      "introTagline": "✦ Comment ça marche",
-      "headlinePre": "Du premier message",
-      "headlineHighlight": "à la vente",
-      "subHeadline": "",
+      "introTagline": "Processus simple en 4 étapes",
+      "headlinePre": "Commencez en",
+      "headlineHighlight": "moins de 5 minutes",
+      "subHeadline": "Notre processus d'intégration rationalisé vous permet de démarrer avec le marketing WhatsApp plus rapidement que toute autre plateforme",
       "steps": [
         {
-          "title": "1. Ajoutez vos offres",
-          "description": "Saisissez les détails de vos produits ou services dans votre tableau de bord.",
+          "title": "Connectez votre API Meta",
+          "description": "Apportez votre propre API WhatsApp Business de Meta et connectez-la à notre plateforme en quelques secondes",
           "details": [
-            "Secure API integration",
-            "One-click setup process",
-            "No technical knowledge required",
-            "Full data ownership"
+            "Intégration API sécurisée",
+            "Processus de configuration en un clic",
+            "Aucune connaissance technique requise",
+            "Propriété complète des données"
           ]
         },
         {
-          "title": "2. Le Bot prend le relais",
-          "description": "Lorsqu'un client pose une question, l'IA répond avec précision.",
+          "title": "Importez vos Contacts",
+          "description": "Téléchargez votre base de données clients ou synchronisez directement depuis votre CRM et vos outils existants",
           "details": [
-            "CSV/Excel import support",
-            "CRM integrations available",
-            "Smart duplicate detection",
-            "Automatic data validation"
+            "Support d'importation CSV/Excel",
+            "Intégrations CRM disponibles",
+            "Détection intelligente des doublons",
+            "Validation automatique des données"
           ]
         },
         {
-          "title": "3. Qualification",
-          "description": "L'IA demande gentiment le numéro de téléphone pour planifier la suite de l'échange.",
+          "title": "Créez et Lancez des Campagnes",
+          "description": "Concevez de beaux messages avec notre constructeur glisser-déposer et lancez des campagnes ciblées",
           "details": [
-            "Visual campaign builder",
-            "Pre-built templates",
-            "Personalization options",
-            "A/B testing capabilities"
+            "Constructeur de campagne visuel",
+            "Modèles préconstruits",
+            "Options de personnalisation",
+            "Capacités de tests A/B"
           ]
         },
         {
-          "title": "4. Concluez la vente",
-          "description": "Accédez aux contacts qualifiés et appelez-les pour finaliser l'accord.",
+          "title": "Suivez et Optimisez",
+          "description": "Surveillez les performances en temps réel et optimisez vos campagnes pour de meilleurs résultats",
           "details": [
-            "Real-time analytics",
-            "Delivery tracking",
-            "Engagement metrics",
-            "ROI calculations"
+            "Analyses en temps réel",
+            "Suivi de la livraison",
+            "Métriques d'engagement",
+            "Calculs du ROI"
           ]
         }
       ],
       "progressBar": {
-        "previous": "Previous",
-        "nextStep": "Next Step"
+        "previous": "Précédent",
+        "nextStep": "Étape Suivante"
       },
       "visualDemo": {
-        "whatsAppBusinessDashboard": "taysir.one/agency/dashboard"
+        "whatsAppBusinessDashboard": "Tableau de Bord WhatsApp Business"
       },
       "cta": {
-        "readyToGetStarted": "Prêt ?",
-        "joinText": "",
-        "startFreeTrial": "Commencer"
+        "readyToGetStarted": "Prêt à commencer ?",
+        "joinText": "Rejoignez des milliers d'entreprises qui utilisent déjà notre plateforme pour développer leur marketing WhatsApp",
+        "startFreeTrial": "Démarrez Votre Essai Gratuit"
       }
     },
     "useCasesSec": {
-      "introTagline": "✦ Plateformes supportées",
-      "headlinePre": "Servez vos clients",
-      "headlineHighlight": "sur toutes les plateformes",
-      "subHeadline": "",
-      "keyFeatures": "Key Features",
-      "quickStatsTitle": "Quick Stats",
+      "introTagline": "Solutions par Secteur",
+      "headlinePre": "Parfait pour chaque",
+      "headlineHighlight": "secteur & entreprise",
+      "subHeadline": "Découvrez comment les entreprises de différents secteurs utilisent le marketing WhatsApp pour stimuler la croissance et améliorer l'engagement client",
+      "keyFeatures": "Caractéristiques Clés",
+      "quickStatsTitle": "Statistiques Rapides",
       "useCases": [
         {
           "icon": "ShoppingCart",
-          "title": "💚 WhatsApp Business",
-          "description": "La réponse automatique la plus demandée en Algérie. Connexion directe via l'API Meta ✅",
+          "title": "E-commerce",
+          "description": "Augmentez les ventes grâce à la récupération de paniers abandonnés, aux mises à jour de commandes et aux recommandations personnalisées",
           "color": "from-green-500 to-green-600",
           "bgColor": "bg-green-50",
           "stats": {
             "increase": "300%",
-            "metric": "Sales Recovery"
+            "metric": "Récupération des ventes"
           },
           "features": [
-            "Abandoned cart recovery",
-            "Order status updates",
-            "Product recommendations",
-            "Flash sale notifications"
+            "Récupération de panier abandonné",
+            "Mises à jour du statut de commande",
+            "Recommandations de produits",
+            "Notifications ventes flash"
           ]
         },
         {
           "icon": "GraduationCap",
-          "title": "💙 Facebook Messenger",
-          "description": "Réponse intelligente pour la page de l'agence. Transformez les visiteurs en rendez-vous ✅",
+          "title": "Éducation",
+          "description": "Impliquer étudiants et parents avec des mises à jour de cours, rappels de devoirs et contenus éducatifs",
           "color": "from-blue-500 to-blue-600",
           "bgColor": "bg-blue-50",
           "stats": {
             "increase": "85%",
-            "metric": "Student Engagement"
+            "metric": "Engagement des étudiants"
           },
           "features": [
-            "Assignment reminders",
-            "Course announcements",
-            "Parent communication",
-            "Study material sharing"
+            "Rappels de devoir",
+            "Annonces de cours",
+            "Communication avec les parents",
+            "Partage de matériel d'étude"
           ]
         },
         {
           "icon": "Heart",
-          "title": "🟣 Instagram DM",
-          "description": "Idéal pour les concessionnaires de luxe. Réponse instantanée et professionnelle ✅",
+          "title": "Santé",
+          "description": "Améliorez les soins avec rappels de rendez-vous, conseils santé et alertes médicaments",
           "color": "from-red-500 to-red-600",
           "bgColor": "bg-red-50",
           "stats": {
             "increase": "60%",
-            "metric": "Appointment Attendance"
+            "metric": "Présence aux rendez-vous"
           },
           "features": [
-            "Appointment reminders",
-            "Medication alerts",
-            "Health tips delivery",
-            "Test result notifications"
+            "Rappels de rendez-vous",
+            "Alertes médicaments",
+            "Livraison de conseils santé",
+            "Notifications de résultats"
           ]
         },
         {
           "icon": "Building",
-          "title": "Real Estate",
-          "description": "Connect with prospects through property alerts, virtual tours, and market updates",
+          "title": "Immobilier",
+          "description": "Connectez avec les prospects via des alertes de biens, visites virtuelles et mises à jour marché",
           "color": "from-purple-500 to-purple-600",
           "bgColor": "bg-purple-50",
           "stats": {
             "increase": "45%",
-            "metric": "Lead Conversion"
+            "metric": "Taux de conversion"
           },
           "features": [
-            "Property alerts",
-            "Virtual tour scheduling",
-            "Market updates",
-            "Lead qualification"
+            "Alertes sur les biens",
+            "Planification de visites virtuelles",
+            "Mises à jour du marché",
+            "Qualification de leads"
           ]
         },
         {
           "icon": "Utensils",
           "title": "Restaurants",
-          "description": "Increase orders with menu updates, special offers, and reservation confirmations",
+          "description": "Augmentez les commandes avec mises à jour de menus, offres spéciales et confirmations de réservation",
           "color": "from-orange-500 to-orange-600",
           "bgColor": "bg-orange-50",
           "stats": {
             "increase": "120%",
-            "metric": "Order Volume"
+            "metric": "Volume de commandes"
           },
           "features": [
-            "Menu updates",
-            "Special offers",
-            "Reservation confirmations",
-            "Loyalty programs"
+            "Mises à jour du menu",
+            "Offres spéciales",
+            "Confirmations de réservation",
+            "Programmes de fidélité"
           ]
         },
         {
           "icon": "Car",
-          "title": "Automotive",
-          "description": "Enhance customer service with service reminders, appointment booking, and vehicle updates",
+          "title": "Automobile",
+          "description": "Améliorez le service client grâce aux rappels d'entretien, à la prise de rendez-vous et aux mises à jour véhicules",
           "color": "from-indigo-500 to-indigo-600",
           "bgColor": "bg-indigo-50",
           "stats": {
             "increase": "75%",
-            "metric": "Service Bookings"
+            "metric": "Réservations d'entretien"
           },
           "features": [
-            "Service reminders",
-            "Appointment booking",
-            "Vehicle updates",
-            "Maintenance tips"
+            "Rappels d'entretien",
+            "Prise de rendez-vous",
+            "Mises à jour véhicule",
+            "Conseils d'entretien"
           ]
         }
       ],
       "cta": {
-        "viewCaseStudyButton": "View Case Study",
-        "customerSuccessQuote": "WhatsApp Pro helped us increase our {industry} engagement by {increase}. The automation features saved us countless hours while improving customer satisfaction.",
+        "viewCaseStudyButton": "Voir l'étude de cas",
+        "customerSuccessQuote": "WhatsApp Pro nous a permis d'augmenter l'engagement {industry} de {increase}. Les fonctions d'automatisation nous ont fait gagner d'innombrables heures tout en améliorant la satisfaction client.",
         "testimonialName": "Sarah Johnson",
-        "testimonialPosition": "Marketing Director"
+        "testimonialPosition": "Directrice Marketing"
       },
       "quickStats": [
         {
           "value": "98%",
-          "label": "Delivery Rate"
+          "label": "Taux de livraison"
         },
         {
           "value": "5x",
-          "label": "Higher Engagement"
+          "label": "Engagement supérieur"
         },
         {
           "value": "24/7",
-          "label": "Automation"
+          "label": "Automatisation"
         },
         {
           "value": "50%",
-          "label": "Cost Reduction"
+          "label": "Réduction des coûts"
         }
       ]
     },
     "testimonialsSec": {
-      "introTagline": "✦ Histoires de succès",
-      "headlinePre": "Les agences",
-      "headlineHighlight": "nous font confiance",
-      "subHeadline": "",
+      "introTagline": "Histoires de réussite client",
+      "headlinePre": "Apprécié par",
+      "headlineHighlight": "10 000+ entreprises",
+      "subHeadline": "Découvrez comment des entreprises de divers secteurs obtiennent des résultats remarquables avec notre plateforme marketing WhatsApp",
       "testimonials": [
         {
-          "name": "Mounir Q.",
-          "role": "Agence Immobilière",
+          "name": "Sarah Chen",
+          "role": "Directrice E-commerce",
           "company": "Fashion Forward",
-          "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+          "image": "...",
           "rating": 5,
-          "text": "La plateforme m'a évité de répondre à des centaines de curieux. Le bot donne les détails et ne me passe que les sérieux.",
-          "results": "300% increase in cart recovery"
+          "text": "WhatsApp Pro a transformé notre engagement client. Nous avons constaté une augmentation de 300% des paniers récupérés et nos clients adorent l'expérience personnalisée.",
+          "results": "Hausse de 300% de récupération de panier"
         },
         {
-          "name": "Redouane M.",
-          "role": "Showroom Auto",
+          "name": "Michael Rodriguez",
+          "role": "Responsable Marketing",
           "company": "TechStart Solutions",
-          "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+          "image": "...",
           "rating": 5,
-          "text": "Les messages ne s'arrêtent jamais. Taysir One centralise tout, nous savons exactement qui est le client sérieux.",
-          "results": "85% improvement in lead conversion"
+          "text": "Les workflows d'automatisation sont incroyables. Nous pouvons désormais nourrir les prospects 24/7 sans intervention manuelle. Nos taux de conversion n'ont jamais été aussi élevés.",
+          "results": "Amélioration de 85% de la conversion des leads"
         },
         {
-          "name": "Hamid S.",
-          "role": "Promoteur Immobilier",
+          "name": "Emily Johnson",
+          "role": "Cheffe de Suivi Client",
           "company": "HealthCare Plus",
-          "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+          "image": "...",
           "rating": 5,
-          "text": "Simplicité incroyable. Connecté en 5 minutes. Le meilleur investissement pour toute agence.",
-          "results": "60% reduction in no-shows"
+          "text": "La fréquentation des rendez-vous patients s'est nettement améliorée avec les rappels WhatsApp. La plateforme est intuitive et notre équipe l'a adoptée rapidement.",
+          "results": "60% de réduction des absences"
         },
         {
           "name": "David Park",
-          "role": "Restaurant Owner",
+          "role": "Propriétaire de Restaurant",
           "company": "Gourmet Bistro",
-          "image": "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+          "image": "...",
           "rating": 5,
-          "text": "Our reservation system is now seamless. Customers get instant confirmations and we can send them special offers. Revenue increased by 40% in just 3 months.",
-          "results": "40% revenue increase"
+          "text": "Notre système de réservation est désormais fluide. Les clients obtiennent des confirmations instantanées et nous envoyons des offres spéciales. Le chiffre d'affaires a augmenté de 40% en 3 mois.",
+          "results": "Hausse de 40% du chiffre d'affaires"
         },
         {
           "name": "Lisa Thompson",
-          "role": "Education Coordinator",
+          "role": "Coordinatrice Éducation",
           "company": "Bright Future Academy",
-          "image": "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+          "image": "...",
           "rating": 5,
-          "text": "Parent engagement has never been better. We can instantly share updates about their children and important school announcements reach everyone.",
-          "results": "90% parent engagement rate"
+          "text": "L'engagement des parents n'a jamais été aussi bon. Nous partageons instantanément des mises à jour et toutes les annonces scolaires importantes atteignent tout le monde.",
+          "results": "Taux d'engagement parental de 90%"
         }
       ],
       "navButtons": {
-        "previous": "Previous",
-        "next": "Next"
+        "previous": "Précédent",
+        "next": "Suivant"
       },
       "statsGrid": [
         {
           "number": "10,000+",
-          "label": "Happy Customers"
+          "label": "Clients satisfaits"
         },
         {
           "number": "98%",
-          "label": "Satisfaction Rate"
+          "label": "Taux de satisfaction"
         },
         {
           "number": "5M+",
-          "label": "Messages Sent"
+          "label": "Messages envoyés"
         },
         {
           "number": "24/7",
-          "label": "Support Available"
+          "label": "Support disponible"
         }
       ]
     },
     "ctaSec": {
-      "introTagline": "Join 10,000+ Businesses Already Growing",
-      "headline": "Prêt à transformer les demandes en ventes?",
-      "subHeadline": "Inscrivez-vous gratuitement et lancez-vous en quelques minutes. Sans carte bancaire.",
+      "introTagline": "Rejoignez plus de 10 000 entreprises qui se développent déjà",
+      "headline": "Prêt à développer votre entreprise avec le marketing WhatsApp ?",
+      "subHeadline": "Commencez votre essai gratuit aujourd'hui. Aucune carte de crédit requise. Connectez votre API Meta et commencez à envoyer des campagnes en moins de 5 minutes.",
       "buttons": {
-        "startTrial": "Commencer gratuitement",
-        "scheduleDemo": "Schedule Demo"
+        "startTrial": "Démarrer l'Essai Gratuit",
+        "scheduleDemo": "Planifier une Démo"
       },
       "trustIndicators": [
         {
-          "title": "Instant Setup",
-          "desc": "Get started in 5 minutes"
+          "title": "Configuration Instantanée",
+          "desc": "Commencez en 5 minutes"
         },
         {
-          "title": "Secure & Compliant",
-          "desc": "Enterprise-grade security"
+          "title": "Sécurisé et Conforme",
+          "desc": "Sécurité de niveau entreprise"
         },
         {
-          "title": "24/7 Support",
-          "desc": "Always here to help"
+          "title": "Support 24/7",
+          "desc": "Toujours là pour vous aider"
         },
         {
-          "title": "Free Forever",
-          "desc": "No hidden costs"
+          "title": "Gratuit Pour Toujours",
+          "desc": "Aucun coût caché"
         }
       ],
       "stats": [
         {
-          "number": "10,000+",
-          "label": "Active Users"
+          "number": "10 000+",
+          "label": "Utilisateurs Actifs"
         },
         {
           "number": "98%",
-          "label": "Delivery Rate"
+          "label": "Taux de Livraison"
         },
         {
           "number": "5M+",
-          "label": "Messages Sent"
+          "label": "Messages Envoyés"
         },
         {
           "number": "24/7",
@@ -1572,123 +1537,123 @@
       ]
     },
     "pricingSec": {
-      "introTagline": "✦ Tarifs",
-      "headlinePre": "Un plan pro, à moitié",
-      "headlineHighlight": "prix d'un employé",
-      "subHeadline": "",
+      "introTagline": "Tarification simple et transparente",
+      "headlinePre": "Choisissez votre",
+      "headlineHighlight": "plan parfait",
+      "subHeadline": "Commencez gratuitement et évoluez avec votre croissance. Tous les plans incluent votre propre intégration API Meta et envoi de messages illimité.",
       "billingToggle": {
-        "monthly": "Monthly",
-        "annual": "Annual",
-        "saveLabel": "Save 20%"
+        "monthly": "Mensuel",
+        "annual": "Annuel",
+        "saveLabel": "Économisez 20%"
       },
       "planCTA": {
-        "freeButton": "Get Started Free",
-        "paidButton": "Buy "
+        "freeButton": "Commencer gratuitement",
+        "paidButton": "Démarrer l'essai gratuit"
       },
       "pricing": {
-        "month": "month",
-        "year": "year",
-        "upTo": "Up to",
+        "month": "mois",
+        "year": "an",
+        "upTo": "Jusqu'à",
         "contacts": "contacts",
-        "channels": "WhatsApp Channels",
-        "automation": "Automation"
+        "channels": "canaux WhatsApp",
+        "automation": "automatisation"
       },
-      "loading": "Loading plans...",
+      "loading": "Chargement des plans...",
       "noPlans": {
-        "title": "No Plans Available",
-        "description": "Please check back later for pricing options."
+        "title": "Aucun plan disponible",
+        "description": "Veuillez revenir plus tard pour les options de tarification."
       },
       "authRequired": {
-        "title": "Authentication Required",
-        "description": "Please login before purchasing a plan"
+        "title": "Authentification requise",
+        "description": "Veuillez vous connecter avant d'acheter un plan"
       },
       "faq": {
-        "title": "Frequently Asked Questions",
+        "title": "Questions fréquemment posées",
         "questions": [
           {
-            "q": "Do I need my own WhatsApp Business API?",
-            "a": "Yes, you need to bring your own Meta WhatsApp Business API. This ensures you have full control over your data and messaging."
+            "q": "Ai-je besoin de ma propre API WhatsApp Business ?",
+            "a": "Oui, vous devez apporter votre propre API Meta WhatsApp Business. Cela garantit que vous avez un contrôle total sur vos données et vos messages."
           },
           {
-            "q": "Is there a setup fee?",
-            "a": "No setup fees! You can start using our platform immediately after connecting your API."
+            "q": "Y a-t-il des frais de configuration ?",
+            "a": "Aucun frais de configuration ! Vous pouvez commencer à utiliser notre plateforme immédiatement après avoir connecté votre API."
           },
           {
-            "q": "Can I change plans anytime?",
-            "a": "Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately."
+            "q": "Puis-je changer de plan à tout moment ?",
+            "a": "Absolument ! Vous pouvez mettre à niveau ou rétrograder votre plan à tout moment. Les modifications prennent effet immédiatement."
           },
           {
-            "q": "What happens if I exceed my contact limit?",
-            "a": "We'll notify you before you reach your limit. You can upgrade your plan or purchase additional contacts."
+            "q": "Que se passe-t-il si je dépasse ma limite de contacts ?",
+            "a": "Nous vous avertirons avant que vous n'atteigniez votre limite. Vous pouvez mettre à niveau votre plan ou acheter des contacts supplémentaires."
           }
         ]
       },
       "enterprise": {
-        "title": "Need a Custom Solution?",
-        "description": "Contact our enterprise team for custom pricing, dedicated support, and tailored features",
-        "button": "Contact Sales"
+        "title": "Besoin d'une solution personnalisée ?",
+        "description": "Contactez notre équipe entreprise pour une tarification personnalisée, un support dédié et des fonctionnalités sur mesure",
+        "button": "Contacter les ventes"
       }
     },
     "footerSec": {
       "newsletter": {
-        "heading": "Stay Updated with WhatsApp Marketing Tips",
-        "description": "Get the latest strategies, case studies, and platform updates delivered to your inbox.",
-        "emailPlaceholder": "Enter your email address",
-        "subscribeButton": "Subscribe"
+        "heading": "Restez informé avec les conseils marketing WhatsApp",
+        "description": "Recevez les dernières stratégies, études de cas et mises à jour de la plateforme dans votre boîte de réception.",
+        "emailPlaceholder": "Entrez votre adresse e-mail",
+        "subscribeButton": "S'abonner"
       },
       "brandSection": {
         "brandNames": [
           "",
           ""
         ],
-        "description": "Taysir One - La plateforme n°1 de gestion des leads et ventes en ligne en Algérie."
+        "description": "La plateforme de marketing WhatsApp la plus puissante. Développez votre entreprise avec des campagnes automatisées, des analyses avancées et une intégration API transparente."
       },
       "socialLinks": {
         "twitter": "Twitter",
         "linkedin": "LinkedIn",
         "github": "GitHub",
-        "mail": "Mail"
+        "mail": "E-mail"
       },
       "links": {
         "product": [
-          "Features",
-          "How it Works",
-          "Use Cases",
-          "Pricing",
-          "API Documentation"
+          "Fonctionnalités",
+          "Comment ça marche",
+          "Cas d'utilisation",
+          "Tarifs",
+          "Documentation API"
         ],
         "company": [
-          "About Us",
+          "À propos",
           "Contact",
-          "Careers",
-          "Press Kit",
-          "Integrations"
+          "Carrières",
+          "Kit presse",
+          "Intégrations"
         ],
         "support": [
-          "Help Center",
-          "Community",
-          "Status",
-          "Security"
+          "Centre d'aide",
+          "Communauté",
+          "Statut",
+          "Sécurité"
         ],
         "resources": [
-          "Templates",
-          "Case Studies",
-          "WhatsApp Guide",
-          "Best Practices",
-          "ROI Calculator"
+          "Modèles",
+          "Études de cas",
+          "Guide WhatsApp",
+          "Meilleures pratiques",
+          "Calculateur de ROI"
         ],
         "legal": [
-          "Privacy Policy",
-          "Terms of Service",
-          "Cookie Policy",
-          "GDPR"
+          "Politique de confidentialité",
+          "Conditions d'utilisation",
+          "Politique de cookies",
+          "RGPD"
         ]
       },
       "bottomBar": {
-        "copyrightText": "© 2025 {{appName}}. All rights reserved.",
-        "termsLink": "Terms of Service",
-        "privacyLink": "Privacy Policy",
-        "cookieLink": "Cookie Policy"
+        "copyrightText": "© 2025 {{appName}}. Tous droits réservés.",
+        "termsLink": "Conditions d'utilisation",
+        "privacyLink": "Politique de confidentialité",
+        "cookieLink": "Politique de cookies"
       }
     }
   },
@@ -3347,212 +3312,5 @@
       "perMinuteDesc": "Nombre maximum de requêtes autorisées par minute.",
       "exceeded": "Réponse lorsque la limite est dépassée (HTTP 429)"
     }
-  },
-  "Landing": {
-    "header": {
-      "Navlinks": ["Fonctionnalités", "Comment ça marche ?", "Tarifs", "Témoignages"],
-      "Settings": "Paramètres",
-      "Account": "Compte",
-      "logout": "Déconnexion",
-      "Login": "Connexion",
-      "getstart": "Commencer Gratuitement",
-      "dash": "Tableau de Bord",
-      "redystart": "Prêt à commencer ?",
-      "join": "Rejoignez {{appName}} aujourd'hui",
-      "start": "Commencer maintenant",
-      "Learn": "En savoir plus"
-    },
-    "hero": {
-      "badge": "✦ Pour les commerçants, professionnels et prestataires de services",
-      "title": "Transformez vos demandes en",
-      "subtitle": "Taysir One regroupe vos messages clients de Facebook et WhatsApp en un seul endroit, et le bot IA s'occupe des réponses techniques et de la collecte des numéros de téléphone pour vous.",
-      "cta_primary": "Commencer gratuitement",
-      "cta_secondary": "Comment ça marche ?",
-      "stats": [
-        "Commerçants",
-        "Leads par mois",
-        "Précision des données",
-        "Wilayas couvertes"
-      ]
-    },
-    "features": {
-      "badge": "✦ Fonctionnalités",
-      "title": "Dites adieu aux répétitions des mêmes",
-      "title_highlight": "Questions",
-      "subtitle": "Un système intelligent qui filtre les clients sérieux et collecte leurs données automatiquement.",
-      "items": [
-        {
-          "title": "Agent de vente IA",
-          "desc": "Un bot intelligent répond avec précision aux détails de vos offres ou services 24h/24 et 7j/7."
-        },
-        {
-          "title": "Collecte de numéros",
-          "desc": "Le bot demande le numéro du client intéressé et l'enregistre dans une liste de Leads organisée."
-        },
-        {
-          "title": "Boîte de réception unifiée",
-          "desc": "Rassemblez les messages WhatsApp, Facebook et Instagram dans un seul écran professionnel."
-        },
-        {
-          "title": "Filtrage intelligent",
-          "desc": "L'IA fait la différence entre un acheteur sérieux et une simple discussion, ignorant les messages inutiles."
-        },
-        {
-          "title": "Analyses des ventes",
-          "desc": "Sachez quels produits attirent le plus de clients et quelles plateformes fonctionnent le mieux."
-        },
-        {
-          "title": "Gestion des Leads",
-          "desc": "Le bot organise la liste des clients en fonction de leur niveau d'intérêt et de leur préparation à l'achat."
-        }
-      ]
-    },
-    "how": {
-      "badge": "✦ Comment ça marche",
-      "title_before": "De",
-      "title_quote": "'C'est combien ?'",
-      "title_middle": "à",
-      "title_highlight": "un Lead sérieux",
-      "steps": [
-        {
-          "title": "Ajoutez vos offres",
-          "desc": "Téléchargez les spécifications, le prix et les détails sur votre panneau de contrôle une seule fois."
-        },
-        {
-          "title": "Le bot prend le relais",
-          "desc": "Lorsqu'un client pose une question, le bot donne tous les détails techniques de manière professionnelle."
-        },
-        {
-          "title": "Collecte de données",
-          "desc": "Le bot demande au client son numéro pour le suivi et la confirmation de la commande."
-        },
-        {
-          "title": "Concluez la vente",
-          "desc": "Entrez dans le tableau de bord et trouvez la liste des numéros de téléphone prêts à être appelés."
-        }
-      ]
-    },
-    "platforms": {
-      "badge": "✦ Plateformes supportées",
-      "title": "Servez vos clients sur toutes les plateformes",
-      "items": [
-        {
-          "name": "WhatsApp Business",
-          "desc": "L'automatisation la plus demandée en Algérie",
-          "feature": "Connexion directe via Meta API"
-        },
-        {
-          "name": "Facebook Messenger",
-          "desc": "Réponses intelligentes pour vos messages de page",
-          "feature": "Convertissez les visiteurs en rendez-vous"
-        },
-        {
-          "name": "Instagram DM",
-          "desc": "Réponses professionnelles instantanées pour les DM",
-          "feature": "Idéal pour toutes les activités commerciales"
-        }
-      ]
-    },
-    "pricing": {
-      "badge": "✦ Tarification",
-      "title": "Plan professionnel,",
-      "title_highlight": "la moitié du prix d'un employé",
-      "plans": [
-        {
-          "name": "Essai",
-          "price": "Gratuit",
-          "subtitle": "Aperçu des fonctionnalités",
-          "cta": "Essayer gratuitement",
-          "features": ["Annonces limitées (3)", "Réponse auto de base", "Gestion des messages"],
-          "locked": ["IA intelligente avancée", "Exportation de liste de numéros"]
-        },
-        {
-          "name": "Pro Agency",
-          "price": "5.000",
-          "period": "DZD / Mois",
-          "subtitle": "Le pack complet pour les entreprises sérieuses",
-          "cta": "S'abonner maintenant",
-          "badge": "⭐ Plus populaire",
-          "features": [
-            "Annonces illimitées",
-            "Bot IA avancé",
-            "Collecte de numéros illimitée",
-            "WhatsApp + FB + Instagram",
-            "Analyses précises des annonces",
-            "Support VIP dédié"
-          ]
-        }
-      ],
-      "footer": "💳 Paiement : virement BaridiMob ou CCP"
-    },
-    "testimonials": {
-      "badge": "✦ Success Stories",
-      "title": "Des agences qui nous font",
-      "title_highlight": "confiance",
-      "items": [
-        {
-          "text": "La plateforme m'a évité de répondre à des centaines de curieux. Le bot ne me donne que les numéros des clients sérieux.",
-          "name": "Mounir .Q",
-          "role": "Agence Immobilière · Alger"
-        },
-        {
-          "text": "Dans un showroom auto, les messages ne s'arrêtent jamais. Taysir One rassemble tout au même endroit.",
-          "name": "Radouane .M",
-          "role": "Showroom Auto · Sétif"
-        },
-        {
-          "text": "La facilité d'utilisation est incroyable. Nous avons lié la page en 5 minutes et le bot a commencé à répondre immédiatement.",
-          "name": "Hamid .S",
-          "role": "Promoteur Immobilier · Béjaïa"
-        }
-      ]
-    },
-    "faqs": {
-      "badge": "✦ FAQ",
-      "title": "Questions & Réponses",
-      "items": [
-        {
-          "q": "Puis-je commencer gratuitement sans carte bancaire ?",
-          "a": "Oui ! Le pack d'essai est gratuit et vous permet de tester les fonctionnalités avant de vous abonner."
-        },
-        {
-          "q": "Quels sont les modes de paiement disponibles ?",
-          "a": "Nous acceptons les transferts BaridiMob et CCP, qui sont les plus adaptés aux utilisateurs algériens."
-        },
-        {
-          "q": "Comment mon abonnement est-il activé après le paiement ?",
-          "a": "Après avoir envoyé le reçu, il est examiné manuellement par notre équipe et activé en quelques heures."
-        },
-        {
-          "q": "Le bot répond-il en Darja algérien ?",
-          "a": "Oui ! Vous pouvez programmer le bot en n'importe quelle langue : Arabe, Darja algérien, Français ou Anglais."
-        },
-        {
-          "q": "Est-ce que ça fonctionne avec WhatsApp régulier ?",
-          "a": "Nous travaillons avec l'API WhatsApp Business. Notre équipe de support vous aide pour la configuration."
-        }
-      ]
-    },
-    "cta": {
-      "badge": "✦ Commencez aujourd'hui",
-      "title": "Prêt à transformer vos demandes",
-      "title_highlight": "en ventes ?",
-      "subtitle": "Inscrivez-vous gratuitement et commencez en quelques minutes. Aucune carte bancaire requise.",
-      "button": "Commencer gratuitement"
-    },
-    "footer": {
-      "privacy": "Politique de confidentialité",
-      "terms": "Conditions d'utilisation",
-      "contact": "Contactez-nous",
-      "copyright": "© 2025 Taysir One. Tous droits réservés."
-    }
-  },
-  "agency_nav": {
-    "dashboard": "Tableau de bord",
-    "messages": "Messages (12)",
-    "real_estate": "Immobilier",
-    "cars": "Voitures",
-    "ai_bot": "Bot IA",
-    "subscription": "Abonnement"
   }
 }

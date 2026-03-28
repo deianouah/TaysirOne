@@ -25,13 +25,13 @@ const DemoPage = () => {
       blurIntensity="sm"
       overlayOpacity={90}
       logo="/images/darklogo-1759833955.webp"
-      title="TaysirOne – Smart Communication & Messaging Platform"
+      title="WhatsWay – Smart Communication & Messaging Platform"
       tagline="Experience seamless communication with next-gen automation and multi-channel messaging"
       themeColor="#16A34A"
       infoNote={
         <>
           <strong>
-            Access the TaysirOne demo using the login details below
+            Access the WhatsWay demo using the login details below
           </strong>
           <br />
           Explore our powerful messaging tools, automation flows, and channel
@@ -40,7 +40,7 @@ const DemoPage = () => {
           <span className="font-semibold">
             For full access to real-time messaging, campaigns, billing tools,
             and integrations, please register as a new user. Enjoy the complete
-            TaysirOne experience with no restrictions.
+            WhatsWay experience with no restrictions.
           </span>
           <br />
           <span className="mt-1 block text-xs text-gray-500">
@@ -48,19 +48,19 @@ const DemoPage = () => {
           </span>
         </>
       }
-      demoUrl="https://taysirone.com/login"
+      demoUrl="https://whatsway.diploy.in/login"
       superAdmin={{
         username: "demoadmin",
         password: "Admin@123",
       }}
       tenant={{
-        username: "admin",
-        password: "Admin@123",
+        username: "raman",
+        password: "Raman@123",
       }}
-      buttonLabel="🚀 Try TaysirOne Demo"
-      buttonLink="https://taysirone.com/"
+      buttonLabel="🚀 Try WhatsWay Demo"
+      buttonLink="https://whatsway.diploy.in/"
       bottomHelp="This is a demo environment. All activities are simulated and do not affect live user data, billing, or messaging."
-      supportEmail="taysirone@gmail.com"
+      supportEmail="nb@diploy.in"
     />
   );
 };

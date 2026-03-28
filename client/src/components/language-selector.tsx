@@ -36,10 +36,10 @@ export function LanguageSelector() {
 
   return (
     <Select value={language} onValueChange={(value: any) => setLanguage(value)}>
-      <SelectTrigger className="w-[110px]" data-testid="select-language">
-        <span className="flex items-center gap-1.5">
-          <span className="text-base leading-none">{currentConfig?.flag}</span>
-          <span>{currentConfig?.nativeName}</span>
+      <SelectTrigger className="w-auto min-w-[130px] px-4 py-2 bg-white/50 dark:bg-gray-800/50 border-gray-200/50 dark:border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 rounded-xl" data-testid="select-language">
+        <span className="flex items-center gap-2.5">
+          <span className="text-lg leading-none filter drop-shadow-sm">{currentConfig?.flag}</span>
+          <span className="font-semibold text-[13px] tracking-wide text-gray-700 dark:text-gray-200">{currentConfig?.nativeName || "Language"}</span>
         </span>
       </SelectTrigger>
       <SelectContent>

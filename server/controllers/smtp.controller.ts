@@ -117,30 +117,11 @@ export const getSMTPConfigHandler = async (req: Request, res: Response) => {
 export const getSMTPConfig = async () => {
   return cacheGet(CACHE_KEYS.smtpConfig(), CACHE_TTL.smtpConfig, async () => {
     const configs = await db.select().from(smtpConfig).limit(1);
-    
-    if (configs && configs.length > 0) {
-      return configs[0];
+    if (!configs || configs.length === 0) {
+      console.warn('⚠️ No SMTP configuration found');
+      return null;
     }
-
-    // Fallback to environment variables
-    if (process.env.SMTP_USER && process.env.SMTP_PASS) {
-      return {
-        id: -1,
-        host: process.env.SMTP_HOST || 'smtp.gmail.com',
-        port: process.env.SMTP_PORT || '587',
-        secure: (process.env.SMTP_PORT === '465'),
-        user: process.env.SMTP_USER,
-        password: process.env.SMTP_PASS,
-        fromName: process.env.SMTP_FROM_NAME || 'Your Company',
-        fromEmail: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER,
-        logo: null,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
-    }
-
-    console.warn('⚠️ No SMTP configuration found in DB or .env');
-    return null;
+    return configs[0];
   });
 };
 

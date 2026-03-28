@@ -35,15 +35,25 @@ export interface LanguageConfig {
 }
 
 const staticLanguages: Record<string, LanguageConfig> = {
-  en: { name: "English", nativeName: "En", direction: "ltr", flag: "🇬🇧" },
-  fr: { name: "French", nativeName: "Fr", direction: "ltr", flag: "🇫🇷" },
-  ar: { name: "Arabic", nativeName: "Ar", direction: "rtl", flag: "🇩🇿" },
+  en: { name: "English", nativeName: "English", direction: "ltr", flag: "🇬🇧" },
+  es: { name: "Spanish", nativeName: "Español", direction: "ltr", flag: "🇪🇸" },
+  fr: { name: "French", nativeName: "Français", direction: "ltr", flag: "🇫🇷" },
+  de: { name: "German", nativeName: "Deutsch", direction: "ltr", flag: "🇩🇪" },
+  pt: { name: "Portuguese", nativeName: "Português", direction: "ltr", flag: "🇧🇷" },
+  ar: { name: "Arabic", nativeName: "العربية", direction: "rtl", flag: "🇸🇦" },
+  hi: { name: "Hindi", nativeName: "Hi", direction: "ltr", flag: "🇮🇳" },
+  zh: { name: "Chinese", nativeName: "Zh", direction: "ltr", flag: "🇨🇳" },
 };
 
 const staticTranslations: Record<string, any> = {
   en: enTranslations,
+  es: esTranslations,
   fr: frTranslations,
+  de: deTranslations,
+  pt: ptTranslations,
   ar: arTranslations,
+  hi: hiTranslations,
+  zh: zhTranslations,
 };
 
 interface I18nState {
@@ -73,23 +83,16 @@ export const useI18n = create<I18nState>()(
           const data = await response.json();
 
           const dynamicLanguages: Record<string, LanguageConfig> = {};
-          const ALLOWED_LANGS = ["en", "fr", "ar"];
           for (const lang of data) {
-            if (ALLOWED_LANGS.includes(lang.code)) {
-              // Override flag for Arabic to Algeria context
-              let flag = lang.icon || "";
-              if (lang.code === "ar") flag = "🇩🇿";
-              
-              dynamicLanguages[lang.code] = {
-                name: lang.name,
-                nativeName: lang.nativeName || lang.name.substring(0, 2),
-                direction: lang.direction || "ltr",
-                flag: flag,
-              };
-            }
+            dynamicLanguages[lang.code] = {
+              name: lang.name,
+              nativeName: lang.nativeName || lang.name.substring(0, 2),
+              direction: lang.direction || "ltr",
+              flag: lang.icon || "",
+            };
           }
 
-          set({ languages: Object.keys(dynamicLanguages).length > 0 ? dynamicLanguages : { ...staticLanguages }, isLoadingLanguages: false });
+          set({ languages: dynamicLanguages, isLoadingLanguages: false });
 
           const currentLang = get().language;
           if (!dynamicLanguages[currentLang]) {
@@ -141,18 +144,6 @@ export const useI18n = create<I18nState>()(
         if (langConfig) {
           document.documentElement.dir = langConfig.direction;
           document.documentElement.lang = language;
-          
-          // Add/remove RTL class on body for additional styling
-          if (langConfig.direction === "rtl") {
-            document.body.classList.add("rtl");
-            document.body.classList.remove("ltr");
-          } else {
-            document.body.classList.add("ltr");
-            document.body.classList.remove("rtl");
-          }
-
-          // Reload page to ensure all components re-render with new direction
-          window.location.reload();
         }
       },
 

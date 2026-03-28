@@ -15,20 +15,14 @@
  * ============================================================
  */
 
-// import { Pool, neonConfig } from '@neondatabase/serverless';
-// import { drizzle } from 'drizzle-orm/neon-serverless';
-// import ws from "ws";
-// import * as schema from "@shared/schema";
-// import 'dotenv/config';
-
-// neonConfig.webSocketConstructor = ws;
-
-
-import { Pool } from "pg";
-import { DIPLOY_BRAND } from "@diploy/core";
-import { drizzle } from "drizzle-orm/node-postgres";
+import { Pool, neonConfig } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/neon-serverless';
+import ws from "ws";
 import * as schema from "@shared/schema";
-import "dotenv/config";
+import 'dotenv/config';
+
+neonConfig.webSocketConstructor = ws;
+const DIPLOY_BRAND = "TaysirOne";
 
 
 if (!process.env.DATABASE_URL) {

@@ -77,6 +77,7 @@
     "plan-upgrade": "Billing & Membership",
     "billing": "Billing & Credits",
     "users": "Users",
+    "channels": "Channels",
     "master_contacts": "Master Contacts",
     "notifications": "Notifications",
     "subscription_plans": "Subscription Plans",
@@ -1138,9 +1139,9 @@
   },
   "Landing": {
     "header": {
-      "getstart": "Start for Free",
+      "getstart": "Get Started Free",
       "redystart": "Ready to get started?",
-      "join": "Join thousands of businesses already growing with {{appName}}",
+      "join": "Join businesses already growing with {{appName}}",
       "start": " Start Free Trial",
       "Learn": " Learn more",
       "dash": "Dashboard",
@@ -1150,73 +1151,40 @@
       "resourcesMenuItems": [
         {
           "title": "Privacy Policy",
-          "description": "Ready-to-use message templates"
+          "description": "Our privacy and data protection policy"
         },
         {
           "title": "Terms of Service",
-          "description": "Success stories from our clients"
-        },
-        {
-          "title": "WhatsApp Guide",
-          "description": "Complete WhatsApp marketing guide"
-        },
-        {
-          "title": "API Documentation",
-          "description": "Developer resources and API docs"
-        },
-        {
-          "title": "Best Practices",
-          "description": "Tips for WhatsApp marketing success"
-        },
-        {
-          "title": "ROI Calculator",
-          "description": "Calculate your WhatsApp marketing ROI"
+          "description": "Terms and conditions of use"
         }
       ],
-      "aboutMenuItems": [
-        {
-          "title": "About Us",
-          "description": "Learn about our mission and team"
-        },
-        {
-          "title": "Contact",
-          "description": "Get in touch with our team"
-        },
-        {
-          "title": "Careers",
-          "description": "Join our growing team"
-        },
-        {
-          "title": "Integrations",
-          "description": "Connect with 1000+ apps"
-        }
-      ],
+      "aboutMenuItems": [],
       "Navlinks": [
         "Home",
-        "Features",
-        "How it Works",
+        "About",
+        "Legal",
         "Login",
         "Dashboard"
       ]
     },
     "heroSec": {
-      "animatedBgGreenText": "✦ For sellers, merchants, and professionals",
-      "headline": "Convert your prospects",
-      "highlightText": "into opportunities",
-      "subHeadline": "Taysir One centralizes your Facebook and WhatsApp messages. Our AI bot answers technical questions and qualifies prospects for you.",
-      "startTrialButton": "Start for Free",
-      "watchDemoButton": "Watch 2-min Demo",
-      "trustedByText": "Trusted by professionals",
+      "animatedBgGreenText": "WhatsApp Marketing Platform #1 in Algeria",
+      "headline": "Boost Your Business with",
+      "highlightText": "WhatsApp Marketing",
+      "subHeadline": "Taysir One centralizes your WhatsApp Business messages, automates responses with AI, and captures leads automatically. The complete solution for Algerian businesses.",
+      "startTrialButton": "Start Free",
+      "watchDemoButton": "Watch Demo",
+      "trustedByText": "Technologies integrated in our platform",
       "brands": [
-        "Shopify",
-        "WooCommerce",
-        "Salesforce",
-        "HubSpot",
-        "Zapier"
+        "WhatsApp Business",
+        "Facebook",
+        "Instagram",
+        "Gemini AI",
+        "WAHA"
       ],
       "stats": [
         {
-          "label": "Active Users",
+          "label": "Active Businesses",
           "suffix": "+"
         },
         {
@@ -1234,16 +1202,16 @@
       }
     },
     "featuresSec": {
-      "introTagline": "✦ Features",
-      "headlinePre": "No more",
-      "headlineHighlight": "repetitive answers",
-      "subHeadline": "An intelligent system that filters and collects data automatically.",
+      "introTagline": "Powerful WhatsApp Marketing Features",
+      "headlinePre": "Everything You Need to",
+      "headlineHighlight": "Scale Your Business",
+      "subHeadline": "From bulk messaging to AI chatbots, our platform provides all the tools you need to create successful WhatsApp marketing campaigns",
       "demo": "Demo",
       "campaign_progress": "Campaign Progress",
       "featureTabs": [
         {
-          "title": "🤖 AI Agent",
-          "description": "The smart bot answers with precision about your products and services 24/7.",
+          "title": "Bulk Messaging",
+          "description": "Send personalized messages to thousands of contacts instantly with smart delivery optimization",
           "demo": {
             "title": "Broadcast Campaign",
             "stats": "10,000 messages sent in 2 minutes",
@@ -1255,8 +1223,8 @@
           }
         },
         {
-          "title": "📞 Number Collection",
-          "description": "The AI kindly asks and registers the prospect's number in a structured contact list.",
+          "title": "Automation Workflows",
+          "description": "Create intelligent automated sequences that nurture leads and engage customers 24/7",
           "demo": {
             "title": "Welcome Sequence",
             "stats": "85% engagement rate",
@@ -1268,8 +1236,8 @@
           }
         },
         {
-          "title": "💬 Unified Inbox",
-          "description": "Manage WhatsApp, Facebook, and Instagram messages from a single interface.",
+          "title": "Advanced Analytics",
+          "description": "Track performance with real-time insights, delivery reports, and engagement metrics",
           "demo": {
             "title": "Campaign Analytics",
             "stats": "98% delivery rate",
@@ -1281,8 +1249,8 @@
           }
         },
         {
-          "title": "🛡️ Smart Filtering",
-          "description": "The AI distinguishes a serious client from a curious one and ignores useless messages.",
+          "title": "Contact Management",
+          "description": "Organize and segment your audience with smart tagging and advanced filtering",
           "demo": {
             "title": "Smart Segmentation",
             "stats": "50+ custom fields",
@@ -1294,8 +1262,8 @@
           }
         },
         {
-          "title": "📊 Sales Analytics",
-          "description": "Discover which products and platforms generate the most interest.",
+          "title": "AI Chatbots",
+          "description": "Deploy intelligent chatbots that handle customer queries and qualify leads automatically",
           "demo": {
             "title": "Customer Support Bot",
             "stats": "24/7 availability",
@@ -1307,8 +1275,8 @@
           }
         },
         {
-          "title": "🗓️ Contact Management",
-          "description": "The bot organizes your prospects according to their level of interest.",
+          "title": "Campaign Scheduler",
+          "description": "Plan and schedule campaigns across time zones with optimal delivery timing",
           "demo": {
             "title": "Global Campaigns",
             "stats": "Multi-timezone support",
@@ -1336,14 +1304,14 @@
       ]
     },
     "howItWorksSec": {
-      "introTagline": "✦ How it works",
-      "headlinePre": "From first message",
-      "headlineHighlight": "to sale",
-      "subHeadline": "",
+      "introTagline": "Simple 4-Step Process",
+      "headlinePre": "Get Started in",
+      "headlineHighlight": "Under 5 Minutes",
+      "subHeadline": "Our streamlined onboarding process gets you up and running with WhatsApp marketing faster than any other platform",
       "steps": [
         {
-          "title": "1. Add your offers",
-          "description": "Enter the details of your products or services in your dashboard.",
+          "title": "Connect Your Meta API",
+          "description": "Bring your own WhatsApp Business API from Meta and connect it to our platform in seconds",
           "details": [
             "Secure API integration",
             "One-click setup process",
@@ -1352,8 +1320,8 @@
           ]
         },
         {
-          "title": "2. The Bot takes over",
-          "description": "When a client asks a question, the AI answers with accuracy.",
+          "title": "Import Your Contacts",
+          "description": "Upload your customer database or sync directly from your CRM and existing tools",
           "details": [
             "CSV/Excel import support",
             "CRM integrations available",
@@ -1362,8 +1330,8 @@
           ]
         },
         {
-          "title": "3. Qualification",
-          "description": "The AI kindly asks for the phone number to plan the next steps.",
+          "title": "Create & Launch Campaigns",
+          "description": "Design beautiful messages with our drag-and-drop builder and launch targeted campaigns",
           "details": [
             "Visual campaign builder",
             "Pre-built templates",
@@ -1372,8 +1340,8 @@
           ]
         },
         {
-          "title": "4. Close the deal",
-          "description": "Access qualified contacts and call them to finalize the agreement.",
+          "title": "Track & Optimize",
+          "description": "Monitor performance in real-time and optimize your campaigns for better results",
           "details": [
             "Real-time analytics",
             "Delivery tracking",
@@ -1387,26 +1355,26 @@
         "nextStep": "Next Step"
       },
       "visualDemo": {
-        "whatsAppBusinessDashboard": "taysir.one/agency/dashboard"
+        "whatsAppBusinessDashboard": "WhatsApp Business Dashboard"
       },
       "cta": {
-        "readyToGetStarted": "Ready?",
-        "joinText": "",
-        "startFreeTrial": "Start"
+        "readyToGetStarted": "Ready to Get Started?",
+        "joinText": "Join thousands of businesses already using our platform to scale their WhatsApp marketing",
+        "startFreeTrial": "Start Your Free Trial"
       }
     },
     "useCasesSec": {
-      "introTagline": "✦ Supported Platforms",
-      "headlinePre": "Serve your customers",
-      "headlineHighlight": "across platforms",
-      "subHeadline": "",
+      "introTagline": "Industry Solutions",
+      "headlinePre": "Perfect for Every",
+      "headlineHighlight": "Industry & Business",
+      "subHeadline": "Discover how businesses across different industries are using WhatsApp marketing to drive growth and improve customer engagement",
       "keyFeatures": "Key Features",
       "quickStatsTitle": "Quick Stats",
       "useCases": [
         {
           "icon": "ShoppingCart",
-          "title": "💚 WhatsApp Business",
-          "description": "The most requested auto-reply in Algeria. Direct connection via Meta API ✅",
+          "title": "E-commerce",
+          "description": "Boost sales with abandoned cart recovery, order updates, and personalized product recommendations",
           "color": "from-green-500 to-green-600",
           "bgColor": "bg-green-50",
           "stats": {
@@ -1422,8 +1390,8 @@
         },
         {
           "icon": "GraduationCap",
-          "title": "💙 Facebook Messenger",
-          "description": "Smart reply to agency page messages. Turn visitors into appointments ✅",
+          "title": "Education",
+          "description": "Engage students and parents with course updates, assignment reminders, and educational content",
           "color": "from-blue-500 to-blue-600",
           "bgColor": "bg-blue-50",
           "stats": {
@@ -1439,8 +1407,8 @@
         },
         {
           "icon": "Heart",
-          "title": "🟣 Instagram DM",
-          "description": "Perfect for luxury car dealerships. Instant and professional reply ✅",
+          "title": "Healthcare",
+          "description": "Improve patient care with appointment reminders, health tips, and medication alerts",
           "color": "from-red-500 to-red-600",
           "bgColor": "bg-red-50",
           "stats": {
@@ -1532,36 +1500,36 @@
       ]
     },
     "testimonialsSec": {
-      "introTagline": "✦ Success Stories",
-      "headlinePre": "Agencies that trust",
-      "headlineHighlight": "us",
-      "subHeadline": "",
+      "introTagline": "Customer Success Stories",
+      "headlinePre": "Loved by",
+      "headlineHighlight": "10,000+ Businesses",
+      "subHeadline": "See how businesses across industries are achieving remarkable results with our WhatsApp marketing platform",
       "testimonials": [
         {
-          "name": "Mounir Q.",
-          "role": "Real Estate Agency",
+          "name": "Sarah Chen",
+          "role": "E-commerce Director",
           "company": "Fashion Forward",
           "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
           "rating": 5,
-          "text": "The platform saved me from answering hundreds of curious people. The bot gives details and only passes serious numbers.",
+          "text": "WhatsApp Pro transformed our customer engagement. We saw a 300% increase in cart recovery rates and our customers love the personalized experience.",
           "results": "300% increase in cart recovery"
         },
         {
-          "name": "Redouane M.",
-          "role": "Car Dealership",
+          "name": "Michael Rodriguez",
+          "role": "Marketing Manager",
           "company": "TechStart Solutions",
           "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
           "rating": 5,
-          "text": "Messages never stop. Taysir One aggregates everything, we know exactly who the serious buyer is.",
+          "text": "The automation workflows are incredible. We can now nurture leads 24/7 without any manual intervention. Our conversion rates have never been higher.",
           "results": "85% improvement in lead conversion"
         },
         {
-          "name": "Hamid S.",
-          "role": "Property Developer",
+          "name": "Emily Johnson",
+          "role": "Customer Success Lead",
           "company": "HealthCare Plus",
           "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
           "rating": 5,
-          "text": "Incredible ease of use. We connected our page in 5 minutes. Best investment for any agency.",
+          "text": "Patient appointment attendance improved dramatically after implementing WhatsApp reminders. The platform is intuitive and our team adopted it quickly.",
           "results": "60% reduction in no-shows"
         },
         {
@@ -1608,10 +1576,10 @@
     },
     "ctaSec": {
       "introTagline": "Join 10,000+ Businesses Already Growing",
-      "headline": "Ready to turn inquiries into sales?",
-      "subHeadline": "Register for free and start in minutes. No credit card required.",
+      "headline": "Ready to Scale Your Business with WhatsApp Marketing?",
+      "subHeadline": "Start your free trial today. No credit card required. Connect your Meta API and begin sending campaigns in under 5 minutes.",
       "buttons": {
-        "startTrial": "Start for Free",
+        "startTrial": "Start Free Trial",
         "scheduleDemo": "Schedule Demo"
       },
       "trustIndicators": [
@@ -1652,10 +1620,10 @@
       ]
     },
     "pricingSec": {
-      "introTagline": "✦ Pricing",
-      "headlinePre": "Professional plan, at half",
-      "headlineHighlight": "the price of an employee",
-      "subHeadline": "",
+      "introTagline": "Simple, Transparent Pricing",
+      "headlinePre": "Choose Your",
+      "headlineHighlight": "Perfect Plan",
+      "subHeadline": "Start free and scale as you grow. All plans include your own Meta API integration and unlimited message sending.",
       "billingToggle": {
         "monthly": "Monthly",
         "annual": "Annual",
@@ -1721,7 +1689,7 @@
           "",
           ""
         ],
-        "description": "Taysir One - The #1 lead management and online sales platform in Algeria."
+        "description": "The most powerful WhatsApp marketing platform. Scale your business with automated campaigns, advanced analytics, and seamless API integration."
       },
       "socialLinks": {
         "twitter": "Twitter",
@@ -3407,212 +3375,5 @@
       "perMinuteDesc": "Maximum number of requests allowed per minute to prevent abuse.",
       "exceeded": "Response when rate limit is exceeded (HTTP 429)"
     }
-  },
-  "Landing": {
-    "header": {
-      "Navlinks": ["Features", "How it works?", "Pricing", "Testimonials"],
-      "Settings": "Settings",
-      "Account": "Account",
-      "logout": "Logout",
-      "Login": "Login",
-      "getstart": "Start Free",
-      "dash": "Dashboard",
-      "redystart": "Ready to Start?",
-      "join": "Join {{appName}} Today",
-      "start": "Start Now",
-      "Learn": "Learn More"
-    },
-    "hero": {
-      "badge": "✦ For Merchants, Professionals & Service Providers",
-      "title": "Turn your inquiries into",
-      "subtitle": "Taysir One collects your customer messages from Facebook and WhatsApp in one place, and the AI bot handles technical replies and collects lead phone numbers for you.",
-      "cta_primary": "Start Free Now",
-      "cta_secondary": "How it works?",
-      "stats": [
-        "Merchants",
-        "Leads Monthly",
-        "Data Accuracy",
-        "States Covered"
-      ]
-    },
-    "features": {
-      "badge": "✦ Features",
-      "title": "Goodbye to repeating the same",
-      "title_highlight": "Questions",
-      "subtitle": "A smart system that filters serious customers and collects their data automatically.",
-      "items": [
-        {
-          "title": "AI Sales Agent",
-          "desc": "Smart bot replies with details of your offers, products, or services accurately 24/7 without intervention."
-        },
-        {
-          "title": "Phone Number Collection",
-          "desc": "The bot asks for the interested customer's number and saves it in an organized Leads list ready for calling."
-        },
-        {
-          "title": "Unified Team Inbox",
-          "desc": "Collect WhatsApp, Facebook, and Instagram messages in one professional screen."
-        },
-        {
-          "title": "Smart Filtering",
-          "desc": "AI knows the difference between a serious buyer and casual chat, ignoring non-essential messages automatically."
-        },
-        {
-          "title": "Sales Analytics",
-          "desc": "Know which products attract the most customers and which platforms perform best for you."
-        },
-        {
-          "title": "Lead Management",
-          "desc": "The bot organizes the customer list based on their level of interest and readiness to buy."
-        }
-      ]
-    },
-    "how": {
-      "badge": "✦ How it works",
-      "title_before": "From",
-      "title_quote": "'How much is it?'",
-      "title_middle": "to",
-      "title_highlight": "Serious Lead",
-      "steps": [
-        {
-          "title": "Add Your Offers",
-          "desc": "Upload specifications, price, and details to your control panel once."
-        },
-        {
-          "title": "Bot Takes Over",
-          "desc": "When a customer asks, the bot gives all technical details professionally."
-        },
-        {
-          "title": "Data Collection",
-          "desc": "The bot asks the customer for their number for follow-up and order confirmation."
-        },
-        {
-          "title": "Close the Deal",
-          "desc": "Enter the dashboard and find the list of phone numbers ready to call."
-        }
-      ]
-    },
-    "platforms": {
-      "badge": "✦ Supported Platforms",
-      "title": "Serve your customers across platforms",
-      "items": [
-        {
-          "name": "WhatsApp Business",
-          "desc": "Most requested automation in the region",
-          "feature": "Direct connection via Meta API"
-        },
-        {
-          "name": "Facebook Messenger",
-          "desc": "Smart replies for your page messages",
-          "feature": "Convert visitors into appointments"
-        },
-        {
-          "name": "Instagram DM",
-          "desc": "Instant professional replies for DMs",
-          "feature": "Perfect for all business activities"
-        }
-      ]
-    },
-    "pricing": {
-      "badge": "✦ Pricing",
-      "title": "Professional Plan,",
-      "title_highlight": "half the price of an employee",
-      "plans": [
-        {
-          "name": "Trial",
-          "price": "Free",
-          "subtitle": "Preview platform features",
-          "cta": "Try for Free",
-          "features": ["Limited ads (3)", "Basic auto-reply", "Message management"],
-          "locked": ["Advanced Smart AI", "Export phone list"]
-        },
-        {
-          "name": "Pro Agency",
-          "price": "5,000",
-          "period": "DZD / Month",
-          "subtitle": "The complete package for serious businesses",
-          "cta": "Subscribe Now",
-          "badge": "⭐ Most Popular",
-          "features": [
-            "Unlimited Ads",
-            "Advanced AI Bot",
-            "Unlimited Phone Collection",
-            "WhatsApp + FB + Instagram",
-            "Accurate Ad Analytics",
-            "Dedicated VIP Support"
-          ]
-        }
-      ],
-      "footer": "💳 Payment: BaridiMob or CCP bank transfer"
-    },
-    "testimonials": {
-      "badge": "✦ Success Stories",
-      "title": "Agencies that trust",
-      "title_highlight": "us",
-      "items": [
-        {
-          "text": "The platform saved me from answering hundreds of curious people. The bot only gives me the serious lead numbers.",
-          "name": "Mounir .Q",
-          "role": "Real Estate Agency · Algiers"
-        },
-        {
-          "text": "In a car showroom, messages never stop. Taysir One collects all requests in one place, and we know exactly who is serious.",
-          "name": "Radouane .M",
-          "role": "Car Showroom · Setif"
-        },
-        {
-          "text": "The ease of use is amazing. We linked the page in 5 minutes and the bot started replying instantly. Highly recommended.",
-          "name": "Hamid .S",
-          "role": "Property Developer · Bejaia"
-        }
-      ]
-    },
-    "faqs": {
-      "badge": "✦ FAQ",
-      "title": "Questions & Answers",
-      "items": [
-        {
-          "q": "Can I start for free without a credit card?",
-          "a": "Yes! The trial package is completely free and lets you test platform features before subscribing."
-        },
-        {
-          "q": "What are the available payment methods?",
-          "a": "We support BaridiMob and CCP transfers, which are the most suitable for Algerian users."
-        },
-        {
-          "q": "How is my subscription activated after payment?",
-          "a": "After sending the transfer receipt, it's manually reviewed by our team and activated within hours."
-        },
-        {
-          "q": "Does the bot reply in Algerian Darja?",
-          "a": "Yes! You can program the bot in any language: Classical Arabic, Algerian Darja, French, or English."
-        },
-        {
-          "q": "Does it work with regular WhatsApp?",
-          "a": "We work with WhatsApp Business API. Our support team provides full assistance in linking and setup."
-        }
-      ]
-    },
-    "cta": {
-      "badge": "✦ Start Today",
-      "title": "Ready to turn inquiries",
-      "title_highlight": "into sales?",
-      "subtitle": "Sign up for free and start in minutes. No credit card required.",
-      "button": "Start Free"
-    },
-    "footer": {
-      "privacy": "Privacy Policy",
-      "terms": "Terms & Conditions",
-      "contact": "Contact Us",
-      "copyright": "© 2025 Taysir One. All rights reserved."
-    }
-  },
-  "agency_nav": {
-    "dashboard": "Dashboard",
-    "messages": "Messages (12)",
-    "real_estate": "Real Estate",
-    "cars": "Cars",
-    "ai_bot": "AI Bot",
-    "subscription": "Subscription"
   }
 }

@@ -42,7 +42,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   });
 
   // 🔥 GLOBAL notification + title logic
-  useGlobalNotifications(socket, conversations, brandSettings?.title);
+  useGlobalNotifications(socket, conversations);
 
   useEffect(() => {
     if (brandSettings) {
