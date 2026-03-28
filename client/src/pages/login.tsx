@@ -53,6 +53,8 @@ import {
   Users,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "@/lib/i18n";
+
 
 import { AppSettings } from "@/types/types";
 
@@ -63,6 +65,7 @@ const loginSchema = z.object({
 });
 
 export default function LoginPage() {
+  const { t } = useTranslation();
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [error, setError] = useState<string | null>(null);
@@ -143,23 +146,23 @@ export default function LoginPage() {
   const features = [
     {
       icon: Zap,
-      title: "Instant Campaigns",
-      description: "Launch WhatsApp campaigns in minutes",
+      title: t("auth.login.features.instantCampaigns.title", { defaultValue: "Instant Campaigns" }),
+      description: t("auth.login.features.instantCampaigns.desc", { defaultValue: "Launch WhatsApp campaigns in minutes" }),
     },
     {
       icon: BarChart3,
-      title: "Real-time Analytics",
-      description: "Track delivery, reads, and engagement",
+      title: t("auth.login.features.realtimeAnalytics.title", { defaultValue: "Real-time Analytics" }),
+      description: t("auth.login.features.realtimeAnalytics.desc", { defaultValue: "Track delivery, reads, and engagement" }),
     },
     {
       icon: Users,
-      title: "Contact Management",
-      description: "Organize and segment your audience",
+      title: t("auth.login.features.contactManagement.title", { defaultValue: "Contact Management" }),
+      description: t("auth.login.features.contactManagement.desc", { defaultValue: "Organize and segment your audience" }),
     },
     {
       icon: Shield,
-      title: "Secure & Compliant",
-      description: "GDPR compliant with enterprise security",
+      title: t("auth.login.features.secureCompliant.title", { defaultValue: "Secure & Compliant" }),
+      description: t("auth.login.features.secureCompliant.desc", { defaultValue: "GDPR compliant with enterprise security" }),
     },
   ];
 
@@ -190,10 +193,10 @@ export default function LoginPage() {
           </div>
 
           <h2 className="text-3xl xl:text-4xl font-bold leading-tight mb-4">
-            Power your business with WhatsApp Marketing
+            {t("auth.login.powerBusiness", { defaultValue: "Power your business with WhatsApp Marketing" })}
           </h2>
           <p className="text-slate-400 text-lg mb-10">
-            Reach your customers where they are. Drive engagement, boost sales, and build relationships.
+            {t("auth.login.heroHeadline", { defaultValue: "Reach your customers where they are. Drive engagement, boost sales, and build relationships." })}
           </p>
 
           <div className="space-y-5">
@@ -229,16 +232,16 @@ export default function LoginPage() {
               )}
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              {step === "login" && "Welcome Back"}
-              {step === "forgot" && "Forgot Password"}
-              {step === "verify" && "Verify OTP"}
-              {step === "reset" && "Reset Password"}
+              {step === "login" && t("auth.login.welcomeBack", { defaultValue: "Welcome Back" })}
+              {step === "forgot" && t("auth.login.forgotPassword", { defaultValue: "Forgot Password" })}
+              {step === "verify" && t("auth.login.verifyOtp", { defaultValue: "Verify OTP" })}
+              {step === "reset" && t("auth.login.resetPassword", { defaultValue: "Reset Password" })}
             </h1>
             <p className="mt-1.5 text-gray-500">
-              {step === "login" && "Sign in to your WhatsApp marketing dashboard"}
-              {step === "forgot" && "Enter your email to receive a reset code"}
-              {step === "verify" && "Enter the code sent to your email"}
-              {step === "reset" && "Create a new secure password"}
+              {step === "login" && t("auth.login.signinToDashboard", { defaultValue: "Sign in to your WhatsApp marketing dashboard" })}
+              {step === "forgot" && t("auth.login.enterEmailReset", { defaultValue: "Enter your email to receive a reset code" })}
+              {step === "verify" && t("auth.login.enterCodeEmail", { defaultValue: "Enter the code sent to your email" })}
+              {step === "reset" && t("auth.login.createNewSecurePassword", { defaultValue: "Create a new secure password" })}
             </p>
           </div>
 
@@ -261,13 +264,13 @@ export default function LoginPage() {
                       name="username"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Username</FormLabel>
+                          <FormLabel>{t("auth.login.username", { defaultValue: "Username" })}</FormLabel>
                           <FormControl>
                             <div className="relative">
                               <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                               <Input
                                 {...field}
-                                placeholder="Enter your username"
+                                placeholder={t("auth.login.usernamePlaceholder", { defaultValue: "Enter your username" })}
                                 autoComplete="username"
                                 autoFocus
                                 className="pl-10"
@@ -284,14 +287,14 @@ export default function LoginPage() {
                       name="password"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Password</FormLabel>
+                          <FormLabel>{t("auth.login.password", { defaultValue: "Password" })}</FormLabel>
                           <FormControl>
                             <div className="relative">
                               <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                               <Input
                                 {...field}
                                 type={showPassword ? "text" : "password"}
-                                placeholder="Enter your password"
+                                placeholder={t("auth.login.passwordPlaceholder", { defaultValue: "Enter your password" })}
                                 autoComplete="current-password"
                                 className="pl-10 pr-10"
                               />
@@ -319,7 +322,7 @@ export default function LoginPage() {
                         className="text-sm text-green-600 hover:text-green-700 font-medium"
                         onClick={() => setStep("forgot")}
                       >
-                        Forgot Password?
+                        {t("auth.login.forgotPasswordLink", { defaultValue: "Forgot Password?" })}
                       </button>
                     </div>
 
@@ -331,10 +334,10 @@ export default function LoginPage() {
                       {loginMutation.isPending ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Signing in...
+                          {t("auth.login.signingIn", { defaultValue: "Signing in..." })}
                         </>
                       ) : (
-                        "Sign in"
+                        t("auth.login.signinButton", { defaultValue: "Sign in" })
                       )}
                     </Button>
                   </form>
@@ -372,12 +375,12 @@ export default function LoginPage() {
               {step === "login" && (
                 <div className="mt-6 text-center">
                   <p className="text-sm text-gray-600">
-                    Don't have an account?{" "}
+                    {t("auth.login.noAccount", { defaultValue: "Don't have an account?" })}{" "}
                     <Link
                       to="/signup"
                       className="text-green-600 hover:text-green-700 font-semibold"
                     >
-                      Sign up for free
+                      {t("auth.login.signupForFree", { defaultValue: "Sign up for free" })}
                     </Link>
                   </p>
                 </div>
@@ -390,15 +393,15 @@ export default function LoginPage() {
             <div className="flex items-center justify-center space-x-6 text-xs text-gray-400">
               <div className="flex items-center space-x-1.5">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                <span>Secure Login</span>
+                <span>{t("auth.login.secureLogin", { defaultValue: "Secure Login" })}</span>
               </div>
               <div className="flex items-center space-x-1.5">
                 <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                <span>GDPR Compliant</span>
+                <span>{t("auth.login.gdprCompliant", { defaultValue: "GDPR Compliant" })}</span>
               </div>
               <div className="flex items-center space-x-1.5">
                 <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
-                <span>24/7 Support</span>
+                <span>{t("auth.login.support247", { defaultValue: "24/7 Support" })}</span>
               </div>
             </div>
           </div>

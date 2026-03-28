@@ -42,7 +42,48 @@
     "inactive": "غير نشط"
   },
   "auth": {
-    "login": "تسجيل الدخول",
+    "login": {
+      "welcomeBack": "مرحبًا بعودتك",
+      "forgotPassword": "نسيت كلمة المرور",
+      "verifyOtp": "التحقق من رمز OTP",
+      "resetPassword": "إعادة تعيين كلمة المرور",
+      "signinToDashboard": "سجل الدخول إلى لوحة تحكم تسويق واتساب الخاصة بك",
+      "enterEmailReset": "أدخل بريدك الإلكتروني لتلقي رمز إعادة التعيين",
+      "enterCodeEmail": "أدخل الرمز المرسل إلى بريدك الإلكتروني",
+      "createNewSecurePassword": "أنشئ كلمة مرور جديدة آمنة",
+      "username": "اسم المستخدم",
+      "usernamePlaceholder": "أدخل اسم المستخدم الخاص بك",
+      "password": "كلمة المرور",
+      "passwordPlaceholder": "أدخل كلمة المرور الخاصة بك",
+      "forgotPasswordLink": "نسيت كلمة المرور؟",
+      "signinButton": "تسجيل الدخول",
+      "signingIn": "جاري تسجيل الدخول...",
+      "noAccount": "ليس لديك حساب؟",
+      "signupForFree": "سجل مجاناً",
+      "secureLogin": "تسجيل دخول آمن",
+      "gdprCompliant": "متوافق مع GDPR",
+      "support247": "دعم 24/7",
+      "powerBusiness": "عزز عملك مع تسويق واتساب",
+      "heroHeadline": "صل إلى عملائك أينما كانوا. عزز التفاعل، وزد المبيعات، وابنِ علاقات قوية.",
+      "features": {
+        "instantCampaigns": {
+          "title": "حملات فورية",
+          "desc": "أطلق حملات واتساب في دقائق"
+        },
+        "realtimeAnalytics": {
+          "title": "تحليلات في الوقت الفعلي",
+          "desc": "تتبع التسليم، والقراءة، والتفاعل"
+        },
+        "contactManagement": {
+          "title": "إدارة جهات الاتصال",
+          "desc": "نظم وقسم جمهورك"
+        },
+        "secureCompliant": {
+          "title": "آمن ومتوافق",
+          "desc": "متوافق مع GDPR مع أمان المؤسسات"
+        }
+      }
+    },
     "logout": "تسجيل الخروج",
     "username": "اسم المستخدم",
     "password": "كلمة المرور",

@@ -42,7 +42,48 @@
     "inactive": "Inactive"
   },
   "auth": {
-    "login": "Login",
+    "login": {
+      "welcomeBack": "Welcome Back",
+      "forgotPassword": "Forgot Password",
+      "verifyOtp": "Verify OTP",
+      "resetPassword": "Reset Password",
+      "signinToDashboard": "Sign in to your WhatsApp marketing dashboard",
+      "enterEmailReset": "Enter your email to receive a reset code",
+      "enterCodeEmail": "Enter the code sent to your email",
+      "createNewSecurePassword": "Create a new secure password",
+      "username": "Username",
+      "usernamePlaceholder": "Enter your username",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "forgotPasswordLink": "Forgot Password?",
+      "signinButton": "Sign in",
+      "signingIn": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "signupForFree": "Sign up for free",
+      "secureLogin": "Secure Login",
+      "gdprCompliant": "GDPR Compliant",
+      "support247": "24/7 Support",
+      "powerBusiness": "Power your business with WhatsApp Marketing",
+      "heroHeadline": "Reach your customers where they are. Drive engagement, boost sales, and build relationships.",
+      "features": {
+        "instantCampaigns": {
+          "title": "Instant Campaigns",
+          "desc": "Launch WhatsApp campaigns in minutes"
+        },
+        "realtimeAnalytics": {
+          "title": "Real-time Analytics",
+          "desc": "Track delivery, reads, and engagement"
+        },
+        "contactManagement": {
+          "title": "Contact Management",
+          "desc": "Organize and segment your audience"
+        },
+        "secureCompliant": {
+          "title": "Secure & Compliant",
+          "desc": "GDPR compliant with enterprise security"
+        }
+      }
+    },
     "logout": "Logout",
     "username": "Username",
     "password": "Password",

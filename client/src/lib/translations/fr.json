@@ -42,7 +42,48 @@
     "inactive": "Inactif"
   },
   "auth": {
-    "login": "Connexion",
+    "login": {
+      "welcomeBack": "Content de vous revoir",
+      "forgotPassword": "Mot de passe oublié",
+      "verifyOtp": "Vérifier l'OTP",
+      "resetPassword": "Réinitialiser le mot de passe",
+      "signinToDashboard": "Connectez-vous à votre tableau de bord de marketing WhatsApp",
+      "enterEmailReset": "Entrez votre e-mail pour recevoir un code de réinitialisation",
+      "enterCodeEmail": "Entrez le code envoyé à votre e-mail",
+      "createNewSecurePassword": "Créez un nouveau mot de passe sécurisé",
+      "username": "Nom d'utilisateur",
+      "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "forgotPasswordLink": "Mot de passe oublié ?",
+      "signinButton": "Se connecter",
+      "signingIn": "Connexion en cours...",
+      "noAccount": "Vous n'avez pas de compte ?",
+      "signupForFree": "Inscrivez-vous gratuitement",
+      "secureLogin": "Connexion sécurisée",
+      "gdprCompliant": "Conforme au RGPD",
+      "support24/7": "Support 24/7",
+      "powerBusiness": "Propulsez votre entreprise avec le marketing WhatsApp",
+      "heroHeadline": "Atteignez vos clients là où ils se trouvent. Stimulez l'engagement, boostez les ventes et établissez des relations.",
+      "features": {
+        "instantCampaigns": {
+          "title": "Campagnes instantanées",
+          "desc": "Lancez des campagnes WhatsApp en quelques minutes"
+        },
+        "realtimeAnalytics": {
+          "title": "Analyses en temps réel",
+          "desc": "Suivez la livraison, les lectures et l'engagement"
+        },
+        "contactManagement": {
+          "title": "Gestion des contacts",
+          "desc": "Organisez et segmentez votre audience"
+        },
+        "secureCompliant": {
+          "title": "Sécurisé et conforme",
+          "desc": "Conforme au RGPD avec une sécurité d'entreprise"
+        }
+      }
+    },
     "logout": "Déconnexion",
     "username": "Nom d'utilisateur",
     "password": "Mot de passe",
