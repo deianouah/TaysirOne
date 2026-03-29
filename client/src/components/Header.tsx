@@ -237,11 +237,11 @@ const Header = () => {
             {/* Logo Part */}
             <Link href="/" className="flex items-center space-x-2.5 group">
               <img
-                src={brandSettings?.logo || "/logo.png?v=24"}
+                src={brandSettings?.logo || "/logo.png?v=25"}
                 alt="Logo"
-                className="h-14 object-contain transition-transform duration-300 group-hover:scale-105"
+                className={`${isScrolled ? "h-16" : "h-20"} object-contain transition-transform duration-300 group-hover:scale-110`}
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/logo.png?v=24";
+                  (e.target as HTMLImageElement).src = "/logo.png?v=25";
                 }}
               />
             </Link>

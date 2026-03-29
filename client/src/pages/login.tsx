@@ -176,20 +176,16 @@ export default function LoginPage() {
 
         <div className="relative z-10 flex flex-col justify-center px-12 xl:px-16 text-white w-full">
           <div className="mb-10">
-            {brandSettings?.logo ? (
+            <Link href="/">
               <img
-                src={brandSettings?.logo}
+                src={brandSettings?.logo || "/logo.png?v=26"}
                 alt="Logo"
-                className="h-12 object-contain brightness-0 invert"
+                className="h-24 object-contain brightness-0 invert"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/logo.png?v=26";
+                }}
               />
-            ) : (
-              <div className="flex items-center gap-3">
-                <div className="bg-green-500/10 backdrop-blur-sm rounded-xl p-2.5">
-                  <MessageSquare className="h-7 w-7 text-green-400" />
-                </div>
-                <span className="text-2xl font-bold">{brandSettings?.name || "Taysir One"}</span>
-              </div>
-            )}
+            </Link>
           </div>
 
           <h2 className="text-3xl xl:text-4xl font-bold leading-tight mb-4">

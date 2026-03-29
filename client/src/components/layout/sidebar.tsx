@@ -656,11 +656,11 @@ export default function Sidebar() {
               className="flex items-center flex-col space-x-2 sm:space-x-3"
             >
               <img
-                src={brandSettings?.logo || "/logo.png?v=22"}
+                src={brandSettings?.logo || "/logo.png?v=23"}
                 alt="Logo"
-                className=" h-14 object-contain"
+                className="h-24 object-contain transition-transform duration-300 group-hover:scale-105"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/logo.png?v=22";
+                  (e.target as HTMLImageElement).src = "/logo.png?v=23";
                 }}
               />
               <span className=" text-[10px] sm:text-xs">
