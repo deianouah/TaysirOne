@@ -396,8 +396,8 @@ export async function sendOTPEmailVerify(
   const companyName = configs?.name || "Taysir One";
   const fromName = "Taysir One";
   
-  // Resend requires a verified domain. Using onboarding@resend.dev for testing.
-  const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+  // Resend domain verified! Using professional email address.
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@taysirone.com";
 
   if (resend) {
     try {
