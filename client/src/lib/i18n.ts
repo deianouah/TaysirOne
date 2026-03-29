@@ -19,13 +19,8 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 import enTranslations from "./translations/en.json";
-import esTranslations from "./translations/es.json";
 import frTranslations from "./translations/fr.json";
-import deTranslations from "./translations/de.json";
-import ptTranslations from "./translations/pt.json";
 import arTranslations from "./translations/ar.json";
-import hiTranslations from "./translations/hi.json";
-import zhTranslations from "./translations/zh.json";
 
 export interface LanguageConfig {
   name: string;
@@ -35,25 +30,15 @@ export interface LanguageConfig {
 }
 
 const staticLanguages: Record<string, LanguageConfig> = {
-  en: { name: "English", nativeName: "English", direction: "ltr", flag: "🇬🇧" },
-  es: { name: "Spanish", nativeName: "Español", direction: "ltr", flag: "🇪🇸" },
-  fr: { name: "French", nativeName: "Français", direction: "ltr", flag: "🇫🇷" },
-  de: { name: "German", nativeName: "Deutsch", direction: "ltr", flag: "🇩🇪" },
-  pt: { name: "Portuguese", nativeName: "Português", direction: "ltr", flag: "🇧🇷" },
   ar: { name: "Arabic", nativeName: "العربية", direction: "rtl", flag: "🇸🇦" },
-  hi: { name: "Hindi", nativeName: "Hi", direction: "ltr", flag: "🇮🇳" },
-  zh: { name: "Chinese", nativeName: "Zh", direction: "ltr", flag: "🇨🇳" },
+  en: { name: "English", nativeName: "English", direction: "ltr", flag: "🇬🇧" },
+  fr: { name: "French", nativeName: "Français", direction: "ltr", flag: "🇫🇷" },
 };
 
 const staticTranslations: Record<string, any> = {
-  en: enTranslations,
-  es: esTranslations,
-  fr: frTranslations,
-  de: deTranslations,
-  pt: ptTranslations,
   ar: arTranslations,
-  hi: hiTranslations,
-  zh: zhTranslations,
+  en: enTranslations,
+  fr: frTranslations,
 };
 
 interface I18nState {

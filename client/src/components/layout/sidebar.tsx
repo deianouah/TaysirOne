@@ -658,7 +658,7 @@ export default function Sidebar() {
               <img
                 src={brandSettings?.logo || "/logo.png?v=23"}
                 alt="Logo"
-                className="h-24 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-32 object-contain transition-transform duration-300 group-hover:scale-105"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "/logo.png?v=23";
                 }}

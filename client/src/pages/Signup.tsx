@@ -90,53 +90,53 @@ const Signup: React.FC = () => {
 
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  if (!validateForm()) return;
+    e.preventDefault();
+    if (!validateForm()) return;
 
-  setIsLoading(true);
-  setErrors({});
+    setIsLoading(true);
+    setErrors({});
 
-  try {
-    const res = await apiRequest("POST", "/api/users/create", {
-      username: formData.username,
-      password: formData.password,
-      email: formData.email,
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      role: "admin",
-      avatar: "",
-    });
+    try {
+      const res = await apiRequest("POST", "/api/users/create", {
+        username: formData.username,
+        password: formData.password,
+        email: formData.email,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        role: "admin",
+        avatar: "",
+      });
 
-    const data = await res.json();
-    console.log("User created:", data);
+      const data = await res.json();
+      console.log("User created:", data);
 
-    if (data.success) {
-      setLocation(`/verify-email?email=${encodeURIComponent(formData.email)}`);
-      return;
-    }
-
-    setErrors({ general: data.message });
-
-  } catch (error: any) {
-    console.error("Signup error:", error);
-
-    let message = "";
-
-    if (error?.message) {
-      try {
-        const jsonPart = error.message.replace(/^\d+:\s*/, "");
-        const parsed = JSON.parse(jsonPart);
-        message = parsed.message || "";
-      } catch {
-        message = error.message || "";
+      if (data.success) {
+        setLocation(`/verify-email?email=${encodeURIComponent(formData.email)}`);
+        return;
       }
-    }
 
-    setErrors({ general: message });
-  } finally {
-    setIsLoading(false);
-  }
-};
+      setErrors({ general: data.message });
+
+    } catch (error: any) {
+      console.error("Signup error:", error);
+
+      let message = "";
+
+      if (error?.message) {
+        try {
+          const jsonPart = error.message.replace(/^\d+:\s*/, "");
+          const parsed = JSON.parse(jsonPart);
+          message = parsed.message || "";
+        } catch {
+          message = error.message || "";
+        }
+      }
+
+      setErrors({ general: message });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -160,7 +160,7 @@ const Signup: React.FC = () => {
                 <img
                   src={brandSettings?.logo || "/logo.png?v=27"}
                   alt="Logo"
-                  className="h-24 object-contain"
+                  className="h-32 object-contain"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = "/logo.png?v=27";
                   }}
@@ -195,9 +195,8 @@ const Signup: React.FC = () => {
                       name="username"
                       value={formData.username}
                       onChange={handleChange}
-                      className={`w-full pl-10 pr-4 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                        errors.username ? "border-red-300" : "border-gray-300"
-                      }`}
+                      className={`w-full pl-10 pr-4 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${errors.username ? "border-red-300" : "border-gray-300"
+                        }`}
                       placeholder="Choose a unique username"
                       required
                     />
@@ -219,9 +218,8 @@ const Signup: React.FC = () => {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        className={`w-full pl-10 pr-4 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                          errors.firstName ? "border-red-300" : "border-gray-300"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${errors.firstName ? "border-red-300" : "border-gray-300"
+                          }`}
                         placeholder="John"
                         required
                       />
@@ -244,9 +242,8 @@ const Signup: React.FC = () => {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        className={`w-full pl-10 pr-4 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                          errors.lastName ? "border-red-300" : "border-gray-300"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${errors.lastName ? "border-red-300" : "border-gray-300"
+                          }`}
                         placeholder="Doe"
                         required
                       />
@@ -270,9 +267,8 @@ const Signup: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full pl-10 pr-4 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                        errors.email ? "border-red-300" : "border-gray-300"
-                      }`}
+                      className={`w-full pl-10 pr-4 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${errors.email ? "border-red-300" : "border-gray-300"
+                        }`}
                       placeholder="john@company.com"
                       required
                     />
@@ -293,9 +289,8 @@ const Signup: React.FC = () => {
                       name="password"
                       value={formData.password}
                       onChange={handleChange}
-                      className={`w-full pl-10 pr-12 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                        errors.password ? "border-red-300" : "border-gray-300"
-                      }`}
+                      className={`w-full pl-10 pr-12 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${errors.password ? "border-red-300" : "border-gray-300"
+                        }`}
                       placeholder="Create a strong password"
                       required
                     />
@@ -327,11 +322,10 @@ const Signup: React.FC = () => {
                       name="confirmPassword"
                       value={formData.confirmPassword}
                       onChange={handleChange}
-                      className={`w-full pl-10 pr-12 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                        errors.confirmPassword
+                      className={`w-full pl-10 pr-12 py-2.5 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ${errors.confirmPassword
                           ? "border-red-300"
                           : "border-gray-300"
-                      }`}
+                        }`}
                       placeholder="Confirm your password"
                       required
                     />

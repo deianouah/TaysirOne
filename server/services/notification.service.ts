@@ -45,18 +45,23 @@ async function getEmailTransporter() {
   const { getSMTPConfig } = await import("server/controllers/smtp.controller");
   const config = await getSMTPConfig();
   if (config) {
-    const port = parseInt(config.port, 10);
+    const port = Number(config.port);
     const secure = port === 465;
-    return nodemailer.createTransport({
+    const transportOptions: any = {
       host: config.host,
       port,
       secure,
-      ...(!secure && (port === 587 || !!config.secure) ? { requireTLS: true } : {}),
       auth: {
         user: config.user,
         pass: config.password,
       },
-    });
+    };
+
+    if (!secure && (port === 587 || !!config.secure)) {
+      transportOptions.requireTLS = true;
+    }
+
+    return nodemailer.createTransport(transportOptions);
   }
   return nodemailer.createTransport({
     jsonTransport: true,

@@ -25,7 +25,7 @@ async function run() {
     
     await pool.query(query, values);
     
-    console.log('✅ SMTP configuration for taysireone@gmail.com has been successfully applied!');
+    console.log('✅ SMTP configuration for taysirone@gmail.com has been successfully applied!');
     process.exit(0);
   } catch (error) {
     console.error('❌ Failed to update SMTP config:', error);

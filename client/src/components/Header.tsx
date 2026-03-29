@@ -239,7 +239,7 @@ const Header = () => {
               <img
                 src={brandSettings?.logo || "/logo.png?v=25"}
                 alt="Logo"
-                className={`${isScrolled ? "h-16" : "h-20"} object-contain transition-transform duration-300 group-hover:scale-110`}
+                className={`${isScrolled ? "h-20" : "h-28"} object-contain transition-transform duration-300 group-hover:scale-110`}
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "/logo.png?v=25";
                 }}

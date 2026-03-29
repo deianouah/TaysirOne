@@ -180,7 +180,7 @@ export default function LoginPage() {
               <img
                 src={brandSettings?.logo || "/logo.png?v=26"}
                 alt="Logo"
-                className="h-24 object-contain brightness-0 invert"
+                className="h-32 object-contain brightness-0 invert"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "/logo.png?v=26";
                 }}
@@ -219,7 +219,7 @@ export default function LoginPage() {
                 <img
                   src={brandSettings?.logo}
                   alt="Logo"
-                  className="h-14 object-contain"
+                  className="h-20 object-contain"
                 />
               ) : (
                 <div className="bg-slate-800 text-white rounded-full p-3">
