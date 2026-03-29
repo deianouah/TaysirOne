@@ -279,14 +279,34 @@ export async function sendOTPEmail(
   otpCode: string,
   name?: string
 ) {
+  const resend = await getResendClient();
   const config = await getConfig();
   const configs = await getPanelConfig();
+
+  const companyName = configs?.name || "Taysir One";
+  const fromName = "Taysir One";
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@taysirone.com";
+
+  if (resend) {
+    try {
+      console.log(`[Email] Sending Password Reset OTP via Resend to ${email}...`);
+      const data = await resend.emails.send({
+        from: `${fromName} <${fromEmail}>`,
+        to: [email],
+        subject: `Your ${companyName} Password Reset Code`,
+        html: generateForgotPasswordEmailHTML(companyName, resolveLogoUrl(config?.logo, configs?.logo), otpCode, name),
+        text: generateForgotPasswordEmailText(companyName, otpCode, name),
+      });
+
+      if (data.error) throw new Error(data.error.message);
+      return { success: true, messageId: data.data?.id };
+    } catch (error) {
+      console.error("[Email] Resend ForgotPassword Error:", error);
+    }
+  }
+
+  // Fallback to SMTP
   const mailer = await getTransporter();
-
-  const companyName = configs?.name || "Your Company";
-  const fromName = config?.fromName || companyName;
-  const fromEmail = config?.fromEmail;
-
   const mailOptions = {
     from: `"${fromName}" <${fromEmail}>`,
     to: email,
@@ -304,7 +324,7 @@ export async function sendOTPEmail(
     const info = await mailer.sendMail(mailOptions);
     return { success: true, messageId: info.messageId };
   } catch (error) {
-    console.error("[Email] Failed to send OTP:", error);
+    console.error("[Email] SMTP ForgotPassword Failed:", error);
     throw new Error("Failed to send verification email");
   }
 }
@@ -317,69 +337,68 @@ export async function sendContactEmail(data: {
   message: string;
 }) {
   const { name, email, company, subject, message } = data;
-
+  const resend = await getResendClient();
   const config = await getConfig();
   const configs = await getPanelConfig();
-  const mailer = await getTransporter();
 
-  const companyName = configs?.name || "Your Company";
-  const fromName = config?.fromName || companyName;
-  const fromEmail = config?.fromEmail;
+  const companyName = configs?.name || "Taysir One";
+  const fromName = "Taysir One";
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@taysirone.com";
 
-  const html = `
-  <div style="background:#f4f5f7; padding:40px; font-family:Arial, sans-serif;">
-    <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-      <div style="background:#4f46e5; padding:24px; color:#ffffff; text-align:center;">
-        <h2 style="margin:0; font-size:24px; font-weight:600;">New Contact Form Message</h2>
-        <p style="margin:6px 0 0; opacity:0.85;">${companyName}</p>
-      </div>
-      <div style="padding:30px;">
-        <p style="font-size:16px; color:#111827;">You have received a new message from your website contact form.</p>
-        <table style="width:100%; margin-top:20px;">
-          <tr>
-            <td style="padding:10px 0; font-size:16px; font-weight:600; width:150px; color:#374151;">Name:</td>
-            <td style="padding:10px 0; font-size:16px; color:#111827;">${name}</td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0; font-size:16px; font-weight:600; color:#374151;">Email:</td>
-            <td style="padding:10px 0; font-size:16px; color:#111827;">${email}</td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0; font-size:16px; font-weight:600; color:#374151;">Company:</td>
-            <td style="padding:10px 0; font-size:16px; color:#111827;">${company || "-"}</td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0; font-size:16px; font-weight:600; color:#374151;">Subject:</td>
-            <td style="padding:10px 0; font-size:16px; color:#111827;">${subject}</td>
-          </tr>
-        </table>
-        <div style="margin-top:30px;">
-          <p style="font-size:16px; font-weight:600; color:#374151; margin-bottom:8px;">Message:</p>
-          <div style="background:#f9fafb; padding:20px; border-radius:10px; font-size:15px; line-height:1.6; color:#111827;">
-            ${message.replace(/\n/g, "<br>")}
+  const buildHtml = (name: string, email: string, company?: string, subject?: string, message?: string) => `
+    <div style="background:#f4f5f7; padding:40px; font-family:Arial, sans-serif;">
+      <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <div style="background:#10b981; padding:24px; color:#ffffff; text-align:center;">
+          <h2 style="margin:0; font-size:24px; font-weight:600;">New Contact Form Message</h2>
+          <p style="margin:6px 0 0; opacity:0.85;">${companyName}</p>
+        </div>
+        <div style="padding:30px;">
+          <p style="font-size:16px; color:#111827;">You have received a new message from your website contact form.</p>
+          <table style="width:100%; margin-top:20px;">
+            <tr><td style="padding:10px 0; font-weight:600; width:150px;">Name:</td><td>${name}</td></tr>
+            <tr><td style="padding:10px 0; font-weight:600;">Email:</td><td>${email}</td></tr>
+            <tr><td style="padding:10px 0; font-weight:600;">Company:</td><td>${company || "-"}</td></tr>
+            <tr><td style="padding:10px 0; font-weight:600;">Subject:</td><td>${subject}</td></tr>
+          </table>
+          <div style="margin-top:30px;">
+            <p style="font-size:16px; font-weight:600; margin-bottom:8px;">Message:</p>
+            <div style="background:#f9fafb; padding:20px; border-radius:10px; color:#111827;">${message?.replace(/\n/g, "<br>")}</div>
           </div>
         </div>
       </div>
-      <div style="background:#f3f4f6; padding:18px; text-align:center; font-size:13px; color:#6b7280;">
-        This email was sent from the contact form on <strong>${companyName}</strong>.
-      </div>
     </div>
-  </div>
-`;
+  `;
 
-  const mailOptions = {
-    from: `"${fromName}" <${fromEmail}>`,
-    to: fromEmail,
-    subject: `Contact Form: ${subject}`,
-    html,
-    text: `${name} (${email}) says: ${message}`,
-  };
+  if (resend) {
+    try {
+      console.log(`[Email] Sending Contact Request via Resend to ${fromEmail}...`);
+      const data = await resend.emails.send({
+        from: `${fromName} <${fromEmail}>`,
+        to: [fromEmail],
+        subject: `Contact Form: ${subject}`,
+        html: buildHtml(name, email, company, subject, message),
+        text: `${name} (${email}) says: ${message}`,
+      });
+      if (data.error) throw new Error(data.error.message);
+      return { success: true, messageId: data.data?.id };
+    } catch (error) {
+      console.error("[Email] Resend Contact Error:", error);
+    }
+  }
 
+  // Fallback
+  const mailer = await getTransporter();
   try {
-    const info = await mailer.sendMail(mailOptions);
+    const info = await mailer.sendMail({
+      from: `"${fromName}" <${fromEmail}>`,
+      to: fromEmail,
+      subject: `Contact Form: ${subject}`,
+      html: buildHtml(name, email, company, subject, message),
+      text: `${name} (${email}) says: ${message}`,
+    });
     return { success: true, messageId: info.messageId };
   } catch (error) {
-    console.error("[Contact] Failed:", error);
+    console.error("[Email] SMTP Contact Fallback Failed:", error);
     throw new Error("Failed to send contact message");
   }
 }
@@ -443,11 +462,13 @@ export async function sendOTPEmailVerify(
 
 export async function verifyEmailConfiguration(): Promise<boolean> {
   try {
+    const resend = await getResendClient();
+    if (resend) return true; // Resend client presence is enough for config validation
     const mailer = await getTransporter();
     await mailer.verify();
     return true;
   } catch (error) {
-    console.error("[Email] SMTP configuration error:", error);
+    console.error("[Email] Email configuration error:", error);
     return false;
   }
 }
