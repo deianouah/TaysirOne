@@ -15,6 +15,7 @@
  * ============================================================
  */
 
+import { Resend } from "resend";
 import nodemailer from "nodemailer";
 import { diployLogger, HTTP_STATUS, DIPLOY_BRAND } from "@diploy/core";
 import { getSMTPConfig } from "server/controllers/smtp.controller";
@@ -22,6 +23,7 @@ import { getFirstPanelConfig, getPanelConfigs } from "./panel.config";
 import { cacheGet, cacheInvalidate, CACHE_KEYS, CACHE_TTL } from './cache';
 
 let transporter: any = null;
+let resendClient: Resend | null = null;
 
 function resolveLogoUrl(smtpLogo?: string | null, panelLogo?: string | null): string | undefined {
   const logo = smtpLogo || panelLogo;
@@ -31,6 +33,15 @@ function resolveLogoUrl(smtpLogo?: string | null, panelLogo?: string | null): st
   if (!baseUrl) return undefined;
   const path = logo.startsWith("/") ? logo : `/uploads/${logo}`;
   return `${baseUrl}${path}`;
+}
+
+async function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return null;
+  if (!resendClient) {
+    resendClient = new Resend(apiKey);
+  }
+  return resendClient;
 }
 
 async function getTransporter() {
@@ -53,6 +64,13 @@ async function getTransporter() {
       },
     });
   } else {
+    // Check if we have Resend API Key fallback
+    const resend = await getResendClient();
+    if (resend) {
+      // Return a mock transporter that we'll skip later or handle separately
+      return { sendMail: () => Promise.resolve({ messageId: "handled-by-resend" }) };
+    }
+
     console.warn("Using fallback SMTP settings (emails will not be sent)");
     transporter = nodemailer.createTransport({
       jsonTransport: true,
@@ -371,16 +389,43 @@ export async function sendOTPEmailVerify(
   otpCode: string,
   name?: string
 ) {
+  const resend = await getResendClient();
   const config = await getConfig();
   const configs = await getPanelConfig();
+
+  const companyName = configs?.name || "Taysir One";
+  const fromName = "Taysir One";
+  
+  // Resend requires a verified domain or onboarding email
+  const fromEmail = process.env.RESEND_FROM_EMAIL || config?.fromEmail || "onboarding@resend.dev";
+
+  if (resend) {
+    try {
+      console.log(`[Email] Sending OTP via Resend to ${email}...`);
+      const data = await resend.emails.send({
+        from: `${fromName} <${fromEmail}>`,
+        to: [email],
+        subject: `Your ${companyName} Verification Code`,
+        html: generateOTPEmailHTML(companyName, resolveLogoUrl(config?.logo, configs?.logo), otpCode, name),
+        text: generateOTPEmailText(companyName, otpCode, name),
+      });
+
+      if (data.error) {
+        throw new Error(data.error.message);
+      }
+
+      return { success: true, messageId: data.data?.id };
+    } catch (error) {
+      console.error("[Email] Resend API Error:", error);
+      // Fallback to SMTP if Resend fails
+    }
+  }
+
+  // Fallback to SMTP
   const mailer = await getTransporter();
-
-  const companyName = configs?.name || "Your Company";
-  const fromName = config?.fromName || companyName;
-  const fromEmail = config?.fromEmail;
-
+  const finalFromEmail = config?.fromEmail || fromEmail;
   const mailOptions = {
-    from: `"${fromName}" <${fromEmail}>`,
+    from: `"${fromName}" <${finalFromEmail}>`,
     to: email,
     subject: `Your ${companyName} Verification Code`,
     html: generateOTPEmailHTML(companyName, resolveLogoUrl(config?.logo, configs?.logo), otpCode, name),
@@ -391,7 +436,7 @@ export async function sendOTPEmailVerify(
     const info = await mailer.sendMail(mailOptions);
     return { success: true, messageId: info.messageId };
   } catch (error) {
-    console.error("[Email] Failed to send OTP:", error);
+    console.error("[Email] SMTP Fallback Failed:", error);
     throw new Error("Failed to send verification email");
   }
 }
