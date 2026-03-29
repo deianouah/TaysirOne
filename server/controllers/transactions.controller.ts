@@ -906,11 +906,20 @@ export const verifyRazorpayPayment = async (req: Request, res: Response) => {
 
     const provider = providerData[0];
     const secret =
-      provider.config.apiSecret || process.env.RAZORPAY_KEY_SECRET;
+      (provider.config as any)?.apiSecret || 
+      (provider.config as any)?.apiSecretTest || 
+      process.env.RAZORPAY_KEY_SECRET || "";
+
+    if (!secret) {
+      return res.status(500).json({
+        success: false,
+        message: "Razorpay secret key not found",
+      });
+    }
 
     const generated_signature = crypto
       .createHmac("sha256", secret)
-      .update(razorpay_payment_id + "|" + razorpay_subscription_id)
+      .update(String(razorpay_payment_id) + "|" + String(razorpay_subscription_id))
       .digest("hex");
 
     const transactionData = await db
@@ -993,8 +1002,8 @@ export const verifyRazorpayPayment = async (req: Request, res: Response) => {
     const newSubscription = await db
       .insert(subscriptions)
       .values({
-        userId: transaction.userId,
-        planId: transaction.planId,
+        userId: String(transaction.userId),
+        planId: String(transaction.planId),
         planData: {
           name: plan.name,
           description: plan.description,
@@ -1004,12 +1013,11 @@ export const verifyRazorpayPayment = async (req: Request, res: Response) => {
           features: plan.features,
         },
         status: "active",
-        billingCycle: transaction.billingCycle,
+        billingCycle: String(transaction.billingCycle) as any,
         startDate,
         endDate,
         autoRenew: true,
-        currency: transaction.currency || "INR",
-        gatewaySubscriptionId: razorpay_subscription_id,
+        gatewaySubscriptionId: String(razorpay_subscription_id),
         gatewayProvider: "razorpay",
         gatewayStatus: "active",
         createdAt: new Date(),
@@ -1017,9 +1025,10 @@ export const verifyRazorpayPayment = async (req: Request, res: Response) => {
       })
       .returning();
 
+    // Current plan is tracked via the subscriptions table, so we don't update users.planId
     await db
       .update(users)
-      .set({ planId: transaction.planId, updatedAt: new Date() })
+      .set({ updatedAt: new Date() })
       .where(eq(users.id, transaction.userId));
 
     res.status(200).json({
@@ -1090,6 +1099,12 @@ export const verifyManualPayment = async (req: Request, res: Response) => {
         receiptUrl,
       },
     });
+  } catch (error) {
+    console.error("Error verifying manual payment:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error uploading receipt",
+      error,
     });
   }
 };
@@ -1166,8 +1181,8 @@ export const approveManualPayment = async (req: Request, res: Response) => {
     const newSubscription = await db
       .insert(subscriptions)
       .values({
-        userId: user.id,
-        planId: plan.id,
+        userId: String(user.id),
+        planId: String(plan.id),
         planData: {
           name: plan.name,
           description: plan.description,
@@ -1177,11 +1192,10 @@ export const approveManualPayment = async (req: Request, res: Response) => {
           features: plan.features,
         },
         status: "active",
-        billingCycle: transaction.billingCycle,
+        billingCycle: String(transaction.billingCycle) as any,
         startDate,
         endDate,
         autoRenew: true,
-        currency: transaction.currency || "DZD",
         gatewayProvider: "manual",
         gatewayStatus: "active",
         createdAt: new Date(),
@@ -1190,9 +1204,10 @@ export const approveManualPayment = async (req: Request, res: Response) => {
       .returning();
 
     // 4. Update User's planId
+    // Current plan is tracked via the subscriptions table
     await db
       .update(users)
-      .set({ planId: plan.id, updatedAt: new Date() })
+      .set({ updatedAt: new Date() })
       .where(eq(users.id, user.id));
 
     // 5. Link subscription to transaction
@@ -1313,8 +1328,8 @@ export const verifyStripePayment = async (req: Request, res: Response) => {
       const newSubscription = await db
         .insert(subscriptions)
         .values({
-          userId: transaction.userId,
-          planId: transaction.planId,
+          userId: String(transaction.userId),
+          planId: String(transaction.planId),
           planData: {
             name: plan.name,
             description: plan.description,
@@ -1324,22 +1339,22 @@ export const verifyStripePayment = async (req: Request, res: Response) => {
             features: plan.features,
           },
           status: "active",
-          billingCycle: transaction.billingCycle,
+          billingCycle: String(transaction.billingCycle) as any,
           startDate,
           endDate,
           autoRenew: !stripeSub.cancel_at_period_end,
-          currency: transaction.currency || "USD",
-          gatewaySubscriptionId: gatewaySubId,
+          gatewaySubscriptionId: String(gatewaySubId),
           gatewayProvider: "stripe",
-          gatewayStatus: stripeSub.status,
+          gatewayStatus: String(stripeSub.status),
           createdAt: new Date(),
           updatedAt: new Date(),
         })
         .returning();
 
+      // Current plan is tracked via the subscriptions table
       await db
         .update(users)
-        .set({ planId: transaction.planId, updatedAt: new Date() })
+        .set({ updatedAt: new Date() })
         .where(eq(users.id, transaction.userId));
 
       return res.status(200).json({
@@ -1480,8 +1495,8 @@ export const verifyPayPalPayment = async (req: Request, res: Response) => {
       const newSubscription = await db
         .insert(subscriptions)
         .values({
-          userId: transaction.userId,
-          planId: transaction.planId,
+          userId: String(transaction.userId),
+          planId: String(transaction.planId),
           planData: {
             name: plan.name,
             description: plan.description,
@@ -1491,22 +1506,22 @@ export const verifyPayPalPayment = async (req: Request, res: Response) => {
             features: plan.features,
           },
           status: "active",
-          billingCycle: transaction.billingCycle,
+          billingCycle: String(transaction.billingCycle) as any,
           startDate,
           endDate,
           autoRenew: true,
-          currency: transaction.currency || "USD",
-          gatewaySubscriptionId: gatewaySubId,
+          gatewaySubscriptionId: String(gatewaySubId),
           gatewayProvider: "paypal",
-          gatewayStatus: subStatus.status,
+          gatewayStatus: String(subStatus.status),
           createdAt: new Date(),
           updatedAt: new Date(),
         })
         .returning();
 
+      // Current plan is tracked via the subscriptions table
       await db
         .update(users)
-        .set({ planId: transaction.planId, updatedAt: new Date() })
+        .set({ updatedAt: new Date() })
         .where(eq(users.id, transaction.userId));
 
       return res.status(200).json({
@@ -1691,8 +1706,8 @@ export const verifyPaystackPayment = async (req: Request, res: Response) => {
     const newSubscription = await db
       .insert(subscriptions)
       .values({
-        userId: transaction.userId,
-        planId: transaction.planId,
+        userId: String(transaction.userId),
+        planId: String(transaction.planId),
         planData: {
           name: plan.name,
           description: plan.description,
@@ -1702,12 +1717,11 @@ export const verifyPaystackPayment = async (req: Request, res: Response) => {
           features: plan.features,
         },
         status: "active",
-        billingCycle: transaction.billingCycle,
+        billingCycle: String(transaction.billingCycle) as any,
         startDate,
         endDate,
         autoRenew: true,
-        currency: transaction.currency || "NGN",
-        gatewaySubscriptionId: subscriptionCode,
+        gatewaySubscriptionId: String(subscriptionCode),
         gatewayProvider: "paystack",
         gatewayStatus: "active",
         createdAt: new Date(),
@@ -1715,9 +1729,10 @@ export const verifyPaystackPayment = async (req: Request, res: Response) => {
       })
       .returning();
 
+    // Current plan is tracked via the subscriptions table, so we don't update users.planId
     await db
       .update(users)
-      .set({ planId: transaction.planId, updatedAt: new Date() })
+      .set({ updatedAt: new Date() })
       .where(eq(users.id, transaction.userId));
 
     return res.status(200).json({
@@ -1835,8 +1850,8 @@ export const verifyMercadoPagoPayment = async (req: Request, res: Response) => {
       const newSubscription = await db
         .insert(subscriptions)
         .values({
-          userId: transaction.userId,
-          planId: transaction.planId,
+          userId: String(transaction.userId),
+          planId: String(transaction.planId),
           planData: {
             name: plan.name,
             description: plan.description,
@@ -1846,22 +1861,22 @@ export const verifyMercadoPagoPayment = async (req: Request, res: Response) => {
             features: plan.features,
           },
           status: "active",
-          billingCycle: transaction.billingCycle,
+          billingCycle: String(transaction.billingCycle) as any,
           startDate,
           endDate,
           autoRenew: true,
-          currency: transaction.currency || "BRL",
-          gatewaySubscriptionId: gatewaySubId,
+          gatewaySubscriptionId: String(gatewaySubId),
           gatewayProvider: "mercadopago",
-          gatewayStatus: subStatus.status,
+          gatewayStatus: String(subStatus.status),
           createdAt: new Date(),
           updatedAt: new Date(),
         })
         .returning();
 
+      // Current plan is tracked via the subscriptions table
       await db
         .update(users)
-        .set({ planId: transaction.planId, updatedAt: new Date() })
+        .set({ updatedAt: new Date() })
         .where(eq(users.id, transaction.userId));
 
       return res.status(200).json({
