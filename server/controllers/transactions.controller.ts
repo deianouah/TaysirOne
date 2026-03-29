@@ -467,12 +467,12 @@ export const createTransaction = async (req: Request, res: Response) => {
     const newTransaction = await db
       .insert(transactions)
       .values({
-        userId,
-        planId,
-        paymentProviderId,
-        amount,
-        currency: dynamicCurrency,
-        billingCycle,
+        userId: String(userId),
+        planId: String(planId),
+        paymentProviderId: String(paymentProviderId),
+        amount: String(amount),
+        currency: dynamicCurrency as string,
+        billingCycle: billingCycle as string,
         status: "pending",
         paymentMethod,
         metadata: {},
@@ -591,13 +591,24 @@ export const completeTransaction = async (req: Request, res: Response) => {
       endDate.setMonth(endDate.getMonth() + 1);
     }
 
+    const planDataResult = await db.select().from(plans).where(eq(plans.id, transaction.planId)).limit(1);
+    const plan = planDataResult[0];
+
     const newSubscription = await db
       .insert(subscriptions)
       .values({
         userId: transaction.userId,
         planId: transaction.planId,
+        planData: {
+          name: plan.name,
+          description: plan.description,
+          monthlyPrice: plan.monthlyPrice,
+          annualPrice: plan.annualPrice,
+          permissions: plan.permissions,
+          features: plan.features,
+        },
         status: "active",
-        billingCycle: transaction.billingCycle,
+        billingCycle: transaction.billingCycle as any,
         startDate,
         endDate,
         autoRenew: true,
