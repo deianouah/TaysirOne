@@ -46,6 +46,8 @@ import {
   getPaymentStatus,
   getTransactionStats,
   exportTransactions,
+  verifyManualPayment,
+  approveManualPayment,
 } from "../controllers/transactions.controller";
 
 // Subscriptions Controllers
@@ -62,6 +64,7 @@ import {
   checkExpiredSubscriptions,
   changePlan,
 } from "../controllers/subscriptions.controller";
+import { upload, handleDigitalOceanUpload } from "../middlewares/upload.middleware";
 import type { Express } from "express";
 
 export function registerPaymentsRoutes(app: Express) {
@@ -140,6 +143,17 @@ export function registerPaymentsRoutes(app: Express) {
 
   // GET - Check payment/transaction status
   app.get("/api/payment/status/:transactionId", getPaymentStatus);
+
+  // POST - Verify Manual Payment (CCP/BaridiMob Receipt)
+  app.post(
+    "/api/payment/verify/manual", 
+    upload.single('receipt'), 
+    handleDigitalOceanUpload,
+    verifyManualPayment
+  );
+
+  // POST - Approve Manual Payment (Admin only)
+  app.post("/api/payment/approve/manual", approveManualPayment);
 
   // ==================== SUBSCRIPTIONS ROUTES ====================
 

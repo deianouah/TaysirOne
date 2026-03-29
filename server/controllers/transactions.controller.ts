@@ -733,12 +733,12 @@ export const initiatePayment = async (req: Request, res: Response) => {
     const newTransaction = await db
       .insert(transactions)
       .values({
-        userId,
-        planId,
-        paymentProviderId,
-        amount,
-        currency: resolvedCurrency,
-        billingCycle: cycle,
+        userId: String(userId),
+        planId: String(planId),
+        paymentProviderId: String(paymentProviderId),
+        amount: String(amount),
+        currency: resolvedCurrency as string,
+        billingCycle: cycle as string,
         status: "pending",
         metadata: {},
       })
@@ -835,6 +835,14 @@ export const initiatePayment = async (req: Request, res: Response) => {
         initPoint: result.initPoint,
         subscriptionId: result.subscriptionId,
         gatewayStatus: result.status,
+      };
+    } else if (provider.providerKey === "manual") {
+      // For manual payments, we just need to ensure the transaction exists
+      // The user will upload the receipt in the next step
+      paymentData = {
+        instructions: provider.description,
+        ccpDetails: provider.config,
+        gatewayStatus: "awaiting_receipt",
       };
     } else {
       return res.status(400).json({
@@ -1018,6 +1026,184 @@ export const verifyRazorpayPayment = async (req: Request, res: Response) => {
     res
       .status(500)
       .json({ success: false, message: "Error verifying payment", error });
+  }
+};
+
+export const verifyManualPayment = async (req: Request, res: Response) => {
+  try {
+    const { transactionId } = req.body;
+    const file = req.file as any;
+
+    if (!transactionId || !file) {
+      return res.status(400).json({
+        success: false,
+        message: "Missing transaction ID or receipt file",
+      });
+    }
+
+    const transactionData = await db
+      .select()
+      .from(transactions)
+      .where(eq(transactions.id, transactionId))
+      .limit(1);
+
+    if (transactionData.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Transaction not found",
+      });
+    }
+
+    const transaction = transactionData[0];
+    const receiptUrl = file.cloudUrl || `/uploads/${file.userId || 'guest'}/${file.filename}`;
+
+    await db
+      .update(transactions)
+      .set({
+        status: "pending_approval",
+        metadata: { 
+          ...transaction.metadata, 
+          receiptUrl,
+          submittedAt: new Date().toISOString()
+        },
+        updatedAt: new Date(),
+      })
+      .where(eq(transactions.id, transactionId));
+
+    res.status(200).json({
+      success: true,
+      message: "Receipt uploaded successfully. Your payment is pending approval.",
+      data: {
+        transactionId,
+        status: "pending_approval",
+        receiptUrl,
+      },
+    });
+    });
+  }
+};
+
+export const approveManualPayment = async (req: Request, res: Response) => {
+  try {
+    const { transactionId } = req.body;
+
+    const transactionData = await db
+      .select({
+        transaction: transactions,
+        user: users,
+        plan: plans,
+      })
+      .from(transactions)
+      .leftJoin(users, eq(transactions.userId, users.id))
+      .leftJoin(plans, eq(transactions.planId, plans.id))
+      .where(eq(transactions.id, transactionId))
+      .limit(1);
+
+    if (transactionData.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Transaction not found",
+      });
+    }
+
+    const { transaction, user, plan } = transactionData[0];
+
+    if (transaction.status !== "pending_approval") {
+      return res.status(400).json({
+        success: false,
+        message: `Only transactions with status 'pending_approval' can be approved. Current status: ${transaction.status}`,
+      });
+    }
+
+    if (!user || !plan) {
+      return res.status(400).json({
+        success: false,
+        message: "Associated user or plan not found",
+      });
+    }
+
+    // 1. Update Transaction
+    await db
+      .update(transactions)
+      .set({
+        status: "completed",
+        paidAt: new Date(),
+        updatedAt: new Date(),
+      })
+      .where(eq(transactions.id, transactionId));
+
+    // 2. Deactivate existing active subscriptions for this user
+    await db
+      .update(subscriptions)
+      .set({ status: "cancelled", updatedAt: new Date() })
+      .where(
+        and(
+          eq(subscriptions.userId, user.id),
+          eq(subscriptions.status, "active")
+        )
+      );
+
+    // 3. Create New Subscription
+    const startDate = new Date();
+    const endDate = new Date();
+    if (transaction.billingCycle === "annual") {
+      endDate.setFullYear(endDate.getFullYear() + 1);
+    } else {
+      endDate.setMonth(endDate.getMonth() + 1);
+    }
+
+    const newSubscription = await db
+      .insert(subscriptions)
+      .values({
+        userId: user.id,
+        planId: plan.id,
+        planData: {
+          name: plan.name,
+          description: plan.description,
+          monthlyPrice: plan.monthlyPrice,
+          annualPrice: plan.annualPrice,
+          permissions: plan.permissions,
+          features: plan.features,
+        },
+        status: "active",
+        billingCycle: transaction.billingCycle,
+        startDate,
+        endDate,
+        autoRenew: true,
+        currency: transaction.currency || "DZD",
+        gatewayProvider: "manual",
+        gatewayStatus: "active",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      })
+      .returning();
+
+    // 4. Update User's planId
+    await db
+      .update(users)
+      .set({ planId: plan.id, updatedAt: new Date() })
+      .where(eq(users.id, user.id));
+
+    // 5. Link subscription to transaction
+    await db
+      .update(transactions)
+      .set({ subscriptionId: newSubscription[0].id })
+      .where(eq(transactions.id, transactionId));
+
+    res.status(200).json({
+      success: true,
+      message: "Payment approved and subscription activated successfully.",
+      data: {
+        subscription: newSubscription[0],
+      },
+    });
+  } catch (error) {
+    console.error("Error approving manual payment:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error approving payment",
+      error,
+    });
   }
 };
 

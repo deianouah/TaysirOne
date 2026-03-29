@@ -560,6 +560,22 @@ async function seed() {
         supportedCurrencies: ["BRL", "ARS", "MXN", "CLP", "COP", "PEN", "UYU"],
         supportedMethods: ["card", "pix", "boleto", "debit"],
       },
+      {
+        name: "CCP / BaridiMob",
+        providerKey: "manual",
+        description: "دفع يدوي عبر البريد الجزائري (CCP) أو تطبيق BaridiMob. يرجى رفع الوصل بعد الدفع.",
+        logo: "manual",
+        isActive: true,
+        config: {
+          ccp_name: "ALGERIA POST USER",
+          ccp_number: "0012345678",
+          ccp_key: "99",
+          baridimob_id: "RIP-1234567890",
+          isLive: false
+        },
+        supportedCurrencies: ["DZD", "USD"],
+        supportedMethods: ["bank_transfer", "manual"],
+      },
     ];
 
     for (const provider of defaultProviders) {

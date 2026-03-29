@@ -26,6 +26,10 @@ import {
   Star,
   Building,
   AlertCircle,
+  FileText,
+  Upload,
+  Info,
+  Banknote,
 } from "lucide-react";
 import { PaymentProvider, Plan } from "@/types/types";
 import { useToast } from "@/hooks/use-toast";
@@ -188,7 +192,9 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const [selectedProvider, setSelectedProvider] =
     useState<PaymentProvider | null>(null);
   const [loading, setLoading] = useState(false);
-  const [paymentStep, setPaymentStep] = useState<"select" | "pay">("select");
+  const [paymentStep, setPaymentStep] = useState<"select" | "pay" | "manual_pay">("select");
+  const [receiptFile, setReceiptFile] = useState<File | null>(null);
+  const [receiptPreview, setReceiptPreview] = useState<string | null>(null);
   const [stripePromise, setStripePromise] =
     useState<Promise<Stripe | null> | null>(null);
   const [clientSecret, setClientSecret] = useState<string>("");
@@ -254,6 +260,8 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
         return <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-teal-600" />;
       case "mercadopago":
         return <SiMercadopago className="w-6 h-6 sm:w-7 sm:h-7 text-[#009ee3]" />;
+      case "manual":
+        return <Banknote className="w-6 h-6 sm:w-7 sm:h-7 text-green-600" />;
       default:
         return <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-gray-600" />;
     }
@@ -291,6 +299,12 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
           border: "border-sky-500",
           bg: "bg-sky-50",
           check: "text-sky-600",
+        };
+      case "manual":
+        return {
+          border: "border-green-500",
+          bg: "bg-green-50",
+          check: "text-green-600",
         };
       default:
         return {
@@ -461,6 +475,11 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
           throw new Error("Missing Mercado Pago checkout URL. Please ensure the plan is synced to Mercado Pago.");
         }
         window.location.href = data.data.initPoint;
+      } else if (provider === "manual") {
+        setTransactionId(data.data.transactionId);
+        setPaymentStep("manual_pay");
+        onOpenChange(true);
+        setLoading(false);
       } else {
         throw new Error(`Unsupported payment provider: ${provider}`);
       }
@@ -480,6 +499,8 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
     setClientSecret("");
     setTransactionId("");
     setGatewaySubscriptionId("");
+    setReceiptFile(null);
+    setReceiptPreview(null);
   };
 
   const handleStripeSuccess = () => {
@@ -543,6 +564,170 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 onError={handleStripeError}
               />
             </Elements>
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
+  // Manual Payment View
+  if (paymentStep === "manual_pay" && transactionId) {
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        if (file.size > 10 * 1024 * 1024) {
+          toast({
+            title: "File too large",
+            description: "Please upload an image smaller than 10MB",
+            variant: "destructive",
+          });
+          return;
+        }
+        setReceiptFile(file);
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setReceiptPreview(reader.result as string);
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+
+    const submitReceipt = async () => {
+      if (!receiptFile) {
+        toast({
+          title: "Receipt Required",
+          description: "Please upload your payment receipt image",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      setLoading(true);
+      try {
+        const formData = new FormData();
+        formData.append("transactionId", transactionId);
+        formData.append("receipt", receiptFile);
+        formData.append("userId", userId || "guest");
+
+        const response = await fetch("/api/payment/verify/manual", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          toast({
+            title: "Payment Submitted!",
+            description: "Your receipt has been uploaded. We will verify your payment within an hour.",
+          });
+          onOpenChange(false);
+          // Optional: redirect to a "pending" page or dashboard
+          setTimeout(() => setLocation("/dashboard"), 1500);
+        } else {
+          throw new Error(data.message || "Failed to upload receipt");
+        }
+      } catch (error: any) {
+        toast({
+          title: "Upload Failed",
+          description: error.message || "Please try again or contact support",
+          variant: "destructive",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    return (
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent className="max-w-[95vw] sm:max-w-md p-0 gap-0 overflow-hidden max-h-[90vh] overflow-y-auto">
+          <DialogHeader className="sr-only">
+            <DialogTitle>Complete Manual Payment</DialogTitle>
+          </DialogHeader>
+
+          <div className="p-4 sm:p-6 space-y-4">
+            <div className="flex items-center justify-between mb-2">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                <Banknote className="w-5 h-5 text-green-600" />
+                Dépôt CCP / BaridiMob
+              </h2>
+              <Button variant="ghost" size="sm" onClick={handleBack}>
+                Retour
+              </Button>
+            </div>
+
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 space-y-3">
+              <div className="flex items-start gap-3">
+                <Info className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                <div className="text-sm">
+                  <p className="font-semibold text-green-900 mb-1">Détails du compte (Placeholder):</p>
+                  <div className="space-y-1 text-green-800 font-mono">
+                    <p>Nom: {selectedProvider?.config.ccp_name || 'ALGERIA POST'}</p>
+                    <p>CCP: {selectedProvider?.config.ccp_number || '0012345678'}</p>
+                    <p>Clé: {selectedProvider?.config.ccp_key || '99'}</p>
+                    <p>RIP: {selectedProvider?.config.baridimob_id || 'RIP-1234567890'}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <label className="block text-sm font-medium text-gray-700">
+                Uploader le reçu (وصل الدفع)
+              </label>
+              
+              {!receiptPreview ? (
+                <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-blue-500 transition-colors cursor-pointer relative">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  />
+                  <Upload className="w-10 h-10 text-gray-400 mx-auto mb-2" />
+                  <p className="text-sm text-gray-600">Cliquez pour choisir une photo du reçu</p>
+                  <p className="text-xs text-gray-400 mt-1">JPG, PNG, WebP (Max 10MB)</p>
+                </div>
+              ) : (
+                <div className="relative rounded-xl overflow-hidden border border-gray-200">
+                  <img src={receiptPreview} alt="Receipt preview" className="w-full h-48 object-cover" />
+                  <button 
+                    onClick={() => { setReceiptFile(null); setReceiptPreview(null); }}
+                    className="absolute top-2 right-2 bg-red-600 text-white p-1 rounded-full shadow-lg"
+                  >
+                    <AlertCircle className="w-5 h-5" />
+                  </button>
+                  <div className="absolute bottom-0 inset-x-0 bg-black/50 text-white p-2 text-xs flex items-center gap-2">
+                    <FileText className="w-4 h-4" />
+                    {receiptFile?.name}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="pt-2">
+              <Button 
+                onClick={submitReceipt} 
+                className="w-full bg-green-600 hover:bg-green-700" 
+                disabled={loading || !receiptFile}
+              >
+                {loading ? (
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Envoi du reçu...
+                  </div>
+                ) : (
+                  <>
+                    <Check className="w-4 h-4 mr-2" />
+                    Confirmer le Paiement
+                  </>
+                )}
+              </Button>
+              <p className="text-[10px] text-gray-500 text-center mt-3">
+                En cliquant sur confirmer, vous déclarez avoir effectué le virement. 
+                L'équipe vérifiera votre demande sous 60 minutes.
+              </p>
+            </div>
           </div>
         </DialogContent>
       </Dialog>

@@ -53,11 +53,16 @@ export interface PlansDataTypes {
 // Payment
 
 export interface PaymentConfig {
-  apiKey: string;
-  apiSecret: string;
-  apiKeyTest: string;
-  apiSecretTest: string;
+  apiKey?: string;
+  apiSecret?: string;
+  apiKeyTest?: string;
+  apiSecretTest?: string;
   isLive: boolean;
+  // Manual Payment Fields
+  ccp_name?: string;
+  ccp_number?: string;
+  ccp_key?: string;
+  baridimob_id?: string;
 }
 
 export interface PaymentProvider {
@@ -90,6 +95,9 @@ export interface PaymentInitiationData {
   paymentIntentId: string;
   clientSecret: string;
   publishableKey: string;
+  // Manual Payment
+  instructions?: string;
+  ccpDetails?: any;
 }
 
 export interface PaymentInitiationResponse {
@@ -127,7 +135,8 @@ export type SubscriptionStatus =
   | "active"
   | "inactive"
   | "expired"
-  | "cancelled";
+  | "cancelled"
+  | "pending_approval";
 export type BillingCycle = "monthly" | "yearly" | "annual";
 
 export interface PlanData {
