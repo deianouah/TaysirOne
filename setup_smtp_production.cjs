@@ -15,8 +15,8 @@ async function run() {
     const query = 'INSERT INTO smtp_config (host, port, secure, "user", password, from_name, from_email) VALUES ($1, $2, $3, $4, $5, $6, $7)';
     const values = [
       'smtp.gmail.com',
-      465,
-      true, // SSL for port 465
+      587,
+      false, // STARTTLS for port 587
       'taysireone@gmail.com',
       'ojmrzhoobywykmoz', // Your app password
       'Taysir One',
