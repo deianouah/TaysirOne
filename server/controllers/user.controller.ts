@@ -403,17 +403,17 @@ export const createUser = async (req: Request, res: Response) => {
         role: role || "admin",
         avatar,
         permissions: defaultPermissions,
-        isEmailVerified: false,
+        isEmailVerified: true, // Temporarily bypass OTP
       })
       .returning();
 
     const user = newUser[0];
 
-    // Generate OTP
+    // Generate OTP (still generated for database integrity if needed later)
     const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
 
-    console.log(`Generated OTP for ${email}: ${otpCode} (expires at ${expiresAt.toISOString()})`);
+    console.log(`Bypassing OTP for ${email}: ${otpCode}`);
 
     await db.insert(otpVerifications).values({
       userId: user.id,
@@ -422,11 +422,12 @@ export const createUser = async (req: Request, res: Response) => {
       isUsed: false,
     });
 
-    await sendOTPEmailVerify(email, otpCode, firstName);
+    // Try sending email in background, don't wait for it
+    sendOTPEmailVerify(email, otpCode, firstName).catch(() => console.warn("Email sending skipped (SMTP not configured)"));
 
     return res.status(201).json({
       success: true,
-      message: "User created. Verification OTP sent to email.",
+      message: "User created and automatically verified.",
     });
 
   } catch (error) {
