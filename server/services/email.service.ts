@@ -83,12 +83,10 @@ function generateOTPEmailHTML(
   otpCode?: string,
   name?: string
 ): string {
-  const displayName = companyName || "Your Company";
+  const displayName = "Taysir One";
   const headerContent = logo
-    ? `<img src="${logo}" alt="${displayName} Logo" style="max-height: 60px; margin-bottom: 10px;">`
+    ? `<img src="${logo}" alt="${displayName} Logo" style="max-height: 80px; margin-bottom: 20px;">`
     : `<div class="logo">${displayName}</div>`;
-
-  const messageText = `Please use the verification code below to verify your identity.`;
 
   return `
     <!DOCTYPE html>
@@ -97,46 +95,51 @@ function generateOTPEmailHTML(
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
-        .container { background: #ffffff; border-radius: 8px; padding: 40px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1f2937; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb; }
+        .container { background: #ffffff; border-radius: 16px; padding: 40px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb; }
         .header { text-align: center; margin-bottom: 30px; }
-        .logo { font-size: 28px; font-weight: bold; color: #1f2937; margin-bottom: 10px; }
-        .otp-box { background: #f3f4f6; border: 2px solid #e5e7eb; border-radius: 8px; padding: 20px; text-align: center; margin: 30px 0; }
-        .otp-code { font-size: 36px; font-weight: bold; letter-spacing: 8px; color: #1f2937; font-family: 'Courier New', monospace; }
-        .message { font-size: 16px; color: #4b5563; margin: 20px 0; }
-        .warning { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px; margin: 20px 0; font-size: 14px; color: #92400e; }
-        .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #9ca3af; }
+        .logo { font-size: 32px; font-weight: 800; color: #10b981; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .welcome-title { font-size: 24px; font-weight: 700; color: #111827; text-align: center; margin-bottom: 10px; }
+        .otp-box { background: #ecfdf5; border: 2px dashed #10b981; border-radius: 12px; padding: 30px; text-align: center; margin: 30px 0; }
+        .otp-code { font-size: 42px; font-weight: 800; letter-spacing: 10px; color: #065f46; font-family: monospace; }
+        .message { font-size: 16px; color: #4b5563; text-align: center; line-height: 1.8; }
+        .security-warning { background: #fffbeb; border-radius: 8px; padding: 15px; margin: 25px 0; font-size: 14px; color: #92400e; border: 1px solid #fde68a; text-align: center; }
+        .footer { text-align: center; margin-top: 40px; padding-top: 25px; border-top: 1px solid #f3f4f6; font-size: 13px; color: #9ca3af; }
+        .cta-text { color: #10b981; font-weight: 600; }
       </style>
     </head>
     <body>
       <div class="container">
         <div class="header">
           ${headerContent}
-          <p style="color: #6b7280; margin: 0;">Our Platform</p>
         </div>
+        
+        <h2 class="welcome-title">Welcome to Taysir One!</h2>
         
         <div class="message">
           ${name ? `<p>Hello <strong>${name}</strong>,</p>` : "<p>Hello,</p>"}
-          <p>${messageText}</p>
+          <p>Thank you for choosing <span class="cta-text">Taysir One</span> for your business growth. We are excited to help you scale your marketing journey!</p>
+          <p>Please use the verification code below to complete your registration:</p>
         </div>
         
         <div class="otp-box">
-          <div style="font-size: 14px; color: #6b7280; margin-bottom: 10px;">Your Verification Code</div>
+          <div style="font-size: 14px; color: #065f46; margin-bottom: 12px; text-transform: uppercase; font-weight: 600;">Your Security Code</div>
           <div class="otp-code">${otpCode}</div>
-          <div style="font-size: 12px; color: #9ca3af; margin-top: 10px;">Valid for 5 minutes</div>
+          <div style="font-size: 12px; color: #059669; margin-top: 12px;">This code expires in 10 minutes.</div>
         </div>
         
-        <div class="warning">
-          <strong>Security Notice:</strong> Never share this code with anyone. ${displayName} will never ask for your verification code.
+        <div class="security-warning">
+          <strong>Important Security Notice:</strong> For your protection, <span style="text-decoration: underline;">never share this code</span> with anyone. Taysir One staff will never ask for your verification code via phone or email.
         </div>
         
         <div class="message">
-          <p>If you didn't request this code, please ignore this email or contact our support team.</p>
+          <p>If you did not request this code, simply ignore this email or contact our support team if you have concerns.</p>
         </div>
         
         <div class="footer">
-          <p>This is an automated message from ${displayName}.</p>
-          <p>&copy; ${new Date().getFullYear()} ${displayName}. All rights reserved.</p>
+          <p>You are receiving this because you signed up for Taysir One.</p>
+          <p>&copy; ${new Date().getFullYear()} Taysir One. All rights reserved.</p>
+          <p>The smartest way to grow your business.</p>
         </div>
       </div>
     </body>
@@ -152,17 +155,17 @@ function generateOTPEmailText(
   return `
 Hello${name ? " " + name : ""},
 
-Thank you for signing up for ${companyName}!
+Welcome to Taysir One! Thank you for choosing us for your business growth.
 
 Your verification code is: ${otpCode}
 
-This code will expire in 5 minutes.
+For your security, DO NOT share this code with anyone. This code will expire in 10 minutes.
 
 If you didn't request this code, please ignore this email.
 
 ---
-${companyName}
-Our Platform
+Taysir One
+The smartest way to grow your business.
   `.trim();
 }
 
