@@ -20,7 +20,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FaEllipsisH, FaEye, FaBan, FaSearch, FaCheck, FaCrown, FaEdit, FaFileExport } from "react-icons/fa";
+import { FaEllipsisH, FaEye, FaBan, FaSearch, FaCheck, FaCrown, FaEdit, FaFileExport, FaTrash } from "react-icons/fa";
 import EditUserModal from "@/components/modals/EditUserModal";
 import { PageNumbers } from "@/components/ui/page-numbers";
 import Header from "@/components/layout/header";
@@ -135,9 +135,35 @@ const User: React.FC = () => {
     }
   };
 
+  const handleDeleteUser = async (u: UserType) => {
+    const confirmed = window.confirm(`تأكيد حذف الحساب:\n${u.username} (${u.email})\n\nهذا الإجراء لا يمكن التراجع عنه!`);
+    if (!confirmed) return;
+    try {
+      const res = await apiRequest("DELETE", `/api/admin/users/${u.id}`);
+      const data = await res.json();
+      if (data.success) {
+        toast({
+          title: "b تم الحذف",
+          description: `تم حذف حساب ${u.username} بنجاح.`,
+        });
+        setUsers((prev) => prev.filter((x) => x.id !== u.id));
+      } else {
+        toast({
+          title: t("users.toast.error"),
+          description: data.message || "فشل الحذف",
+          variant: "destructive",
+        });
+      }
+    } catch {
+      toast({
+        title: t("users.toast.error"),
+        description: t("users.toast.somethingWrong"),
+        variant: "destructive",
+      });
+    }
+  };
 
-  
-  
+
   
 
   const fetchUsers = async (
@@ -588,8 +614,7 @@ const handleExportCSV = async () => {
                           <FaEye className="cursor-pointer hover:text-green-600" />
                         </Link>
 
-                         {/* PLAN ASSIGN DROPDOWN */}
-   <FaCrown
+                         <FaCrown
   onClick={() => openAssignPlanModal(u)}
   className="cursor-pointer text-yellow-500 hover:text-yellow-600"
   title="Assign Plan"
@@ -608,6 +633,11 @@ const handleExportCSV = async () => {
                             title={t("users.actions.activateUser")}
                           />
                         )}
+                        <FaTrash
+                          onClick={() => handleDeleteUser(u)}
+                          className="cursor-pointer hover:text-red-700 text-red-400"
+                          title="حذف الحساب"
+                        />
                       </div>
                     </td>
                   </tr>
@@ -720,6 +750,11 @@ const handleExportCSV = async () => {
                       title={t("users.actions.activateUser")}
                     />
                   )}
+                  <FaTrash
+                    onClick={() => handleDeleteUser(u)}
+                    className="cursor-pointer hover:text-red-700 text-red-400"
+                    title="حذف الحساب"
+                  />
                 </div>
               </div>
             ))

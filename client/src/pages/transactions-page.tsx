@@ -16,7 +16,7 @@
  */
 
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import {
   Search,
@@ -34,6 +34,8 @@ import {
   ChevronRight,
   X,
   Wallet,
+  UserCheck,
+  Eye,
 } from "lucide-react";
 import {
   Select,
@@ -47,9 +49,12 @@ import Header from "@/components/layout/header";
 import { useTranslation } from "@/lib/i18n";
 import { useAuth } from "@/contexts/auth-context";
 import {isDemoUser, maskValue} from "@/utils/maskUtils"
+import { useToast } from "@/hooks/use-toast";
 
 function TransactionsPage() {
   const { t } = useTranslation();
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
   const [filters, setFilters] = useState({
     search: "",
     status: "",
@@ -64,6 +69,8 @@ function TransactionsPage() {
   });
 
   const [showFilters, setShowFilters] = useState(false);
+  const [approvingId, setApprovingId] = useState<string | null>(null);
+  const [receiptModal, setReceiptModal] = useState<{ url: string; transactionId: string } | null>(null);
   const { user } = useAuth();
 
   // ==================== API CALLS ====================
@@ -83,7 +90,7 @@ function TransactionsPage() {
       return data;
     },
     keepPreviousData: true,
-  });
+  } as any);
 
   // 🔹 Fetch Transaction Stats
   const { data: statsData } = useQuery({
@@ -94,14 +101,14 @@ function TransactionsPage() {
     },
   });
 
-  const transactions = transactionData?.data || [];
-  const stats = statsData?.data || {
+  const transactions = (transactionData as any)?.data || [];
+  const stats = (statsData as any)?.data || {
     totalRevenue: 0,
     statusCounts: [],
   };
 
-  const totalPages = transactionData?.pagination?.totalPages || 1;
-  const totalCount = transactionData?.pagination?.totalCount || 0;
+  const totalPages = (transactionData as any)?.pagination?.totalPages || 1;
+  const totalCount = (transactionData as any)?.pagination?.totalCount || 0;
 
   // ==================== HANDLERS ====================
 
@@ -145,6 +152,36 @@ function TransactionsPage() {
     }
   };
 
+  const handleApprovePayment = async (transactionId: string) => {
+    if (approvingId) return;
+    setApprovingId(transactionId);
+    try {
+      const { data } = await axios.post("/api/payment/approve/manual", { transactionId });
+      if (data.success) {
+        toast({
+          title: "✅ تم التفعيل!",
+          description: "تم اعتماد الدفع وتفعيل اشتراك المستخدم بنجاح.",
+        });
+        queryClient.invalidateQueries({ queryKey: ["transactions"] });
+        queryClient.invalidateQueries({ queryKey: ["transactionStats"] });
+      } else {
+        toast({
+          title: "خطأ",
+          description: data.message || "فشل التفعيل",
+          variant: "destructive",
+        });
+      }
+    } catch (err: any) {
+      toast({
+        title: "خطأ في الخادم",
+        description: err?.response?.data?.message || "حاول مرة أخرى",
+        variant: "destructive",
+      });
+    } finally {
+      setApprovingId(null);
+    }
+  };
+
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "completed":
@@ -153,6 +190,8 @@ function TransactionsPage() {
         return <XCircle className="w-4 h-4 text-red-500" />;
       case "pending":
         return <Clock className="w-4 h-4 text-yellow-500" />;
+      case "pending_approval":
+        return <Clock className="w-4 h-4 text-orange-500" />;
       case "refunded":
         return <RefreshCw className="w-4 h-4 text-blue-500" />;
       case "cancelled":
@@ -167,8 +206,18 @@ function TransactionsPage() {
       completed: "bg-green-100 text-green-800",
       failed: "bg-red-100 text-red-800",
       pending: "bg-yellow-100 text-yellow-800",
+      pending_approval: "bg-orange-100 text-orange-800",
       refunded: "bg-blue-100 text-blue-800",
       cancelled: "bg-gray-100 text-gray-800",
+    };
+
+    const labels: Record<string, string> = {
+      completed: "مكتمل",
+      failed: "فشل",
+      pending: "معلق",
+      pending_approval: "بانتظار الموافقة",
+      refunded: "مسترجع",
+      cancelled: "ملغى",
     };
 
     return (
@@ -177,7 +226,7 @@ function TransactionsPage() {
           colors[status] || "bg-gray-100 text-gray-800"
         }`}
       >
-        {t(`transactions.status.${status}`)}
+        {labels[status] || status}
       </span>
     );
   };
@@ -558,6 +607,9 @@ function TransactionsPage() {
                       <th className="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         {t("transactions.table.date")}
                       </th>
+                      <th className="px-3 lg:px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        الإجراءات
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -607,6 +659,36 @@ function TransactionsPage() {
                         </td>
                         <td className="px-3 lg:px-6 py-3 lg:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500">
                           {formatDateTime(item.transaction.createdAt)}
+                        </td>
+                        <td className="px-3 lg:px-6 py-3 lg:py-4 whitespace-nowrap text-center">
+                          <div className="flex items-center justify-center gap-2">
+                            {/* Show receipt button if receiptUrl exists */}
+                            {item.transaction.metadata?.receiptUrl && (
+                              <button
+                                onClick={() => setReceiptModal({ url: item.transaction.metadata.receiptUrl, transactionId: item.transaction.id })}
+                                className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-blue-50 text-blue-700 border border-blue-200 rounded-lg hover:bg-blue-100 transition"
+                                title="عرض الوصل"
+                              >
+                                <Eye className="w-3 h-3" />
+                                الوصل
+                              </button>
+                            )}
+                            {/* Activate button for pending_approval */}
+                            {item.transaction.status === "pending_approval" && (
+                              <button
+                                onClick={() => handleApprovePayment(item.transaction.id)}
+                                disabled={approvingId === item.transaction.id}
+                                className="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold bg-green-600 text-white rounded-lg hover:bg-green-700 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                              >
+                                {approvingId === item.transaction.id ? (
+                                  <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                ) : (
+                                  <UserCheck className="w-3 h-3" />
+                                )}
+                                تفعيل
+                              </button>
+                            )}
+                          </div>
                         </td>
                       </tr>
                     ))}
@@ -687,6 +769,32 @@ function TransactionsPage() {
                         </span>
                       </div>
                     </div>
+
+                    {/* Actions for mobile */}
+                    {item.transaction.status === "pending_approval" && (
+                      <div className="pt-3 border-t border-gray-100 flex gap-2">
+                        {item.transaction.metadata?.receiptUrl && (
+                          <button
+                            onClick={() => setReceiptModal({ url: item.transaction.metadata.receiptUrl, transactionId: item.transaction.id })}
+                            className="flex-1 flex items-center justify-center gap-1 py-2 text-xs bg-blue-50 text-blue-700 border border-blue-200 rounded-lg"
+                          >
+                            <Eye className="w-3 h-3" /> عرض الوصل
+                          </button>
+                        )}
+                        <button
+                          onClick={() => handleApprovePayment(item.transaction.id)}
+                          disabled={approvingId === item.transaction.id}
+                          className="flex-1 flex items-center justify-center gap-1 py-2 text-xs font-semibold bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-60"
+                        >
+                          {approvingId === item.transaction.id ? (
+                            <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                          ) : (
+                            <UserCheck className="w-3 h-3" />
+                          )}
+                          تفعيل الحساب
+                        </button>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -790,6 +898,56 @@ function TransactionsPage() {
           )}
         </div>
       </div>
+
+      {/* Receipt Preview Modal */}
+      {receiptModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          onClick={() => setReceiptModal(null)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between p-4 border-b">
+              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <Eye className="w-5 h-5 text-blue-600" />
+                وصل الدفع - CCP / BaridiMob
+              </h3>
+              <button onClick={() => setReceiptModal(null)} className="text-gray-400 hover:text-gray-700">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-4">
+              <img
+                src={receiptModal.url}
+                alt="Receipt"
+                className="w-full max-h-[60vh] object-contain rounded-xl border border-gray-200"
+                onError={(e) => { (e.target as HTMLImageElement).src = "/fallback-receipt.png"; }}
+              />
+            </div>
+            <div className="p-4 border-t flex justify-end gap-3">
+              <button
+                onClick={() => setReceiptModal(null)}
+                className="px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50"
+              >
+                إغلاق
+              </button>
+              <button
+                onClick={() => {
+                  handleApprovePayment(receiptModal.transactionId);
+                  setReceiptModal(null);
+                }}
+                disabled={!!approvingId}
+                className="px-5 py-2 text-sm font-semibold bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-60 flex items-center gap-2"
+              >
+                <UserCheck className="w-4 h-4" />
+                قبول ✓ تفعيل الحساب
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
