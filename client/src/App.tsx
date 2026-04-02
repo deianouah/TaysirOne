@@ -250,6 +250,9 @@ function ProtectedRoutes() {
           <Route path="/channels-management">
             <PermissionRoute component={ChannelsManagement} requiredRoles={["superadmin"]} />
           </Route>
+          <Route path="/transactions-logs">
+            <PermissionRoute component={TransactionsPage} requiredRoles={["superadmin"]} />
+          </Route>
           <Route path="/users/:id">
             <PermissionRoute component={userDetails} requiredRoles={["superadmin"]} />
           </Route>
