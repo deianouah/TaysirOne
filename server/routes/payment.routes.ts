@@ -63,6 +63,7 @@ import {
   toggleAutoRenew,
   checkExpiredSubscriptions,
   changePlan,
+  startTrial,
 } from "../controllers/subscriptions.controller";
 import { upload, handleDigitalOceanUpload } from "../middlewares/upload.middleware";
 import type { Express } from "express";
@@ -192,4 +193,7 @@ export function registerPaymentsRoutes(app: Express) {
 
   // POST check and update expired subscriptions (cron job endpoint)
   app.post("/api/subscriptions/check-expired", checkExpiredSubscriptions);
+
+  // POST start 7-day trial subscription
+  app.post("/api/subscriptions/start-trial", startTrial);
 }

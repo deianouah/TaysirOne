@@ -411,6 +411,38 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
   };
 
   const handlePayment = async () => {
+    if (total === 0) {
+      setLoading(true);
+      try {
+        const response = await apiRequest("POST", "/api/subscriptions/start-trial", {
+          userId: userId,
+          planId: plan.id,
+        });
+        const data = await response.json();
+        if (data.success) {
+          toast({
+            title: "Trial Started!",
+            description: "Your 7-day free trial has started successfully.",
+          });
+          onOpenChange(false);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
+        } else {
+          throw new Error(data.message || "Failed to start trial");
+        }
+      } catch (error: any) {
+        toast({
+          title: "Failed",
+          description: error.message || "Failed to start trial. Please try again.",
+          variant: "destructive",
+        });
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
     if (!selectedProvider) {
       toast({
         title: "Payment Method Required",
@@ -819,92 +851,94 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
             </div>
           </div>
 
-          <div>
-            <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-2 sm:mb-3">
-              Select Payment Method:
-            </h3>
+          {total > 0 && (
+            <div>
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-2 sm:mb-3">
+                Select Payment Method:
+              </h3>
 
-            {(() => {
-              if (isLoadingProviders) {
-                return (
-                  <div className="flex items-center justify-center p-8">
-                    <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-                  </div>
-                );
-              }
-              if (activeProviders.length === 0) {
-                return (
-                  <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                    <div className="flex items-start gap-2">
-                      <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="text-sm font-medium text-yellow-800">
-                          No payment methods available
-                        </p>
-                        <p className="text-xs text-yellow-700 mt-1">
-                          Please contact support to enable payment gateways.
-                        </p>
+              {(() => {
+                if (isLoadingProviders) {
+                  return (
+                    <div className="flex items-center justify-center p-8">
+                      <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                  );
+                }
+                if (activeProviders.length === 0) {
+                  return (
+                    <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                      <div className="flex items-start gap-2">
+                        <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-sm font-medium text-yellow-800">
+                            No payment methods available
+                          </p>
+                          <p className="text-xs text-yellow-700 mt-1">
+                            Please contact support to enable payment gateways.
+                          </p>
+                        </div>
                       </div>
                     </div>
+                  );
+                }
+                return (
+                  <div
+                    className={`grid gap-2 sm:gap-3 ${
+                      activeProviders.length === 1 ? "grid-cols-1" : "grid-cols-2"
+                    }`}
+                  >
+                    {activeProviders.map((provider) => {
+                      const colors = getProviderColor(provider.providerKey);
+                      const isSelected = selectedProvider?.id === provider.id;
+
+                      return (
+                        <button
+                          key={provider.id}
+                          onClick={() => setSelectedProvider(provider)}
+                          className={`p-3 sm:p-4 border-2 rounded-lg sm:rounded-xl transition-all ${
+                            isSelected
+                              ? `${colors.border} ${colors.bg}`
+                              : "border-gray-200 hover:border-gray-300"
+                          }`}
+                        >
+                          <div className="flex flex-col items-center gap-1.5 sm:gap-2">
+                            {getProviderIcon(provider.providerKey)}
+                            <div className="text-center">
+                              <span className="text-[10px] sm:text-xs font-medium text-gray-900 block">
+                                {provider.name}
+                              </span>
+                              <div className="flex items-center gap-1 justify-center mt-0.5">
+                                {provider.config.isLive ? (
+                                  <span className="text-[8px] sm:text-[10px] text-green-600 font-medium">
+                                    Live Mode
+                                  </span>
+                                ) : (
+                                  <span className="text-[8px] sm:text-[10px] text-orange-600 font-medium">
+                                    Test Mode
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            {isSelected && (
+                              <Check
+                                className={`w-3 h-3 sm:w-4 sm:h-4 ${colors.check}`}
+                              />
+                            )}
+                          </div>
+                        </button>
+                      );
+                    })}
                   </div>
                 );
-              }
-              return (
-                <div
-                  className={`grid gap-2 sm:gap-3 ${
-                    activeProviders.length === 1 ? "grid-cols-1" : "grid-cols-2"
-                  }`}
-                >
-                  {activeProviders.map((provider) => {
-                    const colors = getProviderColor(provider.providerKey);
-                    const isSelected = selectedProvider?.id === provider.id;
-
-                    return (
-                      <button
-                        key={provider.id}
-                        onClick={() => setSelectedProvider(provider)}
-                        className={`p-3 sm:p-4 border-2 rounded-lg sm:rounded-xl transition-all ${
-                          isSelected
-                            ? `${colors.border} ${colors.bg}`
-                            : "border-gray-200 hover:border-gray-300"
-                        }`}
-                      >
-                        <div className="flex flex-col items-center gap-1.5 sm:gap-2">
-                          {getProviderIcon(provider.providerKey)}
-                          <div className="text-center">
-                            <span className="text-[10px] sm:text-xs font-medium text-gray-900 block">
-                              {provider.name}
-                            </span>
-                            <div className="flex items-center gap-1 justify-center mt-0.5">
-                              {provider.config.isLive ? (
-                                <span className="text-[8px] sm:text-[10px] text-green-600 font-medium">
-                                  Live Mode
-                                </span>
-                              ) : (
-                                <span className="text-[8px] sm:text-[10px] text-orange-600 font-medium">
-                                  Test Mode
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                          {isSelected && (
-                            <Check
-                              className={`w-3 h-3 sm:w-4 sm:h-4 ${colors.check}`}
-                            />
-                          )}
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              );
-            })()}
-          </div>
+              })()}
+            </div>
+          )}
 
           <Button
             onClick={handlePayment}
             disabled={
-              loading || !selectedProvider || activeProviders.length === 0
+              loading || (total > 0 && (!selectedProvider || activeProviders.length === 0))
             }
             className="w-full h-10 sm:h-12 text-sm sm:text-base font-semibold"
           >
@@ -913,6 +947,11 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 <div className="w-3 h-3 sm:w-4 sm:h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                 <span className="text-xs sm:text-sm">Processing...</span>
               </div>
+            ) : total === 0 ? (
+              <>
+                <Rocket className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                Start 7-Day Free Trial
+              </>
             ) : (
               <>
                 <Lock className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />

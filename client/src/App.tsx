@@ -90,6 +90,7 @@ import LanguageManagement from "./pages/LanguageManagement";
 import SuperadminMessageLogs from "./pages/SuperadminMessageLogs";
 import ApiDocs from "./pages/api-docs";
 import ChannelsManagement from "./pages/channels-management";
+import { GlobalSubscriptionBanner } from "./components/layout/GlobalSubscriptionBanner";
 
 // Define route permissions mapping
 const ROUTE_PERMISSIONS: Record<string, string> = {
@@ -231,7 +232,8 @@ function ProtectedRoutes() {
   return (
     <div className="flex min-h-screen bg-white">
       <Sidebar />
-      <div className="flex-1 lg:ml-64">
+      <div className="flex-1 lg:ml-64 flex flex-col min-h-screen min-w-0">
+        <GlobalSubscriptionBanner />
         <Switch>
           <Route path="/dashboard">
             <Dashboard />

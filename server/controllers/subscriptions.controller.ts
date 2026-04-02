@@ -712,3 +712,84 @@ export const checkExpiredSubscriptions = async (
     });
   }
 };
+
+// ==================== START TRIAL (7-day free trial) ====================
+export const startTrial = async (req: Request, res: Response) => {
+  try {
+    const { userId, planId } = req.body;
+
+    if (!userId || !planId) {
+      return res.status(400).json({
+        success: false,
+        message: "userId and planId are required",
+      });
+    }
+
+    // Fetch plan
+    const planData = await db
+      .select()
+      .from(plans)
+      .where(eq(plans.id, planId))
+      .limit(1);
+
+    if (!planData.length) {
+      return res.status(404).json({ success: false, message: "Plan not found" });
+    }
+
+    const plan = planData[0];
+
+    // Cancel existing active subscriptions
+    await db
+      .update(subscriptions)
+      .set({ status: "cancelled", updatedAt: new Date() })
+      .where(
+        and(
+          eq(subscriptions.userId, userId),
+          eq(subscriptions.status, "active")
+        )
+      );
+
+    // Create 7-day trial
+    const startDate = new Date();
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 7);
+
+    const newSub = await db
+      .insert(subscriptions)
+      .values({
+        userId,
+        planId,
+        planData: {
+          name: plan.name,
+          description: plan.description,
+          monthlyPrice: plan.monthlyPrice,
+          annualPrice: plan.annualPrice,
+          permissions: plan.permissions,
+          features: plan.features,
+        },
+        status: "active",
+        billingCycle: "monthly",
+        startDate,
+        endDate,
+        autoRenew: false,
+        gatewayProvider: "trial",
+        gatewayStatus: "trial",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      })
+      .returning();
+
+    return res.status(201).json({
+      success: true,
+      message: "7-day trial started successfully",
+      data: newSub[0],
+    });
+  } catch (error: any) {
+    console.error("Error starting trial:", error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Error starting trial",
+    });
+  }
+};
+
